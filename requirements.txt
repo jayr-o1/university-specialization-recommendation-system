@@ -1,0 +1,9 @@
+numpy==1.26.4
+pandas==2.2.1
+scikit-learn==1.4.1
+fastapi==0.111.0
+uvicorn==0.27.1
+pydantic==2.6.3
+nltk==3.8.1
+spacy==3.7.4
+matplotlib==3.8.3 

@@ -12,81 +12,10 @@ from src.utils.data_access import (
     update_faculty_skills
 )
 from src.matching.semantic_matcher import match_faculty_to_course, get_top_course_matches
-from src.models.recommender import SkillBasedRecommender
+from src.models import get_recommender
 from src.data.dataset import ensure_dataset_exists
 
 router = APIRouter()
-
-# Initialize the recommender model - lazy loading
-_recommender = None
-
-def get_recommender():
-    """Get a trained recommender model, creating it if it doesn't exist."""
-    global _recommender
-    
-    if _recommender is None:
-        # Ensure dataset exists
-        ensure_dataset_exists()
-        
-        # Load the model if it exists, otherwise create and train it
-        models_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'models'))
-        model_path = os.path.join(models_dir, "recommender_model.npz")
-        
-        try:
-            if os.path.exists(model_path):
-                # Check the n_components value in the saved model
-                with np.load(model_path, allow_pickle=True) as data:
-                    if 'n_components' in data:
-                        n_components = int(data['n_components'])
-                    else:
-                        # Default to 5 if not found
-                        n_components = 5
-                
-                # Load existing model with the correct number of components
-                print(f"Loading model from {model_path} with {n_components} components")
-                _recommender = SkillBasedRecommender(n_components=n_components)
-                _recommender.load_model(model_path)
-                
-                # Verify the model is properly loaded
-                if not _recommender.is_trained:
-                    raise ValueError("Model loaded but not marked as trained")
-            else:
-                # Create new model
-                print("Model file not found. Training new model...")
-                from src.data.dataset import save_dataset_as_csv
-                save_dataset_as_csv()
-                
-                data_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'data'))
-                skill_matrix_path = os.path.join(data_dir, "skill_course_matrix.csv")
-                
-                # Use 5 components for consistency
-                n_components = 5
-                _recommender = SkillBasedRecommender(n_components=n_components)
-                _recommender.load_data(skill_matrix_path)
-                _recommender.train()
-                _recommender.save_model(model_path)
-                print(f"New model trained and saved to {model_path}")
-                
-        except Exception as e:
-            print(f"Error loading/creating recommender model: {str(e)}")
-            # If there's any error, let's just train a new model
-            print("Training new model due to error...")
-            from src.data.dataset import save_dataset_as_csv
-            save_dataset_as_csv()
-            
-            data_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'data'))
-            skill_matrix_path = os.path.join(data_dir, "skill_course_matrix.csv")
-            
-            # Use 5 components for consistency
-            n_components = 5
-            _recommender = SkillBasedRecommender(n_components=n_components)
-            _recommender.load_data(skill_matrix_path)
-            _recommender.train()
-            _recommender.save_model(model_path)
-            print(f"New model trained and saved to {model_path}")
-    
-    return _recommender
-
 
 @router.get("/courses", response_model=List[Course])
 async def get_courses():

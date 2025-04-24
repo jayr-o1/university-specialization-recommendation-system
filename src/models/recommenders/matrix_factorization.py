@@ -5,13 +5,13 @@ from sklearn.decomposition import NMF
 from sklearn.metrics.pairwise import cosine_similarity
 import os
 
-# Updated imports with proper package paths
 from src.models.schemas import Faculty, Course, ProficiencyLevel, SkillProficiency, MatchResult
-from src.data.courses import COURSES  # Import course data to access required skills
+from src.data.courses import COURSES
+from src.models.recommenders.base import BaseRecommender
 
-class SkillBasedRecommender:
+class SkillBasedRecommender(BaseRecommender):
     """
-    A skill-based recommender system using matrix factorization techniques.
+    A skill-based recommender system using matrix factorization techniques (NMF).
     This model creates latent representations of skills and courses for better matching.
     """
     
@@ -245,8 +245,8 @@ class SkillBasedRecommender:
         
         if model_path is None:
             # Default location in the models directory
-            models_dir = os.path.dirname(os.path.abspath(__file__))
-            model_path = os.path.join(models_dir, "recommender_model.npz")
+            from src.models.persistence.model_storage import get_default_model_path
+            model_path = get_default_model_path("nmf")
         
         # Ensure course_codes is saved as object array to preserve strings
         np.savez(

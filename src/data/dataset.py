@@ -3,11 +3,13 @@ import os
 import pandas as pd
 import numpy as np
 from typing import Dict, List, Tuple, Union
-from models.schemas import ProficiencyLevel, Faculty, Course, SkillProficiency
-from data.courses import COURSES
-from data.faculties import FACULTIES
 
-# Define paths
+# Updated imports with proper package paths
+from src.models.schemas import ProficiencyLevel, Faculty, Course, SkillProficiency
+from src.data.courses import COURSES
+from src.data.faculties import FACULTIES
+
+# Define paths more robustly
 DATA_DIR = os.path.dirname(os.path.abspath(__file__))
 DATASET_PATH = os.path.join(DATA_DIR, "training_data.json")
 CSV_DATASET_PATH = os.path.join(DATA_DIR, "training_data.csv")

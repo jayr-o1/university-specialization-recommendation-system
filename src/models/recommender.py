@@ -5,8 +5,9 @@ from sklearn.decomposition import NMF
 from sklearn.metrics.pairwise import cosine_similarity
 import os
 
-from models.schemas import Faculty, Course, ProficiencyLevel, SkillProficiency, MatchResult
-from data.courses import COURSES  # Import course data to access required skills
+# Updated imports with proper package paths
+from src.models.schemas import Faculty, Course, ProficiencyLevel, SkillProficiency, MatchResult
+from src.data.courses import COURSES  # Import course data to access required skills
 
 class SkillBasedRecommender:
     """

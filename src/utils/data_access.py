@@ -1,7 +1,7 @@
 from typing import Dict, List, Optional
-from models.schemas import Faculty, Course, SkillProficiency
-from data.courses import COURSES
-from data.faculties import FACULTIES
+from src.models.schemas import Faculty, Course, SkillProficiency
+from src.data.courses import COURSES
+from src.data.faculties import FACULTIES
 
 
 def load_all_courses() -> List[Course]:

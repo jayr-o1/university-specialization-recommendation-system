@@ -1,6 +1,82 @@
-# University Teaching Specialization Recommendation System
+# University Specialization Recommendation System
 
-A system designed to match university faculty members with courses they are best qualified to teach, based on their skills and proficiency levels using semantic benchmarking and machine learning.
+A system to match faculty members with courses they are best qualified to teach, and identify skill gaps using matrix factorization and semantic matching techniques.
+
+## Project Structure
+
+The project is structured as a proper Python package with the following components:
+
+```
+university-specialization-recommendation-system/
+├── src/                          # Main source code package
+│   ├── api/                      # API endpoints and route handlers
+│   ├── core/                     # Core functionalities and shared components
+│   ├── data/                     # Data loading, processing, and access
+│   ├── matching/                 # Matching algorithms and recommendation systems
+│   ├── models/                   # Data models, schemas, and ML models
+│   └── utils/                    # Utility functions and helpers
+├── tests/                        # Test directory
+├── main.py                       # Legacy main application file
+└── run.py                        # Run script that starts the API
+```
+
+## Getting Started
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone <repository-url>
+cd university-specialization-recommendation-system
+```
+
+2. Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+3. Download spaCy model (required for semantic matching):
+
+```bash
+python -m spacy download en_core_web_md
+```
+
+### Running the Application
+
+To start the API server:
+
+```bash
+python run.py
+```
+
+This will start the FastAPI server on http://localhost:8000.
+
+### API Documentation
+
+Once the server is running, you can access the API documentation at:
+
+-   Swagger UI: http://localhost:8000/docs
+-   ReDoc: http://localhost:8000/redoc
+
+## Features
+
+-   Faculty-course matching based on skills and proficiency levels
+-   Identification of skill gaps for faculty members
+-   Semantic matching of related skills
+-   Matrix factorization for latent skill representation
+-   Recommendation system for finding the best courses for faculty members
+
+## Development
+
+### Project Organization
+
+-   `src/models/schemas.py`: Data models and Pydantic schemas
+-   `src/models/recommender.py`: Matrix factorization recommendation model
+-   `src/matching/semantic_matcher.py`: Semantic matching functionality
+-   `src/data/`: Data access and management
+-   `src/api/routes.py`: API endpoints and route handlers
 
 ## Purpose
 
@@ -10,18 +86,6 @@ This system helps university departments:
 -   Identify skill gaps for professional development opportunities
 -   Improve teaching quality by ensuring instructors teach subjects aligned with their expertise
 -   Support faculty professional growth through targeted skill development
-
-## Features
-
--   Faculty skill and proficiency level tracking (Beginner, Intermediate, Advanced, Expert)
--   Course-to-faculty matching using semantic similarity analysis
--   Advanced recommendations using matrix factorization models
--   Percentage match calculation for course recommendations
--   Identification of missing or underdeveloped skills
--   Similar course recommendations based on skill profiles
--   Skill importance analysis across latent factors
--   API for programmatic access and integration
--   Provides at least 10 specialization recommendations by default
 
 ## Technology Stack
 
@@ -143,27 +207,6 @@ The system provides a RESTful API with the following endpoints:
 -   `GET /skill-importance` - Get the importance of skills across latent factors
 
 For detailed API documentation with request/response schemas, visit `/docs` after starting the server.
-
-## Project Structure
-
--   `models/` - Data models, schemas, and ML models
-    -   `schemas.py` - Pydantic data models
-    -   `recommender.py` - Matrix factorization recommendation model
--   `data/` - Course, faculty data, and training datasets
-    -   `courses.py` - Course data with required skills
-    -   `faculties.py` - Faculty data with skills and proficiency
-    -   `dataset.py` - Dataset generation and management
--   `utils/` - Utility functions
-    -   `data_access.py` - Data loading and manipulation functions
--   `matching/` - Matching algorithm implementation
-    -   `semantic_matcher.py` - Semantic similarity based matching
--   `api/` - API endpoints
-    -   `routes.py` - FastAPI route definitions
--   `scripts/` - Utility scripts
-    -   `train_model.py` - Script to train and test the ML model
--   `main.py` - Application entry point
--   `run.py` - Server startup script
--   `test_matching.py` - Script to test the matching functionality
 
 ## Machine Learning Details
 

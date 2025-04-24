@@ -3,17 +3,17 @@ from typing import List, Optional
 import os
 import numpy as np
 
-from models.schemas import Faculty, Course, SkillProficiency, MatchResult, RecommendationRequest, SkillOnlyRequest
-from utils.data_access import (
+from src.models.schemas import Faculty, Course, SkillProficiency, MatchResult, RecommendationRequest, SkillOnlyRequest
+from src.utils.data_access import (
     load_all_courses, 
     get_course_by_code, 
     load_all_faculties, 
     get_faculty_by_id,
     update_faculty_skills
 )
-from matching.semantic_matcher import match_faculty_to_course, get_top_course_matches
-from models.recommender import SkillBasedRecommender
-from data.dataset import ensure_dataset_exists
+from src.matching.semantic_matcher import match_faculty_to_course, get_top_course_matches
+from src.models.recommender import SkillBasedRecommender
+from src.data.dataset import ensure_dataset_exists
 
 router = APIRouter()
 
@@ -53,7 +53,7 @@ def get_recommender():
             else:
                 # Create new model
                 print("Model file not found. Training new model...")
-                from data.dataset import save_dataset_as_csv
+                from src.data.dataset import save_dataset_as_csv
                 save_dataset_as_csv()
                 
                 data_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'data'))
@@ -71,7 +71,7 @@ def get_recommender():
             print(f"Error loading/creating recommender model: {str(e)}")
             # If there's any error, let's just train a new model
             print("Training new model due to error...")
-            from data.dataset import save_dataset_as_csv
+            from src.data.dataset import save_dataset_as_csv
             save_dataset_as_csv()
             
             data_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'data'))
@@ -202,12 +202,6 @@ async def get_custom_recommendations(
         courses = load_all_courses()
         match_results = get_top_course_matches(faculty, courses, top_n)
     
-    # Add course names
-    for result in match_results:
-        course = get_course_by_code(result.course_code)
-        if course:
-            result.course_name = course.name
-    
     return match_results
 
 
@@ -218,14 +212,14 @@ async def skills_to_courses(
     use_model: bool = Query(True, title="Use model-based recommendation")
 ):
     """
-    Simplified endpoint to get course recommendations based only on skills and proficiencies.
-    No faculty information is required.
+    Get course recommendations based only on skills (no faculty information needed).
+    This simplified endpoint is useful for quick recommendations without needing a faculty ID.
     """
-    # Create a simplified faculty object with just the skills
+    # Create a temporary faculty object with the provided skills
     faculty = Faculty(
         id="temp",
-        name="Temporary",
-        department="Temporary",
+        name="Temporary User",
+        department="N/A",
         skills=request.skills
     )
     
@@ -238,16 +232,6 @@ async def skills_to_courses(
         courses = load_all_courses()
         match_results = get_top_course_matches(faculty, courses, top_n)
     
-    # Add course names and clean up faculty information
-    for result in match_results:
-        # Clean up faculty information
-        result.faculty_id = None
-        
-        # Add course name
-        course = get_course_by_code(result.course_code)
-        if course:
-            result.course_name = course.name
-    
     return match_results
 
 
@@ -256,27 +240,24 @@ async def get_similar_courses(
     course_code: str = Path(..., title="The course code"),
     top_n: int = 10
 ):
-    """Get courses similar to the specified course."""
-    # Check if course exists
+    """Find courses that are similar to a given course based on skill requirements."""
     course = get_course_by_code(course_code)
     if not course:
         raise HTTPException(status_code=404, detail=f"Course with code {course_code} not found")
     
-    # Get recommender
+    # Use the recommender model to find similar courses
     recommender = get_recommender()
-    
-    # Get similar courses
     similar_courses = recommender.get_similar_courses(course_code, top_n)
     
-    # Format the response
+    # Format the results to include course names along with similarity scores
     results = []
     for similar_code, similarity in similar_courses:
         similar_course = get_course_by_code(similar_code)
         if similar_course:
             results.append({
-                "course_code": similar_course.code,
+                "course_code": similar_code,
                 "course_name": similar_course.name,
-                "similarity_score": round(similarity * 100, 2)
+                "similarity_score": round(similarity * 100, 2)  # Convert to percentage
             })
     
     return results
@@ -284,17 +265,22 @@ async def get_similar_courses(
 
 @router.get("/skill-importance", response_model=dict)
 async def get_skill_importance():
-    """Get the importance of skills across latent factors."""
-    # Get recommender
+    """Get the importance of each skill across the latent factors in the model."""
     recommender = get_recommender()
-    
-    # Get skill importance
     skill_importance = recommender.get_skill_importance()
     
-    # Format the response
-    result = {}
-    for factor in skill_importance.columns:
-        top_skills = skill_importance[factor].sort_values(ascending=False).head(5)
-        result[factor] = {skill: round(float(importance), 2) for skill, importance in top_skills.items()}
+    # Convert DataFrame to dict for API response
+    # First convert to dict with columns as keys
+    result_dict = skill_importance.to_dict(orient='dict')
     
-    return result 
+    # Add skill names (index) as a key in each factor dict
+    formatted_result = {}
+    for factor, values in result_dict.items():
+        formatted_result[factor] = {
+            "skills": [{"skill": skill, "importance": round(float(imp), 4)} 
+                      for skill, imp in values.items()]
+        }
+        # Sort skills by importance for each factor
+        formatted_result[factor]["skills"].sort(key=lambda x: x["importance"], reverse=True)
+    
+    return {"skill_importance_by_factor": formatted_result} 

@@ -1,0 +1,1 @@
+"""Core package for fundamental functionality and shared components""" 

@@ -2,7 +2,8 @@ import spacy
 import numpy as np
 from typing import Dict, List, Tuple
 
-from models.schemas import ProficiencyLevel, Faculty, Course, SkillProficiency, MatchResult
+# Updated import with proper package path
+from src.models.schemas import ProficiencyLevel, Faculty, Course, SkillProficiency, MatchResult
 
 # Load the spaCy model - English language model
 try:

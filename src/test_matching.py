@@ -1,6 +1,6 @@
-from models.schemas import Faculty, Course, SkillProficiency, ProficiencyLevel
-from utils.data_access import load_all_courses, load_all_faculties
-from matching.semantic_matcher import match_faculty_to_course, get_top_course_matches
+from src.models.schemas import Faculty, Course, SkillProficiency, ProficiencyLevel
+from src.utils.data_access import load_all_courses, load_all_faculties
+from src.matching.semantic_matcher import match_faculty_to_course, get_top_course_matches
 
 def print_course_details(course: Course):
     """Print details of a course."""

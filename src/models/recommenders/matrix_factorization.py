@@ -150,7 +150,24 @@ class SkillBasedRecommender(BaseRecommender):
         similarities = cosine_similarity([faculty_factor_vector], self.course_factors)[0]
         
         # Scale similarities to percentages (0-100)
-        match_percentages = similarities * 100
+        # Apply a sigmoid-like transformation to make high matches more difficult to achieve
+        # This ensures only truly excellent matches get high percentages
+        raw_percentages = similarities * 100
+        match_percentages = np.zeros_like(raw_percentages)
+        
+        for i, percentage in enumerate(raw_percentages):
+            # Apply a curve that reduces high percentages more significantly
+            if percentage > 95:
+                match_percentages[i] = 95 + (percentage - 95) * 0.5  # Cap at ~97.5%
+            elif percentage > 90:
+                match_percentages[i] = 90 + (percentage - 90) * 0.6
+            elif percentage > 80:
+                match_percentages[i] = 80 + (percentage - 80) * 0.7
+            elif percentage > 70:
+                match_percentages[i] = 70 + (percentage - 70) * 0.8
+            else:
+                # For lower scores, apply a smaller reduction
+                match_percentages[i] = percentage * 0.9
         
         # Get top N course indices
         top_indices = np.argsort(match_percentages)[::-1][:top_n]

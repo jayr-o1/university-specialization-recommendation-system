@@ -1,0 +1,5838 @@
+[
+  {
+    "id": "9650ea76",
+    "name": "Employee 1",
+    "department": "Education",
+    "skills": [
+      {
+        "skill": "Computational Complexity",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Digital Communication with Stakeholders",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Health and Wellness Coaching",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Database Administration",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Speech Communication",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Innovation Strategy",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Digital Communication and Collaboration",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Experimental and Observational Studies",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Psychological Theory",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "UML Diagrams",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Cloud Migration and Integration",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Data Integration and ETL",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Mathematical Modeling",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Rizal's Personal Life and Works (Letters, Diaries, Poetry)",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Virtual Private Networks",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Backup and Recovery Techniques",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Process Modeling",
+        "proficiency": "Advanced"
+      }
+    ]
+  },
+  {
+    "id": "2e9d4bb7",
+    "name": "Employee 2",
+    "department": "Computer Science",
+    "skills": [
+      {
+        "skill": "Accounting Principles",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Optimization Techniques",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Digital Logic Design Projects",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Outdoor Education",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Recursion and Recursive Structures",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Customer Relationship Management",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Technology Transfer and Licensing",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Technical Troubleshooting",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Accounting Principles and Concepts",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Techniques and Media in Visual Arts (Painting, Sculpture, Photography)",
+        "proficiency": "Beginner"
+      }
+    ]
+  },
+  {
+    "id": "8da139f2",
+    "name": "Employee 3",
+    "department": "Social Sciences",
+    "skills": [
+      {
+        "skill": "Exercise for Special Populations (e.g., elderly, pregnant women)",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Computing Ethics",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Critical Thinking and Problem Solving",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Computer Ethics and Legal Issues",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Automated Testing Tools (e.g., Selenium, JUnit)",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Communication with Non-Technical Audiences",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Instructional Strategies in PE",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Integrated Development Environments (IDEs)",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Internet of Things (IoT) Integration",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Prototyping Tools (e.g., Sketch, Figma, Adobe XD)",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Group Dynamics in Outdoor Settings",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Network Security Fundamentals",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Public Speaking",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Continuous Integration (CI) and Continuous Testing (CT)",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Philosophical Analysis",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Statistics Fundamentals",
+        "proficiency": "Intermediate"
+      }
+    ]
+  },
+  {
+    "id": "0beb7b8d",
+    "name": "Employee 4",
+    "department": "Education",
+    "skills": [
+      {
+        "skill": "Algorithms in Discrete Mathematics",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Emerging Technologies",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Comparative Analysis of Rizal's Writings and Other Nationalist Texts",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Philippine Society and Culture",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Understanding Algorithms and Computation",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Communication for IT",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Teaching Programming Concepts",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Digital Logic Design Tools (e.g., VHDL, Verilog)",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Statistical Power and Sample Size Calculation",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Business Model Innovation",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Ethics of Artificial Intelligence and Automation",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "ASP.NET",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Cloud-Native Development",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Academic Writing",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Web Accessibility (WCAG Guidelines)",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Data Link Layer and Physical Layer Protocols",
+        "proficiency": "Beginner"
+      }
+    ]
+  },
+  {
+    "id": "9820b583",
+    "name": "Employee 5",
+    "department": "Psychology",
+    "skills": [
+      {
+        "skill": "Critical Race Theory",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Boolean Algebra and Logic Gates",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Presentation of Research Findings",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Data Interpretation",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Advanced Sorting and Searching Algorithms",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Software Testing",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Group Communication",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Room Database",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Virtual Private Networks",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Foreign Language Proficiency",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "IT Service Management",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Database Design",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "TCP/IP Protocol Suite",
+        "proficiency": "Intermediate"
+      }
+    ]
+  },
+  {
+    "id": "b8bdd065",
+    "name": "Employee 6",
+    "department": "Computer Science",
+    "skills": [
+      {
+        "skill": "Database Optimization and Indexing",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Public History and Museum Studies",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Innovation Analysis",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Venture Capital and Funding",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Analytics Tools",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Social Psychology",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Accounting Principles",
+        "proficiency": "Advanced"
+      }
+    ]
+  },
+  {
+    "id": "ba3f9250",
+    "name": "Employee 7",
+    "department": "Arts and Humanities",
+    "skills": [
+      {
+        "skill": "Cognitive Psychology",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Cloud Technologies (AWS, Azure, Google Cloud)",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Systems Integration",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Financial Reporting for IT Projects",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Research Writing",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Systems Thinking",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Version Control",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Technical Writing for IT Audiences",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Database Administration and Maintenance",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Communication Theory",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Fitness Assessment and Testing",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Automated Testing Tools (e.g., Selenium, JUnit)",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Solution Implementation",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Advanced Data Structures (e.g., Red-Black Trees, AVL Trees)",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Business Model Development",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "MVP Development",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Information Security Management",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Technology Transfer and Licensing",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Digital Technology and Social Networks",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Graph Algorithms (e.g., BFS, DFS, Shortest Path)",
+        "proficiency": "Advanced"
+      }
+    ]
+  },
+  {
+    "id": "e1101636",
+    "name": "Employee 8",
+    "department": "Social Sciences",
+    "skills": [
+      {
+        "skill": "CSS",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Policy Literacy (e.g., NSTP Law, civic laws)",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Jetpack Compose",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Speech Communication",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Bioethics and Medical Ethics",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Global Health and Pandemic Responses",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Educational Psychology",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Advanced Android",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "E-Commerce and Digital Business Models",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Application Development",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Business Process Integration",
+        "proficiency": "Intermediate"
+      }
+    ]
+  },
+  {
+    "id": "062db1f1",
+    "name": "Employee 9",
+    "department": "Natural Sciences",
+    "skills": [
+      {
+        "skill": "Geometry",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Advanced Android",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Data Management",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Database Design and Optimization",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Research Methods",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Network Troubleshooting and Diagnostics",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Statistical Software (e.g., SPSS, R, SAS)",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Windows Development",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Cultural and Ethical Implications of Rizal's Works",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Market Validation",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Historical Biography",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Social and Political Context of Rizal's Time",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Transactions and Concurrency Control",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "MVC Frameworks (Laravel, Symfony)",
+        "proficiency": "Intermediate"
+      }
+    ]
+  },
+  {
+    "id": "79ce2970",
+    "name": "Employee 10",
+    "department": "Computer Science",
+    "skills": [
+      {
+        "skill": "IBM Technologies",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Backup Solutions",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Technical Application",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Public History and Museum Studies",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Risk Management in IT Finance",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Version Control and Configuration Management",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Linux/Unix Systems Administration",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Communication Theory",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Ethical Implications of Emerging Technologies",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Documentation Tools and Techniques",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Cybersecurity Operations",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Cloud Migration and Integration",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Cloud Integration and Services",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Graph Theory",
+        "proficiency": "Advanced"
+      }
+    ]
+  },
+  {
+    "id": "5b70e248",
+    "name": "Employee 11",
+    "department": "Mathematics",
+    "skills": [
+      {
+        "skill": "Athlete Development and Long-Term Training Plans",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Introduction to Algorithms",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Graph Algorithms (e.g., BFS, DFS, Shortest Path)",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Technical Writing",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Internet and Web Basics",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Technology Entrepreneurship",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Platform Architecture and Virtualization",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Static and Dynamic Testing",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Policy Literacy (e.g., NSTP Law, civic laws)",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Qualitative Research Methods",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Creative Thinking and Problem-Solving",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Rizal's Personal Life and Works (Letters, Diaries, Poetry)",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Pre-Calculus",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Risk Management in IT",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Database Design and Optimization",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Agile Development Practices",
+        "proficiency": "Intermediate"
+      }
+    ]
+  },
+  {
+    "id": "aefefbae",
+    "name": "Employee 12",
+    "department": "Social Sciences",
+    "skills": [
+      {
+        "skill": "Cognitive Psychology",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Web Design Principles",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Ethnographic Research Methods",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Machine Learning in Databases",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Networking Fundamentals",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "International Relations",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Enterprise Systems",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Anatomy and Kinesiology",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Visual Aids and Infographics for Technical Content",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Data Privacy and Protection",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "System Administration and Cloud Computing",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Agile Practices",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Version Control (Git/GitHub)",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Negotiation Skills for Entrepreneurs",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Human Rights and Global Justice",
+        "proficiency": "Advanced"
+      }
+    ]
+  },
+  {
+    "id": "6bbb841e",
+    "name": "Employee 13",
+    "department": "Social Sciences",
+    "skills": [
+      {
+        "skill": "Innovation Methods",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Network Performance Analysis and Optimization",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Distributed Databases",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Water Sports (e.g., Kayaking, Rafting)",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Relations and Functions",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Programming Logic and Flow Control",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "API Development",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Backup Solutions",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Interpersonal Communication",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Network Troubleshooting and Diagnostics",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Advanced PHP",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Cultural Awareness",
+        "proficiency": "Intermediate"
+      }
+    ]
+  },
+  {
+    "id": "dee395be",
+    "name": "Employee 14",
+    "department": "Mathematics",
+    "skills": [
+      {
+        "skill": "International Political Economy",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Disaster Preparedness",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "First Aid and Emergency Response",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Problem Solving",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Routing Protocols (e.g., OSPF, BGP)",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "SignalR (Real-time Communication)",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Language Assessment",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Ethics in Psychology",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Ethics of Artificial Intelligence and Automation",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Cloud Networking",
+        "proficiency": "Intermediate"
+      }
+    ]
+  },
+  {
+    "id": "9fcc432f",
+    "name": "Employee 15",
+    "department": "Education",
+    "skills": [
+      {
+        "skill": "Nationalism",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Internet Protocol (IP) and Addressing",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Business Model Development",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Quality Assurance Standards (e.g., ISO, CMMI)",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Product Development and Management",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Software Metrics",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Enterprise Integration",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Teambuilding",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Art Appreciation Techniques and Teaching Methods",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "User-Centered Design (UCD) and Human-Computer Interaction (HCI)",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Industry Applications",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Monitoring and Logging Tools",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Software Engineering Practices",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Physical Conditioning for Outdoor Activities",
+        "proficiency": "Intermediate"
+      }
+    ]
+  },
+  {
+    "id": "633f991b",
+    "name": "Employee 16",
+    "department": "Communications",
+    "skills": [
+      {
+        "skill": "Network Security and Encryption",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "MVC Frameworks (Laravel, Symfony)",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Network Security Fundamentals",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "MVP Development",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "IT Governance and Compliance",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Automation Tools (Ansible, Puppet)",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Time Series Analysis",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Nutrition for Fitness and Health",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Sequential Logic Design",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Mathematical Reasoning",
+        "proficiency": "Advanced"
+      }
+    ]
+  },
+  {
+    "id": "f2838670",
+    "name": "Employee 17",
+    "department": "Natural Sciences",
+    "skills": [
+      {
+        "skill": "Assessment and Feedback Design",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Behavioral Coaching and Motivation",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "LAN/WAN Technologies",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Object-Oriented Analysis and Design",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Arithmetic Logic Unit (ALU) Design",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "IT Governance and Compliance",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Data Structures Implementation (e.g., Arrays, Linked Lists, Trees)",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Virtualization and Containerization",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Computer Ethics and Legal Issues",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "VoIP and Video Conferencing Protocols",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Human Factors in Computing",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Cloud Platforms (e.g., AWS, Azure, Google Cloud)",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "User-Centered Design (UCD) and Human-Computer Interaction (HCI)",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Recursion and Recursive Algorithms",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Quantitative Research Methods",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Computer Hardware",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Cloud Platforms and Services",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Art Criticism",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Linguistics Fundamentals",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Movement Analysis and Biomechanics",
+        "proficiency": "Intermediate"
+      }
+    ]
+  },
+  {
+    "id": "487e6bc4",
+    "name": "Employee 18",
+    "department": "Computer Science",
+    "skills": [
+      {
+        "skill": "Load Testing",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Project Evaluation",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Professional Communication",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Cognitive Load and Memory in Design",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "OSI Model",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Windows Development",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Entrepreneurial Finance",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Comparative Analysis of Rizal's Writings and Other Nationalist Texts",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Incident Response",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Adventure Program Design and Implementation",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Graph Algorithms (e.g., Dijkstra's Algorithm, A* Search)",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Web Standards and Best Practices",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Industry Experience",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Virtual Private Networks",
+        "proficiency": "Advanced"
+      }
+    ]
+  },
+  {
+    "id": "369c2ae1",
+    "name": "Employee 19",
+    "department": "Information Technology",
+    "skills": [
+      {
+        "skill": "Version Control and Configuration Management",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Agile Practices",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Natural Language Processing",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Lesson Planning",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Code Coverage and Unit Testing",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "IT Project Documentation and Tracking",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Big Data Concepts and Tools",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Network Performance Monitoring",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Cloud Computing Fundamentals",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Cloud Infrastructure Management",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Advanced Android",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Climbing and Rappelling Techniques",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Web Services",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Instructional Communication",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Historical Methodology",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Historical Context of Literature",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Citation and Referencing Styles",
+        "proficiency": "Beginner"
+      }
+    ]
+  },
+  {
+    "id": "32a380c9",
+    "name": "Employee 20",
+    "department": "Social Sciences",
+    "skills": [
+      {
+        "skill": "Legal Research",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Visual Design Principles",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Sports Pedagogy",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Art History",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Cloud-Based Database Management",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Sports Science",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Automation Scripting (Python, Bash)",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Web Project Planning",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Big Data Frameworks (e.g., Hadoop, Spark)",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Database Optimization",
+        "proficiency": "Intermediate"
+      }
+    ]
+  },
+  {
+    "id": "2d291a14",
+    "name": "Employee 21",
+    "department": "Mathematics",
+    "skills": [
+      {
+        "skill": "Software Testing and Debugging",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Predictive Analytics",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Ethics of Technology and AI",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Accounting Principles",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "VoIP and Video Conferencing Protocols",
+        "proficiency": "Expert"
+      }
+    ]
+  },
+  {
+    "id": "fabb628e",
+    "name": "Employee 22",
+    "department": "Education",
+    "skills": [
+      {
+        "skill": "Malware Analysis",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Ethical Decision Making in Technology",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Design Patterns (e.g., Singleton, Factory, Observer)",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Grammar and Syntax",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Quantitative Research",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Interdisciplinary Approaches to Literature",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Visual Aids and Infographics for Technical Content",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Strength and Conditioning Techniques",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Change Management in System Development",
+        "proficiency": "Advanced"
+      }
+    ]
+  },
+  {
+    "id": "fb44e1ad",
+    "name": "Employee 23",
+    "department": "Engineering",
+    "skills": [
+      {
+        "skill": "Python Programming",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Patents",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Process Modeling",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Critical Race Theory",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Augmented Reality (AR) and Virtual Reality (VR)",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "IT Infrastructure Management",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Reflective Practice",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Technical Proposals and RFPs",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Database Modeling and Design",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Sports Pedagogy and Teaching Methods",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Modulation Techniques",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Art Criticism",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Offline Data Sync",
+        "proficiency": "Intermediate"
+      }
+    ]
+  },
+  {
+    "id": "9d7eb8c2",
+    "name": "Employee 24",
+    "department": "Computer Science",
+    "skills": [
+      {
+        "skill": "Cloud Platforms (e.g., AWS, Azure, Google Cloud)",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Identity and Access Management (IAM)",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Greedy Algorithms",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Audience Analysis and Adaptation",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Global Technology and Policy Issues",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Cloud Computing and IT Financial Management",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Network Configuration Management",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Emotional Intelligence",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "IT Infrastructure Management",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Educational Psychology",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Museum and Gallery Studies",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Number Theory",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "AI Applications",
+        "proficiency": "Intermediate"
+      }
+    ]
+  },
+  {
+    "id": "1cf0f4f2",
+    "name": "Employee 25",
+    "department": "Computer Science",
+    "skills": [
+      {
+        "skill": "Security Best Practices",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Network Security Fundamentals",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Advanced Integration",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Interdisciplinary Approaches to Art (e.g., History, Sociology, Psychology)",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Database Integration (SQL Server, MySQL)",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Listening and Feedback",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Network Performance Analysis and Optimization",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Group Exercise Instruction",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "HTML",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Calculus",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Browser Developer Tools",
+        "proficiency": "Advanced"
+      }
+    ]
+  },
+  {
+    "id": "59ab3af8",
+    "name": "Employee 26",
+    "department": "Business",
+    "skills": [
+      {
+        "skill": "Basic First Aid and Emergency Skills",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Internal Audits and IT Compliance",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Timing Analysis and Optimization",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "OOP Principles",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Global Health and Pandemic Responses",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Sampling Methods and Techniques",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Competitive Sports and Team Building",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Ethical Implications of Emerging Technologies",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Authentication and Authorization (OAuth, JWT)",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Unit Testing (JUnit, Espresso)",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Comparative Politics",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Software-Defined Networking (SDN)",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Data-Driven Financial Decision Making",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Interaction Design",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Data Mining",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "System Administration and Cloud Computing",
+        "proficiency": "Intermediate"
+      }
+    ]
+  },
+  {
+    "id": "405625ee",
+    "name": "Employee 27",
+    "department": "Natural Sciences",
+    "skills": [
+      {
+        "skill": "OSI Model",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Business Development and Sales",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Analysis of Rizal's Novels (e.g., Noli Me Tangere, El Filibusterismo)",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Enterprise Integration",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Enterprise Architecture",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Data Warehousing",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Team Building and Group Facilitation",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Adventure Activities",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Big Data and Data Processing Techniques",
+        "proficiency": "Intermediate"
+      }
+    ]
+  },
+  {
+    "id": "7b220fdc",
+    "name": "Employee 28",
+    "department": "Mathematics",
+    "skills": [
+      {
+        "skill": "Leadership",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Voice Modulation and Clarity",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Deontological Ethics",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Algorithm Analysis",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Cross-Platform Development Frameworks (e.g., React Native, Flutter)",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Instructional Design for Tech Courses",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Global Technology and Policy Issues",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Professional Practice",
+        "proficiency": "Beginner"
+      }
+    ]
+  },
+  {
+    "id": "a43bc3dc",
+    "name": "Employee 29",
+    "department": "Business",
+    "skills": [
+      {
+        "skill": "Logic Gates",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "First Aid and Emergency Response",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Corporate Culture",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "System Documentation and Reporting",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Material Design Principles",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Public History and Museum Studies",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Data Cleaning and Preparation",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Cryptography and Encryption Protocols",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Project Evaluation",
+        "proficiency": "Beginner"
+      }
+    ]
+  },
+  {
+    "id": "d1b943d1",
+    "name": "Employee 30",
+    "department": "Information Technology",
+    "skills": [
+      {
+        "skill": "Ethics in Research and Scientific Integrity",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Accounting Principles and Concepts",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Communication Protocols",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Code Refactoring and Maintenance",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Interdisciplinary Approaches to Art (e.g., History, Sociology, Psychology)",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "User Experience (UX) Design",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Mindfulness and Self-Awareness",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Research Ethics",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Environmental Impact of Technology",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Ethical Theories and Philosophical Foundations",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Database Management (SQL, NoSQL)",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "File I/O Operations",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Foreign Language Proficiency",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Mathematical Modeling",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Web Typography",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Developmental Psychology",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Sports Coaching Techniques and Strategies",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Human Factors in Computing",
+        "proficiency": "Advanced"
+      }
+    ]
+  },
+  {
+    "id": "6065973d",
+    "name": "Employee 31",
+    "department": "Communications",
+    "skills": [
+      {
+        "skill": "Intellectual Property Management",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Wireless LANs",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Android SDK",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Cloud Computing and Virtualization",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Data Structures Implementation (e.g., Arrays, Linked Lists, Trees)",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Discourse Analysis",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Storage Technologies",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Platform Architecture and Virtualization",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Object-Oriented Programming Fundamentals",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Room Database",
+        "proficiency": "Intermediate"
+      }
+    ]
+  },
+  {
+    "id": "09f959e4",
+    "name": "Employee 32",
+    "department": "Information Technology",
+    "skills": [
+      {
+        "skill": "Outdoor Recreation Program Planning",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Industry Knowledge",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Problem Framing",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Technical Presentation",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Business Process Integration",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Research Ethics",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "The Legacy of Dr. Jose Rizal in Modern Philippine Society",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Health and Fitness Certification Knowledge",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Ethical Leadership and Governance",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Material Design Principles",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "IT Ethics",
+        "proficiency": "Advanced"
+      }
+    ]
+  },
+  {
+    "id": "6f7f07bd",
+    "name": "Employee 33",
+    "department": "Social Sciences",
+    "skills": [
+      {
+        "skill": "Ethical Theories and Philosophical Foundations",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "HTML/CSS",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Linguistics Fundamentals",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Logic and Set Theory",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Networking Fundamentals",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "SQL Performance Tuning",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Computer Hardware",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Database Optimization and Indexing",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Psychological Assessment Literacy",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Syntax and Semantics of Programming Languages",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "IT Ethics",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Policy Literacy (e.g., NSTP Law, civic laws)",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Data Modeling",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Multithreading and Concurrency in Java",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Business Intelligence",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Nutrition for Fitness and Health",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Database Security",
+        "proficiency": "Intermediate"
+      }
+    ]
+  },
+  {
+    "id": "41fa2774",
+    "name": "Employee 34",
+    "department": "Computer Science",
+    "skills": [
+      {
+        "skill": "Windows Systems Administration",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "System Design and Analysis",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Enterprise Solutions",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Enterprise IBM Solutions",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Finite State Machines (FSM)",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Dance Instruction for Different Levels",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Research Methods",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Interpersonal Communication",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Technology Trends",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "System Administration and Cloud Computing",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Software Engineering",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Critical Thinking",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Applied Mathematics",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "IT Law",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Computing History",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Creative Thinking and Problem-Solving",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Software Integration",
+        "proficiency": "Beginner"
+      }
+    ]
+  },
+  {
+    "id": "460e5312",
+    "name": "Employee 35",
+    "department": "Engineering",
+    "skills": [
+      {
+        "skill": "Security Auditing",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Enterprise Solutions",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Operating Systems (Linux, Windows)",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Identity and Access Management (IAM)",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Philosophical Writing and Argumentation",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Primary Source Analysis",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Software Engineering",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Geometry",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Social Movements and Revolution",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Use of Educational Technology (e.g., GeoGebra, Desmos)",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Code Documentation",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Outdoor Recreation Program Planning",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Project Evaluation",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Persuasion Theory",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Teambuilding",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Report Writing",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Task Analysis",
+        "proficiency": "Intermediate"
+      }
+    ]
+  },
+  {
+    "id": "feba6c03",
+    "name": "Employee 36",
+    "department": "Mathematics",
+    "skills": [
+      {
+        "skill": "Performance Assessment",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Security Management",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Android SDK",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Sexuality Studies",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Report Writing for IT Projects",
+        "proficiency": "Intermediate"
+      }
+    ]
+  },
+  {
+    "id": "26ee5308",
+    "name": "Employee 37",
+    "department": "Business",
+    "skills": [
+      {
+        "skill": "Error Detection and Correction",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Textual Analysis",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Community Development",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Industry Solutions",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Literature Review Skills",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Cloud Cost Optimization",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Social Movements and Revolution",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Entity Framework",
+        "proficiency": "Intermediate"
+      }
+    ]
+  },
+  {
+    "id": "5604bb33",
+    "name": "Employee 38",
+    "department": "Arts and Humanities",
+    "skills": [
+      {
+        "skill": "Professional Communication",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Disaster Recovery Planning",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Graph Algorithms (e.g., BFS, DFS, Shortest Path)",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Requirements Analysis",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Dance Performance Analysis",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Social Justice",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Software Metrics",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Research Paper Structuring",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Material Design Principles",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Editing and Proofreading Technical Content",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Leadership",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Prototyping and Wireframing",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Version Control Systems (e.g., Git)",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Network Troubleshooting",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Quantitative Research Methods",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "The Legacy of Dr. Jose Rizal in Modern Philippine Society",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Technological Innovation and Social Change",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Sports Science",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Big-O Notation",
+        "proficiency": "Beginner"
+      }
+    ]
+  },
+  {
+    "id": "aa85d424",
+    "name": "Employee 39",
+    "department": "Engineering",
+    "skills": [
+      {
+        "skill": "Outdoor Recreation Program Planning",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "MVVM Architecture",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "OOP Principles",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Techniques and Media in Visual Arts (Painting, Sculpture, Photography)",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Data Flow Diagrams and Entity-Relationship Diagrams",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Caching (Redis, MemoryCache)",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Big Data Frameworks (e.g., Hadoop, Spark)",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Interdisciplinary Approaches to Literature",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "E-Commerce and Digital Business Models",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Database Design and Management",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Software Validation and Verification",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Professional Communication",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Unit Testing (xUnit, NUnit)",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Problem Solving and Computational Thinking",
+        "proficiency": "Beginner"
+      }
+    ]
+  },
+  {
+    "id": "c801a243",
+    "name": "Employee 40",
+    "department": "Social Sciences",
+    "skills": [
+      {
+        "skill": "Data Interpretation and Analysis",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Lean Methodology",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Operating Systems (Linux, Windows)",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Integrated Development Environments (IDEs)",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Android Studio Optimization",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Data Management",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Statistics Fundamentals",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Statistical Software (e.g., SPSS, R, Python)",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Bayesian Statistics",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "SignalR (Real-time Communication)",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Quantitative Data Analysis",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Techniques and Media in Visual Arts (Painting, Sculpture, Photography)",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Understanding Algorithms and Computation",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Change Management",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Scientific Writing",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "C#",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Humanistic Psychology",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Technical Documentation",
+        "proficiency": "Beginner"
+      }
+    ]
+  },
+  {
+    "id": "dc637769",
+    "name": "Employee 41",
+    "department": "Arts and Humanities",
+    "skills": [
+      {
+        "skill": "Critical Race Theory",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "IPv4 and IPv6 Addressing and Routing",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Virtualization Technologies",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Behavioral Science in Fitness",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Networking Fundamentals",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "CAD Tools for Circuit Design",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Digital Electronics",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Corporate Social Responsibility (CSR) in IT",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Science Communication and Public Engagement",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Workplace Ethics",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Ethics in Data Collection and Analysis",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Rizal's Influence on Philippine Independence",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "History and Education (Pedagogy of History)",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Network Design",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Basic Software Engineering Principles",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Social Responsibility",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Data Visualization Techniques",
+        "proficiency": "Advanced"
+      }
+    ]
+  },
+  {
+    "id": "f6bafc49",
+    "name": "Employee 42",
+    "department": "Business",
+    "skills": [
+      {
+        "skill": "Functional and Non-Functional Testing",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Financial Literacy",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Internet and Web Basics",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Integration Patterns",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "WPF (Windows Presentation Foundation)",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Human Factors in Computing",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Information and Communication Technology (ICT)",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Statistical Inference",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Indexing and Query Optimization",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Time Series Analysis",
+        "proficiency": "Intermediate"
+      }
+    ]
+  },
+  {
+    "id": "d1b5f745",
+    "name": "Employee 43",
+    "department": "Communications",
+    "skills": [
+      {
+        "skill": "Ethics in Historical Interpretation",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Algorithm Optimization and Refactoring",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Industry Knowledge",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Cloud Computing",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "MVVM Architecture",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Negotiation and Persuasion Techniques",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Time Series Analysis",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Software Integration",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Educational Facilitation in Communities",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Google Play Store Deployment",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Operating Systems",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Cloud Computing and IT Financial Management",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Active Listening and Empathy",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Global Health and Pandemic Responses",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "C#",
+        "proficiency": "Intermediate"
+      }
+    ]
+  },
+  {
+    "id": "13edb9fb",
+    "name": "Employee 44",
+    "department": "Social Sciences",
+    "skills": [
+      {
+        "skill": "Cloud Platforms and Services",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Cloud Computing and IT Financial Management",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Iconography and Symbolism in Art",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "IP Routing and Subnetting",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Binary Search Trees (BSTs)",
+        "proficiency": "Intermediate"
+      }
+    ]
+  },
+  {
+    "id": "f67a97d0",
+    "name": "Employee 45",
+    "department": "Business",
+    "skills": [
+      {
+        "skill": "Athlete Development and Long-Term Training Plans",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Systems Thinking",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Client Communication and Stakeholder Management",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Social Responsibility",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Science and Technology in Society",
+        "proficiency": "Advanced"
+      }
+    ]
+  },
+  {
+    "id": "8508ee51",
+    "name": "Employee 46",
+    "department": "Social Sciences",
+    "skills": [
+      {
+        "skill": "Data Cleaning and Preparation",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Cryptography and Encryption Protocols",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Argumentation and Debate",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Optimization Techniques",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Contextual Inquiry and User Research",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Science and Technology Studies",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Cross-Platform Development Frameworks (e.g., React Native, Flutter)",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Survival Strategies and Techniques",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Data Structures Implementation (e.g., Arrays, Linked Lists, Trees)",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Trigonometry and Geometry in Applications",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Auditing and Internal Controls",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Event Management and Coordination for Sports and Dance",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Art Criticism",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Digital Communication with Stakeholders",
+        "proficiency": "Intermediate"
+      }
+    ]
+  },
+  {
+    "id": "7363b93c",
+    "name": "Employee 47",
+    "department": "Education",
+    "skills": [
+      {
+        "skill": "Business Ethics and Corporate Social Responsibility",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Computational Mathematics",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Fitness Technology (e.g., wearables, apps)",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Azure Cloud Services",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Digital Presentation Tools",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Cross-Platform Development Frameworks (e.g., React Native, Flutter)",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Global Conflict and Peacebuilding",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Inclusive Pedagogy",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Set Theory",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Risk Management in IT",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Project Planning and Implementation",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Research Ethics",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Process Modeling",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Software Development",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Anatomy and Kinesiology",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Networking Protocols",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Entrepreneurship Principles",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Artificial Intelligence and Machine Learning (AI/ML) Integration",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Communication in Professional Settings",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Application Architecture",
+        "proficiency": "Intermediate"
+      }
+    ]
+  },
+  {
+    "id": "d4dd72aa",
+    "name": "Employee 48",
+    "department": "Natural Sciences",
+    "skills": [
+      {
+        "skill": "Persuasion Theory",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Android Studio Optimization",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Budgeting and Forecasting",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Statistical Power and Sample Size Calculation",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Cloud Cost Optimization",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "International Political Economy",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Business Communication",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Survey Design and Sampling Techniques",
+        "proficiency": "Beginner"
+      }
+    ]
+  },
+  {
+    "id": "88abe8a1",
+    "name": "Employee 49",
+    "department": "Computer Science",
+    "skills": [
+      {
+        "skill": "Web Services",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Data Interpretation and Analysis",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Rizal's Influence on Philippine Independence",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Art Movements and Periods (e.g., Renaissance, Baroque, Modernism)",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Static and Dynamic Testing",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Human Rights and Global Justice",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Art and Popular Culture",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "MVC Architecture",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Divide and Conquer Algorithms",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "IoT Architectures",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Cross-Platform Development Frameworks (e.g., React Native, Flutter)",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": ".NET Framework",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Debugging Techniques",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Virtualization",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Basic Programming Concepts",
+        "proficiency": "Advanced"
+      }
+    ]
+  },
+  {
+    "id": "7bb542d2",
+    "name": "Employee 50",
+    "department": "Psychology",
+    "skills": [
+      {
+        "skill": "Web Design Principles",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Climbing and Rappelling Techniques",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Functional Movement Screening (FMS)",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Intrusion Detection Systems (IDS) and Prevention Systems (IPS)",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Research Methods and Experimental Design",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Academic Writing",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "The Legacy of Dr. Jose Rizal in Modern Philippine Society",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Negotiation and Persuasion Techniques",
+        "proficiency": "Advanced"
+      }
+    ]
+  },
+  {
+    "id": "0d662f74",
+    "name": "Employee 51",
+    "department": "Social Sciences",
+    "skills": [
+      {
+        "skill": "Technology and Economic Development",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Data Management",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Data Link Layer and Physical Layer Protocols",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Technology Trends",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Volunteerism and Service Learning",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Software Development Tools (e.g., Eclipse, IntelliJ IDEA)",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Report Writing for IT Projects",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Systems Integration",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Relations and Functions",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Information Architecture",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "History of Philippine Revolution",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Media Literacy",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Transnational Literature",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "World Literature",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Test Automation",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Cybersecurity Operations",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Ethical Theories and Philosophical Foundations",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Hypothesis Testing and Confidence Intervals",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "History and Education (Pedagogy of History)",
+        "proficiency": "Beginner"
+      }
+    ]
+  },
+  {
+    "id": "6af3c09c",
+    "name": "Employee 52",
+    "department": "Business",
+    "skills": [
+      {
+        "skill": "Big-O Notation",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "IT Project Financials and Cost Tracking",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Cloud Computing",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Crisis Communication",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Language Assessment",
+        "proficiency": "Beginner"
+      }
+    ]
+  },
+  {
+    "id": "f5c4095b",
+    "name": "Employee 53",
+    "department": "Communications",
+    "skills": [
+      {
+        "skill": "IT Budgeting",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Network Monitoring Tools (e.g., Wireshark, NetFlow)",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Speech Communication",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "IT Ethics",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Communication for IT",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Cross-Platform Development Frameworks (e.g., React Native, Flutter)",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Exercise Physiology",
+        "proficiency": "Intermediate"
+      }
+    ]
+  },
+  {
+    "id": "3a3c1cc1",
+    "name": "Employee 54",
+    "department": "Computer Science",
+    "skills": [
+      {
+        "skill": "Recursion",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "IP Law",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Push Notifications (Firebase Cloud Messaging)",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Testing and Debugging Techniques",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Legal Aspects of Business (e.g., business structure, IP)",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Statistics Fundamentals",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Research Methods and Experimental Design",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Business Applications",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Colonialism and Post-Colonial Studies",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Cybersecurity Laws and Regulations",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Rizal's Influence on Philippine Independence",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Digital Literacy",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Automation Tools (Ansible, Puppet)",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Social Responsibility",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Signal Processing",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Art Movements and Periods (e.g., Renaissance, Baroque, Modernism)",
+        "proficiency": "Beginner"
+      }
+    ]
+  },
+  {
+    "id": "306aa4bf",
+    "name": "Employee 55",
+    "department": "Arts and Humanities",
+    "skills": [
+      {
+        "skill": "Blockchain Technologies",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Code Coverage and Unit Testing",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Data Privacy and Protection",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Firewall Configuration and Management",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Prototyping Tools (e.g., Sketch, Figma, Adobe XD)",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Political Science",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Correlation Analysis",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Performance Evaluation and Reporting",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Physical Education Theory",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Philippine History",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Developmental Psychology",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Project Implementation",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Customer Relationship Management",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Network Security",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Offline Data Sync",
+        "proficiency": "Intermediate"
+      }
+    ]
+  },
+  {
+    "id": "229c6ac1",
+    "name": "Employee 56",
+    "department": "Education",
+    "skills": [
+      {
+        "skill": "Business Model Innovation",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Risk Management and Mitigation",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Performance Testing",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Physical Conditioning for Outdoor Activities",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Cognitive Load and Memory in Design",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "UI/UX Design",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Assessment and Feedback in Physical Activities",
+        "proficiency": "Beginner"
+      }
+    ]
+  },
+  {
+    "id": "2a42426d",
+    "name": "Employee 57",
+    "department": "Social Sciences",
+    "skills": [
+      {
+        "skill": "Digital Logic Design Tools (e.g., VHDL, Verilog)",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Defect Management and Root Cause Analysis",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Communication for IT",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Computational Complexity",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Philippine Literature in History",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Sociological Analysis",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Cloud Service Models (e.g., IaaS, PaaS, SaaS)",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Mathematical Proofs",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Operating Systems (Linux, Windows)",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Operating System Troubleshooting and Performance Tuning",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Design and Implementation of Reusable Components",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Requirements Analysis",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Applied Ethics",
+        "proficiency": "Advanced"
+      }
+    ]
+  },
+  {
+    "id": "ef7f6475",
+    "name": "Employee 58",
+    "department": "Communications",
+    "skills": [
+      {
+        "skill": "Agile Methodologies",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Cultural Awareness",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Instructional Design for Tech Courses",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Research Writing",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Performance Feedback and Evaluation",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Software Engineering Practices",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Literary Analysis",
+        "proficiency": "Intermediate"
+      }
+    ]
+  },
+  {
+    "id": "6d5fafd3",
+    "name": "Employee 59",
+    "department": "Communications",
+    "skills": [
+      {
+        "skill": "Ethics in Data Collection and Analysis",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Comparative Literature",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Cybersecurity Laws and Regulations",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Quantitative Reasoning",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Threat Analysis",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Teambuilding",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "API Integration",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Physical Education Theory",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Community Service",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Data Flow Diagrams and Entity-Relationship Diagrams",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Big Data and Data Processing Techniques",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Technical Application",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Media and Communication Ethics",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "CAD Tools for Circuit Design",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Professional Development",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Big Data Technologies",
+        "proficiency": "Intermediate"
+      }
+    ]
+  },
+  {
+    "id": "9e8e27ef",
+    "name": "Employee 60",
+    "department": "Social Sciences",
+    "skills": [
+      {
+        "skill": "Industry Standards",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "MVC Frameworks (Laravel, Symfony)",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Cost Accounting and Management",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Systematic Reviews and Meta-Analysis",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Student Engagement Strategies",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Technical Proposals and RFPs",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Project Evaluation",
+        "proficiency": "Advanced"
+      }
+    ]
+  },
+  {
+    "id": "3cc0bb3a",
+    "name": "Employee 61",
+    "department": "Computer Science",
+    "skills": [
+      {
+        "skill": "Art Conservation and Restoration",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Statistics",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "IT-Specific Accounting Issues",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "IT Budgeting",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Disaster Recovery Planning",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Trademarks",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Mathematical Reasoning",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Algebra",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Probability Theory and Distribution",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Information Architecture",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Combinational Logic Design",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Intellectual Property",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Project Evaluation",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Version Control (Git, GitHub)",
+        "proficiency": "Beginner"
+      }
+    ]
+  },
+  {
+    "id": "b6f6c55c",
+    "name": "Employee 62",
+    "department": "Engineering",
+    "skills": [
+      {
+        "skill": "Computational Complexity",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Cloud Computing Fundamentals",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Team Collaboration and Communication",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Test Automation",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "System Integration and Testing",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "API Development and Integration",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Business Communication",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Project Evaluation",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Philosophical Foundations of Scientific Inquiry",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Computer Vision",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Risk-Based Testing",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Semiotics and Symbolic Interaction",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "IBM Cloud Services",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Combinatorial Optimization",
+        "proficiency": "Advanced"
+      }
+    ]
+  },
+  {
+    "id": "80ef0fc7",
+    "name": "Employee 63",
+    "department": "Education",
+    "skills": [
+      {
+        "skill": "Neural Networks",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Agile Development Practices",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Team Collaboration and Communication",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Networking Protocols",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Communication for Development (C4D)",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Emotional Intelligence",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Visual Literacy",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Techniques and Media in Visual Arts (Painting, Sculpture, Photography)",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Technology Transfer",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Research Methods in Psychology",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Augmented Reality (AR) and Virtual Reality (VR)",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Resource Management",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Audio/Visual Communication",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Business Modeling",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Industry Integration",
+        "proficiency": "Beginner"
+      }
+    ]
+  },
+  {
+    "id": "bbdb40ea",
+    "name": "Employee 64",
+    "department": "Business",
+    "skills": [
+      {
+        "skill": "Team and Individual Sports Fundamentals",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Authentication and Authorization (OAuth, JWT)",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Identity and Access Management (IAM)",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Group Communication and Teamwork",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Team Collaboration and Leadership",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Foreign Language Proficiency",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Negotiation and Persuasion Techniques",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Art Conservation and Restoration",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Presentation of Research Findings",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Error Detection and Correction",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Software Design Patterns",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "CSS",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Report Writing",
+        "proficiency": "Intermediate"
+      }
+    ]
+  },
+  {
+    "id": "adf39bcb",
+    "name": "Employee 65",
+    "department": "Social Sciences",
+    "skills": [
+      {
+        "skill": "Literary Theory",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Startup Ecosystem Understanding",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Exercise Physiology",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Virtualization",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Parallel Algorithms",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Sampling Methods and Techniques",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Numerical Methods",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Taxation and Financial Reporting Standards",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Hypothesis Testing and Confidence Intervals",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Cognitive Load and Memory in Design",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Data Integrity and Constraints",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Machine Learning in Databases",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Time Management and Prioritization",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "UML Diagrams",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Code Review and Visual Feedback Techniques",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Negotiation Skills for Entrepreneurs",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "World Literature",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "OSI Model",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Technical Troubleshooting",
+        "proficiency": "Intermediate"
+      }
+    ]
+  },
+  {
+    "id": "2a2dceeb",
+    "name": "Employee 66",
+    "department": "Arts and Humanities",
+    "skills": [
+      {
+        "skill": "Active Listening and Empathy",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Visual Studio",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Student Code Review and Feedback",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Computing Innovations and Trends",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Material Design Principles",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Health and Wellness Coaching",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Graph Algorithms (e.g., Dijkstra's Algorithm, A* Search)",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Cloud Platforms (AWS, Azure, Google Cloud)",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Emerging Technologies",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Rizal's Personal Life and Works (Letters, Diaries, Poetry)",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Art Conservation and Restoration",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Financial Literacy",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Utilitarianism",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Managerial Accounting and Decision Making",
+        "proficiency": "Intermediate"
+      }
+    ]
+  },
+  {
+    "id": "3ecdda14",
+    "name": "Employee 67",
+    "department": "Education",
+    "skills": [
+      {
+        "skill": "Technology Transfer and Licensing",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Network Troubleshooting and Diagnostics",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Personality Psychology",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Business Process Redesign",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Network Monitoring Tools (e.g., Wireshark, NetFlow)",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Linguistics Fundamentals",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Virtualization Technologies",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Research Writing",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Network Security Fundamentals",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Philippine Literature in History",
+        "proficiency": "Intermediate"
+      }
+    ]
+  },
+  {
+    "id": "6ea3f742",
+    "name": "Employee 68",
+    "department": "Engineering",
+    "skills": [
+      {
+        "skill": "Digital Communication and Collaboration",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Community Service",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Network Virtualization",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Mathematical Proofs",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Distributed Algorithms",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Embedded Programming",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Graph Algorithms (e.g., Dijkstra's Algorithm, A* Search)",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Recursion",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Automation Scripting (Python, Bash)",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Cybersecurity",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Literary Theory",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Network Protocols",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Team and Individual Sports Fundamentals",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Philosophical Foundations of Scientific Inquiry",
+        "proficiency": "Advanced"
+      }
+    ]
+  },
+  {
+    "id": "493ee659",
+    "name": "Employee 69",
+    "department": "Psychology",
+    "skills": [
+      {
+        "skill": "Internal Audits and IT Compliance",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Quality of Service (QoS)",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Agile Methodologies",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Research Methodology",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Web Accessibility (WCAG Guidelines)",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Academic Writing",
+        "proficiency": "Beginner"
+      }
+    ]
+  },
+  {
+    "id": "09751369",
+    "name": "Employee 70",
+    "department": "Communications",
+    "skills": [
+      {
+        "skill": "Dependency Injection (Dagger, Hilt)",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Task Analysis",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "PowerPoint and Other Presentation Tools",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Mobile Testing",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Physical Education Theory",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Sociological Analysis",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Advanced Database Systems",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Computer Vision",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Data Protection and Privacy",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Cloud-Native Development and Deployment",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "API Development",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Binary Search Trees (BSTs)",
+        "proficiency": "Intermediate"
+      }
+    ]
+  },
+  {
+    "id": "58e2f1fe",
+    "name": "Employee 71",
+    "department": "Natural Sciences",
+    "skills": [
+      {
+        "skill": "Quantitative Reasoning",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Quantitative Research",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Business Development and Sales",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "System Administration",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Data Structures Implementation (e.g., Arrays, Linked Lists, Trees)",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Educational Technology Tools (e.g., LMS, Google Workspace)",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Documentation Tools and Techniques",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Project Implementation",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Public Speaking and Presentation for Sports Events",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Competitive Sports and Team Building",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Interaction Styles (e.g., Touch, Voice, Gesture)",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Performance Optimization and Tuning",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Educational Psychology",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "IT Law",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Advanced PHP",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Sampling Methods and Techniques",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Ethical Theories and Philosophical Foundations",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Planarity and Graph Coloring",
+        "proficiency": "Expert"
+      }
+    ]
+  },
+  {
+    "id": "6da1b84b",
+    "name": "Employee 72",
+    "department": "Psychology",
+    "skills": [
+      {
+        "skill": "Health and Wellness Coaching",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Algebra",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Cryptography",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Product Development and Management",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Malware Analysis",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Authentication and Authorization (OAuth, JWT)",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Room Database",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Optimization Techniques",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Emerging Technologies",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "API Integration",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Windows Development",
+        "proficiency": "Intermediate"
+      }
+    ]
+  },
+  {
+    "id": "7cf3d109",
+    "name": "Employee 73",
+    "department": "Social Sciences",
+    "skills": [
+      {
+        "skill": "Transactions and Concurrency Control",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "IT Strategy",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Visual Communication",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Java Programming",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Group Communication and Teamwork",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Data Management",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Student Code Review and Feedback",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "User Experience Design",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "SQLite Database Integration",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Arithmetic Logic Unit (ALU) Design",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Material Design Principles",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Priority Queues and Heaps",
+        "proficiency": "Intermediate"
+      }
+    ]
+  },
+  {
+    "id": "03d90fcf",
+    "name": "Employee 74",
+    "department": "Communications",
+    "skills": [
+      {
+        "skill": "Fitness Program Design",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Critical Reading Skills",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Communication Theory",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Number Theory",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Graph Algorithms (e.g., Dijkstra's Algorithm, A* Search)",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Data Privacy and Protection",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Ethics of Technology and AI",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Computing Research",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Cultural Awareness and Sensitivity in Outdoor Adventures",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Cultural and Economic Imperialism",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Automation Tools (Ansible, Puppet)",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "IT Budgeting",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Performance Evaluation and Reporting",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Art Theory and Philosophical Perspectives",
+        "proficiency": "Intermediate"
+      }
+    ]
+  },
+  {
+    "id": "dfa93edf",
+    "name": "Employee 75",
+    "department": "Natural Sciences",
+    "skills": [
+      {
+        "skill": "Legal Research",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "History of Science",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Educational Technology Tools (e.g., LMS, Google Workspace)",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Research Methods in Psychology",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Low-Level Digital Design (e.g., FPGA, ASIC)",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Meta-Ethics",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Ethics of Technology and AI",
+        "proficiency": "Intermediate"
+      }
+    ]
+  },
+  {
+    "id": "f2051ca4",
+    "name": "Employee 76",
+    "department": "Engineering",
+    "skills": [
+      {
+        "skill": "Performance Evaluation and Reporting",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Data Collection Techniques",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Emerging Technologies",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Ethical Analysis and Moral Reasoning",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Middleware Technologies",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Editing and Proofreading Technical Content",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Group Exercise Instruction",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Incident Response",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Educational Technology Tools (e.g., LMS, Google Workspace)",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Environmental Conservation",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "IT Infrastructure Management",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Normative Ethics",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "AI Algorithms",
+        "proficiency": "Intermediate"
+      }
+    ]
+  },
+  {
+    "id": "180a6d6a",
+    "name": "Employee 77",
+    "department": "Engineering",
+    "skills": [
+      {
+        "skill": "Regression Testing",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Assessment and Feedback Design",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Cultural Globalization and its Impact on Society",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Research Ethics",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Market Analysis",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Reflective Practice",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Leadership",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "English Language Proficiency",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Technical Troubleshooting",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Communication Theory",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Functional Fitness Training",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Functional and Non-Functional Testing",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Graph Algorithms",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Global Issues",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Entrepreneurial Finance",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Stakeholder Communication and Collaboration",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Choreography and Dance Routines",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Project Management",
+        "proficiency": "Expert"
+      }
+    ]
+  },
+  {
+    "id": "8acb0e18",
+    "name": "Employee 78",
+    "department": "Computer Science",
+    "skills": [
+      {
+        "skill": "Software Testing",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Cultural Globalization",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Requirements Analysis",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Firewall and VPN Configuration",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Educational Facilitation in Communities",
+        "proficiency": "Intermediate"
+      }
+    ]
+  },
+  {
+    "id": "85cf1803",
+    "name": "Employee 79",
+    "department": "Arts and Humanities",
+    "skills": [
+      {
+        "skill": "Technical Writing for IT Audiences",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Student Code Review and Feedback",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Technology Trends",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Business Process Redesign",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Accounting Principles and Concepts",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Hypothesis Testing and Confidence Intervals",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Database Architecture and Design Patterns",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Priority Queues and Heaps",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Visual Communication",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Offline Data Sync",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Inclusive Teaching Practices",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Systematic Reviews and Meta-Analysis",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Automation Tools (Ansible, Puppet)",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Sports Coaching",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Rizal's Personal Life and Works (Letters, Diaries, Poetry)",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Signal Processing",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Basic Statistics",
+        "proficiency": "Expert"
+      }
+    ]
+  },
+  {
+    "id": "9187ed17",
+    "name": "Employee 80",
+    "department": "Psychology",
+    "skills": [
+      {
+        "skill": "Enterprise Architecture",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Computer Hardware",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Normative Ethics",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Computing Innovations and Trends",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Media and Communication Ethics",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Network Architecture",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Philippine Economic History",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Software Engineering",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "UML Modeling and Design Patterns",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Nonverbal Communication",
+        "proficiency": "Advanced"
+      }
+    ]
+  },
+  {
+    "id": "fd8310d4",
+    "name": "Employee 81",
+    "department": "Information Technology",
+    "skills": [
+      {
+        "skill": "Software Testing and Quality Assurance",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Troubleshooting",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "RESTful API Development",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Educational Facilitation in Communities",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Cryptography and Information Security (Introduction)",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Web Development Frameworks (e.g., Angular, React)",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Network Topologies",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "API Development and Integration",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "International Relations",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Internet and Web Basics",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Documentation and Reporting of Service Activities",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Data Lake Architecture",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Sport-Specific Drills and Training Methods",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Boolean Algebra and Logic Gates",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Startup Management",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Jetpack Compose",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Technical Writing for IT Audiences",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Water Sports (e.g., Kayaking, Rafting)",
+        "proficiency": "Beginner"
+      }
+    ]
+  },
+  {
+    "id": "7f8535d3",
+    "name": "Employee 82",
+    "department": "Education",
+    "skills": [
+      {
+        "skill": "Data Warehousing Concepts",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Cloud Service Models (e.g., IaaS, PaaS, SaaS)",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Database Security",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Graph Algorithms (e.g., Dijkstra's Algorithm, A* Search)",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Aesthetic Theory",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Digital Literacy",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Interface Design",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Persuasion Theory",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Cloud Deployment Models (e.g., Public, Private, Hybrid)",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Auditing and Internal Controls",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "User Manuals and Guides for IT Systems",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Cloud Computing and IT Financial Management",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Accessibility Design",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Cloud Infrastructure Management",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Communication for Development (C4D)",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Application Architecture",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "OSPF Configuration",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "International Law and Global Security",
+        "proficiency": "Intermediate"
+      }
+    ]
+  },
+  {
+    "id": "16c6a829",
+    "name": "Employee 83",
+    "department": "Education",
+    "skills": [
+      {
+        "skill": "Training Principles",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Quality Assurance Standards (e.g., ISO, CMMI)",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Foreign Policy and Global Diplomacy",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "PHP Frameworks",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Innovation Management",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Networking Protocols",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Innovation Analysis",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Political History of the Philippines",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Cloud Platforms (AWS, Azure, Google Cloud)",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Material Design Principles",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Mobile Testing",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Technological Innovation and Social Change",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Visual Studio",
+        "proficiency": "Intermediate"
+      }
+    ]
+  },
+  {
+    "id": "9c9900fb",
+    "name": "Employee 84",
+    "department": "Engineering",
+    "skills": [
+      {
+        "skill": "Fitness Assessment and Testing",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "System Documentation and Reporting",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Fitness and Conditioning for Athletes",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Predictive Analytics",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Performance Tuning and Profiling",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Corporate Culture",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Risk-Based Testing",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Presentation Skills for IT Professionals",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Continuous Learning and Adaptability",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Literary Analysis",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Systematic Reviews and Meta-Analysis",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Meta-Ethics",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "LAN/WAN Technologies",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Project Management",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Defect Management and Root Cause Analysis",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Interpersonal Communication",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Error Handling and Debugging",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Supply Chain and Operations Management",
+        "proficiency": "Intermediate"
+      }
+    ]
+  },
+  {
+    "id": "e4a56925",
+    "name": "Employee 85",
+    "department": "Engineering",
+    "skills": [
+      {
+        "skill": "Agile Development Methodologies",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Bandwidth Management and QoS",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Speech Communication",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Survey Design and Questionnaire Development",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Routing and Switching",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Basic SEO Principles",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Sports Coaching",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Discrete Probability",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Lean Methodology",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Enterprise Solutions",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Cloud Cost Optimization",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Responsive Web Design",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Time Management and Pacing for Instruction",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "WPF (Windows Presentation Foundation)",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Microprocessor and Microcontroller Design",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Virtual Machines and Hypervisor Technologies",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Enterprise IBM Solutions",
+        "proficiency": "Beginner"
+      }
+    ]
+  },
+  {
+    "id": "692291fc",
+    "name": "Employee 86",
+    "department": "Social Sciences",
+    "skills": [
+      {
+        "skill": "Binary Search Trees (BSTs)",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Choreography",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Low-Level Digital Design (e.g., FPGA, ASIC)",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Graph Theory",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Cultural Globalization and its Impact on Society",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Museum and Gallery Studies",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Business Applications",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Entity Framework",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Computational Mathematics",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Sociolinguistics",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Physical Fitness Programming",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Market Research and Analysis",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Choreography and Dance Routines",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Computer Fundamentals",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Adventure Activities",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Student Code Review and Feedback",
+        "proficiency": "Intermediate"
+      }
+    ]
+  },
+  {
+    "id": "f0571376",
+    "name": "Employee 87",
+    "department": "Arts and Humanities",
+    "skills": [
+      {
+        "skill": "Colonialism and Post-Colonial Studies",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "PowerPoint and Other Presentation Tools",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Web Programming (e.g., Front-end, Back-end basics)",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Network Configuration Management",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "ACID Properties of Transactions",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Business Applications",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Sociological Analysis",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Outdoor Education",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "UI/UX Principles and Design Thinking",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Web Design Principles",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Quality Assurance",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Mathematical Reasoning",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Documentation and Reporting of Service Activities",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Data Replication and Sharding",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Financial Reporting for IT Projects",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Signal Processing Algorithms",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Sports Coaching Techniques and Strategies",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Network Monitoring Tools (e.g., Wireshark, NetFlow)",
+        "proficiency": "Beginner"
+      }
+    ]
+  },
+  {
+    "id": "428548b9",
+    "name": "Employee 88",
+    "department": "Business",
+    "skills": [
+      {
+        "skill": "Microprocessor and Microcontroller Design",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Team Collaboration and Leadership",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Quantitative Research Reporting",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Performance Assessment",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Automation Scripting (Python, Bash)",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Voice Modulation and Clarity",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Combinatorics",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Performance Testing",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Contextual Inquiry and User Research",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Risk Management",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Comparative Literature",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Leadership in Startups",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Cloud Integration",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "IBM Technologies",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Mathematical Modeling",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Routing and Switching",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Software Development Tools (e.g., Eclipse, IntelliJ IDEA)",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Creative Writing",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Database Architecture and Design Patterns",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Statistical Inference",
+        "proficiency": "Beginner"
+      }
+    ]
+  },
+  {
+    "id": "a5af4399",
+    "name": "Employee 89",
+    "department": "Computer Science",
+    "skills": [
+      {
+        "skill": "Risk Management",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Network Performance Analysis and Optimization",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Assessment and Feedback in Physical Activities",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "DevOps and CI/CD",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "User Experience Design",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Market Research and Analysis",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Cloud Security",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Auditing and Internal Controls",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Cognitive Computing",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Ethics of Technology and AI",
+        "proficiency": "Intermediate"
+      }
+    ]
+  },
+  {
+    "id": "fd69204d",
+    "name": "Employee 90",
+    "department": "Social Sciences",
+    "skills": [
+      {
+        "skill": "Technical Proposals and RFPs",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Physical Education Theory",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Process Modeling",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Digital Technology and Social Networks",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Critical Thinking and Visual Analysis",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Cloud Computing",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "User Interface (UI) and User Experience (UX) Design",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Static and Dynamic Testing",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Big-O Notation",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Sports Injury Prevention and Rehabilitation",
+        "proficiency": "Expert"
+      }
+    ]
+  },
+  {
+    "id": "65f5c6e4",
+    "name": "Employee 91",
+    "department": "Communications",
+    "skills": [
+      {
+        "skill": "Binary and Data Representation",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Network Scaling",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Choreography",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Information Security Management",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Copyright",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Time Management and Prioritization",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Bioethics and Medical Ethics",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Global Historical Context of the Philippines",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Database Optimization",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Unit Testing (xUnit, NUnit)",
+        "proficiency": "Beginner"
+      }
+    ]
+  },
+  {
+    "id": "eea509da",
+    "name": "Employee 92",
+    "department": "Communications",
+    "skills": [
+      {
+        "skill": "Entrepreneurship Principles",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Discourse Analysis",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Syntax and Semantics of Programming Languages",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Sports Science",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Data Replication and Sharding",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Historiography",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Agile Development Practices",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "API Management",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "IBM Technologies",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Instructional Design for Tech Courses",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Nutrition for Fitness and Health",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Network Architecture",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "User Interface (UI) Design",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Containerization (Docker, Kubernetes)",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "RESTful API Development",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Bug Tracking and Issue Management",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Debugging Techniques",
+        "proficiency": "Intermediate"
+      }
+    ]
+  },
+  {
+    "id": "d39e35e2",
+    "name": "Employee 93",
+    "department": "Education",
+    "skills": [
+      {
+        "skill": "Visualization Tools",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Business Process Integration",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Recursion and Recursive Structures",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Technology and Economic Development",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Trees and Tree Algorithms",
+        "proficiency": "Beginner"
+      }
+    ]
+  },
+  {
+    "id": "99f75924",
+    "name": "Employee 94",
+    "department": "Engineering",
+    "skills": [
+      {
+        "skill": "Podcasting and Video Production Basics",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Digital Logic Design Fundamentals",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Time Management and Pacing for Instruction",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Operating Systems (Linux, Windows)",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Public History and Museum Studies",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Historiography",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Platform Architecture",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Software Testing and Debugging",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Flip-Flops and Registers",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Documentation",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Leadership in Startups",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Policy Analysis",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Documentation Tools and Techniques",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Project Management in Professional Settings",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Flexibility and Mobility Training",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Statistical Inference",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "String Matching Algorithms",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Geometry",
+        "proficiency": "Intermediate"
+      }
+    ]
+  },
+  {
+    "id": "95d92695",
+    "name": "Employee 95",
+    "department": "Psychology",
+    "skills": [
+      {
+        "skill": "Ethical Implications of Emerging Technologies",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Political Science",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Complexity Classes and NP-Complete Problems",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Resource Management",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Enterprise Systems",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Bug Tracking and Issue Management",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Modeling Real-World Problems (e.g., economics, biology)",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Functional Fitness Training",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Stored Procedures and Triggers",
+        "proficiency": "Intermediate"
+      }
+    ]
+  },
+  {
+    "id": "923a0a86",
+    "name": "Employee 96",
+    "department": "Information Technology",
+    "skills": [
+      {
+        "skill": "Nationalism",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Data Governance and Compliance",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Data Structures",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Room Database",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Mobile Architecture",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Cultural Globalization",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Project Implementation",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Backup and Recovery Techniques",
+        "proficiency": "Advanced"
+      }
+    ]
+  },
+  {
+    "id": "13f05d44",
+    "name": "Employee 97",
+    "department": "Social Sciences",
+    "skills": [
+      {
+        "skill": "OSI Model",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Object-Oriented Programming (OOP)",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Security Management",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Service-Oriented Architecture",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Internet and Web Basics",
+        "proficiency": "Advanced"
+      }
+    ]
+  },
+  {
+    "id": "a58e7fd3",
+    "name": "Employee 98",
+    "department": "Computer Science",
+    "skills": [
+      {
+        "skill": "Load Testing",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Integration Patterns",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Listening and Feedback Skills",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Business Communication",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Time and Space Complexity Analysis",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Pitching Techniques",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Google Play Store Deployment",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "User Manuals and Guides for IT Systems",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "History of Philippine Revolution",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Basic Software Engineering Principles",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Startup Management",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Windows Systems Administration",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Philosophical Writing and Argumentation",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Quality of Service",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Entity-Relationship Diagrams (ERD)",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Project Management Tools (e.g., JIRA, Trello)",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Auditing and Internal Controls",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Web Project Planning",
+        "proficiency": "Advanced"
+      }
+    ]
+  },
+  {
+    "id": "22d5002d",
+    "name": "Employee 99",
+    "department": "Business",
+    "skills": [
+      {
+        "skill": "Student Code Review and Feedback",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Client-Side Debugging",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Prototyping",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Digital Logic Design Projects",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Data Collection Techniques",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Database Administration and Maintenance",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Unit Testing and Test-Driven Development (TDD)",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Global Conflict and Peacebuilding",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Ethics of Artificial Intelligence and Automation",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Ethernet and Wi-Fi Technologies",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Data Transmission",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Operating System Management",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Intrusion Detection Systems (IDS) and Prevention Systems (IPS)",
+        "proficiency": "Intermediate"
+      }
+    ]
+  },
+  {
+    "id": "911e6a88",
+    "name": "Employee 100",
+    "department": "Computer Science",
+    "skills": [
+      {
+        "skill": "API Integration",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Social Advocacy and Civic Engagement",
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Philosophical Debate and Discussion",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Dependency Injection (Dagger, Hilt)",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Language Teaching",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Transnational Movements and Global Activism",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Technical Presentation",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Machine Learning in Databases",
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Arithmetic Logic Unit (ALU) Design",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Software Engineering",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Version Control",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "OSI Model",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Market Research and Analysis",
+        "proficiency": "Beginner"
+      },
+      {
+        "skill": "Code Refactoring and Maintenance",
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Digital Circuit Design",
+        "proficiency": "Intermediate"
+      }
+    ]
+  }
+]

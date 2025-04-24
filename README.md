@@ -1,262 +1,147 @@
-# University Specialization Recommendation System
+# University Teaching Specialization Recommendation System
 
-A system to match faculty members with courses they are best qualified to teach, and identify skill gaps using matrix factorization and semantic matching techniques.
+A system designed to match faculty members or employees with courses they are best qualified to teach, and identify skill gaps.
 
-## Project Structure
+## Overview
 
-The project is structured as a proper Python package with the following components:
+This system uses a combination of techniques to provide course recommendations:
 
-```
-university-specialization-recommendation-system/
-├── src/                          # Main source code package
-│   ├── api/                      # API endpoints and route handlers
-│   ├── core/                     # Core functionalities and shared components
-│   ├── data/                     # Data loading, processing, and access
-│   ├── matching/                 # Matching algorithms and recommendation systems
-│   ├── models/                   # Data models, schemas, and ML models
-│   └── utils/                    # Utility functions and helpers
-├── tests/                        # Test directory
-├── main.py                       # Legacy main application file
-└── run.py                        # Run script that starts the API
-```
+1. **Semantic Matching**: Matches skills based on semantic similarity
+2. **Matrix Factorization**: Learns latent factors from skill distributions
+3. **Customizable Recommendation**: Supports both faculty and custom skill inputs
+
+## Features
+
+-   Course recommendations based on skills
+-   Skill gap analysis
+-   Similar course discovery
+-   Skill importance analysis
+-   Employee/faculty course recommendations
+
+## Data Structure
+
+-   **Courses**: Defined in `src/data/course_skills.json`
+-   **Employees/Faculty**: Generated or defined with skills that match to courses
 
 ## Getting Started
 
 ### Installation
 
-1. Clone the repository:
+1. Clone the repository
+2. Install the required dependencies:
 
 ```bash
-git clone <repository-url>
-cd university-specialization-recommendation-system
-```
-
-2. Install dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-3. Download spaCy model (required for semantic matching):
-
-```bash
+pip install fastapi uvicorn pandas numpy scikit-learn spacy
 python -m spacy download en_core_web_md
 ```
 
-### Running the Application
-
-To start the API server:
+### Running the API Server
 
 ```bash
-python run.py
+uvicorn src.main:app --reload
 ```
 
-This will start the FastAPI server on http://localhost:8000.
+The API will be available at http://localhost:8000 with documentation at http://localhost:8000/docs
 
-### API Documentation
+## Using the Employee Recommendation System
 
-Once the server is running, you can access the API documentation at:
+### 1. Generate Employee Data
 
--   Swagger UI: http://localhost:8000/docs
--   ReDoc: http://localhost:8000/redoc
+Generate synthetic employee data based on the skills in your courses:
 
-## Features
+```bash
+python src/scripts/generate_employees.py
+```
 
--   Faculty-course matching based on skills and proficiency levels
--   Identification of skill gaps for faculty members
--   Semantic matching of related skills
--   Matrix factorization for latent skill representation
--   Recommendation system for finding the best courses for faculty members
+This will create a file called `employees.json` in the `src/data` directory.
 
-## Development
+### 2. Train the Employee-Course Model
 
-### Project Organization
+Train a model to recommend courses for employees:
 
--   `src/models/schemas.py`: Data models and Pydantic schemas
--   `src/models/recommender.py`: Matrix factorization recommendation model
--   `src/matching/semantic_matcher.py`: Semantic matching functionality
--   `src/data/`: Data access and management
--   `src/api/routes.py`: API endpoints and route handlers
+```bash
+python src/scripts/train_employee_model.py
+```
 
-## Purpose
+This process:
 
-This system helps university departments:
+-   Creates matrices from employee skills and course requirements
+-   Trains an NMF model to learn latent factors
+-   Saves the model to `src/models/persistence/saved_models/employee_course_model.npz`
+-   Generates skill importance analysis in `src/data/skill_importance.csv`
 
--   Match faculty members with subjects they can teach most effectively
--   Identify skill gaps for professional development opportunities
--   Improve teaching quality by ensuring instructors teach subjects aligned with their expertise
--   Support faculty professional growth through targeted skill development
+### 3. Get Recommendations
 
-## Technology Stack
+Use the trained model to get recommendations:
 
--   **Backend Framework**: FastAPI with Uvicorn server
--   **Data Processing**: Pandas and NumPy for data manipulation
--   **Machine Learning**: scikit-learn for matrix factorization (NMF)
--   **Natural Language Processing**: spaCy for semantic similarity with en_core_web_md model
--   **Data Visualization**: Matplotlib (for visualization in scripts)
--   **Data Storage**: JSON and CSV formats
--   **API Documentation**: OpenAPI (Swagger UI via FastAPI)
+```bash
+# List all employees
+python src/scripts/recommend_with_employee_model.py --list-employees
 
-## Recommendation Models
+# List all courses
+python src/scripts/recommend_with_employee_model.py --list-courses
 
-The system provides two types of recommendation approaches:
+# Get recommendations for a specific employee
+python src/scripts/recommend_with_employee_model.py --employee [EMPLOYEE_ID] --top 10
 
-1. **Semantic-based matching** (default):
+# Find similar courses to a specific course
+python src/scripts/recommend_with_employee_model.py --course [COURSE_CODE] --top 5
+```
 
-    - Uses spaCy's NLP similarity to match skills directly
-    - Calculates semantic similarity between faculty skills and course requirements
-    - Weights matching based on proficiency levels
-    - Identifies missing skills for development
+## Customizing the System
 
-2. **Model-based recommendations**:
-    - Uses Non-negative Matrix Factorization (NMF) to learn latent factors
-    - Represents courses and skills in a lower-dimensional latent space
-    - Provides collaborative filtering-style recommendations
-    - Offers insight into skill importance and course similarities
+### Adding New Courses
 
-To use model-based recommendations via the API, add the query parameter `?use_model=true` to recommendation endpoints.
+Add new courses to `src/data/course_skills.json` with the following format:
 
-## Data Structure
+```json
+{
+    "COURSE_CODE": {
+        "name": "Course Name",
+        "required_skills": {
+            "Skill 1": "Advanced",
+            "Skill 2": "Intermediate",
+            "Skill 3": "Beginner"
+        }
+    }
+}
+```
 
--   **Courses**: Each course has a code, name, description, and required skills with proficiency levels
--   **Faculty**: Each faculty member has an ID, name, department, and a list of skills with proficiency levels
--   **Skills**: Skills are represented with a name and a proficiency level (Beginner to Expert)
--   **Dataset**: The system maintains both JSON and CSV formats:
-    -   JSON format for easy human readability and editing
-    -   CSV matrix format for machine learning models
+Then rebuild the model:
 
-## Setup
+```bash
+python src/rebuild_model.py
+```
 
-1. Install dependencies:
+### Adding Real Employee Data
 
-    ```
-    pip install -r requirements.txt
-    ```
+Replace the generated employee data with real data by creating an `employees.json` file:
 
-2. Download the spaCy language model (will be done automatically on first run):
-
-    ```
-    python -m spacy download en_core_web_md
-    ```
-
-3. Run the application:
-
-    ```
-    python run.py
-    ```
-
-4. Or test the matching system directly:
-
-    ```
-    python test_matching.py
-    ```
-
-5. To train the recommendation model explicitly:
-    ```
-    python scripts/train_model.py
-    ```
+```json
+[
+    {
+        "id": "emp123",
+        "name": "Employee Name",
+        "department": "Department Name",
+        "skills": [
+            {
+                "skill": "Skill Name",
+                "proficiency": "Advanced"
+            }
+        ]
+    }
+]
+```
 
 ## API Endpoints
 
-The system provides a RESTful API with the following endpoints:
-
-### Courses
-
--   `GET /courses` - Get all available courses
--   `GET /courses/{code}` - Get a specific course by code
-
-### Faculty
-
--   `GET /faculties` - Get all faculty members
--   `GET /faculties/{faculty_id}` - Get a specific faculty member by ID
--   `POST /faculties/{faculty_id}/skills` - Update a faculty member's skills
-
-### Matching & Recommendations
-
--   `GET /match/faculty/{faculty_id}/course/{course_code}` - Match faculty to specific course
--   `GET /recommendations/faculty/{faculty_id}` - Get course recommendations for faculty
-    -   Add `?use_model=true` to use ML-based recommendations
-    -   Add `?top_n=15` to customize number of results (default is 10)
--   `POST /recommendations/custom` - Get recommendations based on custom skills
-    -   Add `?use_model=true` to use ML-based recommendations
-
-### Simplified Skills-Only Endpoint
-
--   `POST /skills-to-courses` - Get course recommendations based only on skills (no faculty information needed)
-    -   Uses the ML model by default
-    -   Returns matched and missing skills for each recommendation
-    -   Example request body:
-        ```json
-        {
-            "skills": [
-                {
-                    "skill": "Python",
-                    "proficiency": "Expert"
-                },
-                {
-                    "skill": "Machine Learning",
-                    "proficiency": "Intermediate"
-                }
-            ]
-        }
-        ```
-
-### Model-specific Endpoints
-
--   `GET /similar-courses/{course_code}` - Find courses similar to a given course (returns 10 by default)
--   `GET /skill-importance` - Get the importance of skills across latent factors
-
-For detailed API documentation with request/response schemas, visit `/docs` after starting the server.
-
-## Machine Learning Details
-
-### Matrix Factorization (NMF)
-
-The system uses Non-negative Matrix Factorization to decompose the skill-course matrix into:
-
--   Course-factor matrix (W) - How courses relate to latent factors
--   Factor-skill matrix (H) - How skills relate to latent factors
-
-This allows the system to:
-
-1. Find underlying patterns between skills and courses
-2. Identify skill clusters through latent factors
-3. Calculate similarity between courses based on their factor representation
-4. Project faculty skills into the same latent space for matching
-
-### Model Training
-
-The model is trained on a matrix where:
-
--   Rows represent courses
--   Columns represent skills
--   Values represent required proficiency levels (1-4)
-
-The training process:
-
-1. Creates CSV datasets from existing course data
-2. Initializes the NMF model with specified components (default: 5)
-3. Learns the latent representations
-4. Calculates course similarities
-5. Saves the model for future use
-
-The model is automatically loaded when needed or can be explicitly trained with the provided script.
-
-## Extending the System
-
-To add more courses or faculty members:
-
-1. Edit the data files in the `data/` directory
-2. Run `python scripts/train_model.py` to update the recommendation model
-
-To extend the system with new features:
-
-1. For new data models, add to `models/schemas.py`
-2. For new API endpoints, add to `api/routes.py`
-3. For algorithm improvements, modify `matching/semantic_matcher.py` or `models/recommender.py`
+-   `GET /api/courses`: Get all available courses
+-   `GET /api/courses/{code}`: Get a specific course by code
+-   `GET /api/faculties`: Get all faculty members
+-   `POST /api/skills-to-courses`: Get course recommendations based only on skills
+-   `GET /api/similar-courses/{course_code}`: Find courses similar to a given course
+-   `GET /api/skill-importance`: Get the importance of each skill
 
 ## License
 
-This project is available for educational and research purposes.
-
-For more detailed usage instructions, see [USAGE.md](USAGE.md)
+This project is licensed under the MIT License.

@@ -3,16 +3,18 @@ import os
 import pandas as pd
 import numpy as np
 from typing import Dict, List, Tuple, Union
+import importlib.util
+import subprocess
 
 # Updated imports with proper package paths
 from src.models.schemas import ProficiencyLevel, Faculty, Course, SkillProficiency
 from src.data.courses import COURSES
-from src.data.faculties import FACULTIES
 
 # Define paths more robustly
 DATA_DIR = os.path.dirname(os.path.abspath(__file__))
 DATASET_PATH = os.path.join(DATA_DIR, "training_data.json")
 CSV_DATASET_PATH = os.path.join(DATA_DIR, "training_data.csv")
+SKILL_MATRIX_PATH = os.path.join(DATA_DIR, "skill_course_matrix.csv")
 
 def create_initial_dataset() -> Dict:
     """
@@ -65,9 +67,53 @@ def save_dataset_as_json(dataset: Dict) -> None:
 
 def save_dataset_as_csv() -> None:
     """
-    Save course-skill matrix and other relevant data as CSV files.
-    This format is more suitable for matrix factorization models.
+    Generate the skill-course matrix CSV using our generator script.
     """
+    try:
+        # Try to run the generator script
+        generator_path = os.path.join(DATA_DIR, "generate_skill_matrix.py")
+        
+        # Check if the file exists
+        if not os.path.exists(generator_path):
+            print(f"Warning: Skill matrix generator not found at {generator_path}")
+            # Fall back to the old method if the generator doesn't exist
+            _generate_skill_matrix_fallback()
+            return
+            
+        # Run the generator script as a module
+        print("Running skill matrix generator...")
+        
+        # Import and run the module
+        spec = importlib.util.spec_from_file_location("generate_skill_matrix", generator_path)
+        if spec and spec.loader:
+            generator = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(generator)
+            generator.main()
+        else:
+            # If import fails, try running as a subprocess
+            result = subprocess.run(
+                ["python", generator_path],
+                cwd=os.path.dirname(generator_path),
+                capture_output=True,
+                text=True
+            )
+            print(result.stdout)
+            
+            if result.returncode != 0:
+                print(f"Error running generator: {result.stderr}")
+                _generate_skill_matrix_fallback()
+    except Exception as e:
+        print(f"Error generating skill matrix: {str(e)}")
+        # Fall back to the old method if there's an error
+        _generate_skill_matrix_fallback()
+
+def _generate_skill_matrix_fallback() -> None:
+    """
+    Fallback method to generate the skill-course matrix in case the generator script fails.
+    This uses the original implementation.
+    """
+    print("Using fallback method to generate skill-course matrix...")
+    
     # Create a courses dataframe
     courses_data = []
     for course in COURSES:
@@ -116,7 +162,7 @@ def save_dataset_as_csv() -> None:
     
     # Save to CSV
     courses_df.to_csv(os.path.join(DATA_DIR, "courses.csv"), index=False)
-    skill_course_df.to_csv(os.path.join(DATA_DIR, "skill_course_matrix.csv"), index=False)
+    skill_course_df.to_csv(SKILL_MATRIX_PATH, index=False)
     
     print(f"CSV datasets saved to {DATA_DIR}")
 
@@ -142,9 +188,14 @@ def load_dataset() -> Dict:
 
 # Function to generate the dataset if it doesn't exist
 def ensure_dataset_exists():
+    """Ensure all necessary dataset files exist"""
+    # Create the main dataset if it doesn't exist
     if not os.path.exists(DATASET_PATH):
         dataset = create_initial_dataset()
         save_dataset_as_json(dataset)
+    
+    # Create the skill matrix if it doesn't exist
+    if not os.path.exists(SKILL_MATRIX_PATH):
         save_dataset_as_csv()
     
     return load_dataset() 

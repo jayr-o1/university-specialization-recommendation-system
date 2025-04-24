@@ -1,119 +1,81 @@
-from src.models.schemas import ProficiencyLevel
+"""
+Course data for the University Specialization Recommendation System.
+This module provides access to course information including skill requirements.
+"""
+import os
+import json
+from typing import List, Dict, Optional
+from src.models.schemas import ProficiencyLevel, Course
 
-# Course data with required skills and proficiency levels
-COURSES = [
-    {
-        "code": "IMDBSYS32",
-        "name": "Information Management and Database Systems",
-        "description": "This course covers database design principles, SQL, and database management systems.",
-        "required_skills": {
-            "SQL": ProficiencyLevel.INTERMEDIATE,
-            "Database Design": ProficiencyLevel.INTERMEDIATE,
-            "MSSQL": ProficiencyLevel.INTERMEDIATE,
-            "File Systems": ProficiencyLevel.ADVANCED,
-            "Data Modeling": ProficiencyLevel.INTERMEDIATE
-        }
-    },
-    {
-        "code": "DASTRUCT",
-        "name": "Data Structures and Algorithms",
-        "description": "Introduction to data structures, algorithm analysis, and problem-solving techniques.",
-        "required_skills": {
-            "Python": ProficiencyLevel.INTERMEDIATE,
-            "Data Structures": ProficiencyLevel.ADVANCED,
-            "Algorithm Analysis": ProficiencyLevel.INTERMEDIATE,
-            "Problem Solving": ProficiencyLevel.ADVANCED,
-            "Computational Complexity": ProficiencyLevel.INTERMEDIATE
-        }
-    },
-    {
-        "code": "INTPROG",
-        "name": "Introduction to Programming",
-        "description": "Fundamentals of programming concepts, syntax, and problem-solving using Python.",
-        "required_skills": {
-            "Python": ProficiencyLevel.INTERMEDIATE,
-            "Programming Fundamentals": ProficiencyLevel.INTERMEDIATE,
-            "Logic Development": ProficiencyLevel.INTERMEDIATE,
-            "Problem Solving": ProficiencyLevel.INTERMEDIATE
-        }
-    },
-    {
-        "code": "PLATECH",
-        "name": "Platform Technologies",
-        "description": "Overview of various computing platforms, operating systems, and infrastructure technologies.",
-        "required_skills": {
-            "Operating Systems": ProficiencyLevel.INTERMEDIATE,
-            "Cloud Computing": ProficiencyLevel.INTERMEDIATE,
-            "Virtualization": ProficiencyLevel.INTERMEDIATE,
-            "System Administration": ProficiencyLevel.INTERMEDIATE
-        }
-    },
-    {
-        "code": "WEBDEV",
-        "name": "Web Development",
-        "description": "Creating interactive web applications using HTML, CSS, JavaScript, and web frameworks.",
-        "required_skills": {
-            "HTML": ProficiencyLevel.ADVANCED,
-            "CSS": ProficiencyLevel.ADVANCED,
-            "JavaScript": ProficiencyLevel.INTERMEDIATE,
-            "Web Frameworks": ProficiencyLevel.INTERMEDIATE
-        }
-    },
-    {
-        "code": "DATANAL",
-        "name": "Data Analytics",
-        "description": "Techniques for analyzing and visualizing data to extract insights and support decision-making.",
-        "required_skills": {
-            "Python": ProficiencyLevel.INTERMEDIATE,
-            "Statistics": ProficiencyLevel.INTERMEDIATE,
-            "Data Analysis": ProficiencyLevel.ADVANCED,
-            "Data Visualization": ProficiencyLevel.INTERMEDIATE
-        }
-    },
-    {
-        "code": "SOFTENG",
-        "name": "Software Engineering",
-        "description": "Principles and practices for developing high-quality software systems.",
-        "required_skills": {
-            "Software Development": ProficiencyLevel.ADVANCED,
-            "UML": ProficiencyLevel.INTERMEDIATE,
-            "Software Testing": ProficiencyLevel.INTERMEDIATE,
-            "Agile Methodologies": ProficiencyLevel.INTERMEDIATE,
-            "Project Management": ProficiencyLevel.INTERMEDIATE
-        }
-    },
-    {
-        "code": "NETSEC",
-        "name": "Network Security",
-        "description": "Protection of networking systems from unauthorized access and cyber threats.",
-        "required_skills": {
-            "Network Protocols": ProficiencyLevel.ADVANCED,
-            "Cryptography": ProficiencyLevel.INTERMEDIATE,
-            "Security Analysis": ProficiencyLevel.ADVANCED,
-            "Firewall Configuration": ProficiencyLevel.INTERMEDIATE,
-            "Threat Modeling": ProficiencyLevel.INTERMEDIATE
-        }
-    },
-    {
-        "code": "MLINTRO",
-        "name": "Introduction to Machine Learning",
-        "description": "Fundamental concepts and algorithms in machine learning and their applications.",
-        "required_skills": {
-            "Python": ProficiencyLevel.ADVANCED,
-            "Statistics": ProficiencyLevel.ADVANCED,
-            "Machine Learning": ProficiencyLevel.INTERMEDIATE,
-            "Data Analysis": ProficiencyLevel.ADVANCED
-        }
-    },
-    {
-        "code": "APIDSGN",
-        "name": "API Design and Development",
-        "description": "Design principles and implementation of robust and scalable APIs.",
-        "required_skills": {
-            "Python": ProficiencyLevel.ADVANCED,
-            "API Integration": ProficiencyLevel.ADVANCED,
-            "Web Frameworks": ProficiencyLevel.ADVANCED,
-            "Database Design": ProficiencyLevel.INTERMEDIATE
-        }
-    }
-] 
+# Mapping from string proficiency levels to enum values
+PROFICIENCY_MAP = {
+    "Beginner": ProficiencyLevel.BEGINNER,
+    "Intermediate": ProficiencyLevel.INTERMEDIATE,
+    "Advanced": ProficiencyLevel.ADVANCED,
+    "Expert": ProficiencyLevel.EXPERT
+}
+
+def load_course_skills() -> Dict:
+    """Load course skills from JSON file"""
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    json_path = os.path.join(current_dir, 'course_skills.json')
+    
+    try:
+        with open(json_path, 'r') as f:
+            return json.load(f)
+    except FileNotFoundError:
+        print(f"Warning: Course skills file not found at {json_path}")
+        return {}
+
+# Load course data
+_course_data = load_course_skills()
+
+# Convert to list format for compatibility with existing code
+COURSES = []
+for code, data in _course_data.items():
+    required_skills = {}
+    for skill, level in data.get('required_skills', {}).items():
+        required_skills[skill] = PROFICIENCY_MAP.get(level, ProficiencyLevel.BEGINNER)
+    
+    COURSES.append({
+        "code": code,
+        "name": data.get('name', ''),
+        "description": data.get('description', f"Course on {data.get('name', code)}"),
+        "required_skills": required_skills
+    })
+
+def get_all_courses() -> List[Dict]:
+    """Get all courses in dictionary format"""
+    return COURSES
+
+def get_course_by_code(code: str) -> Optional[Dict]:
+    """Get a course by its code"""
+    for course in COURSES:
+        if course["code"] == code:
+            return course
+    return None
+
+def get_course_as_schema(code: str) -> Optional[Course]:
+    """Get a course by its code as a Course schema object"""
+    course_dict = get_course_by_code(code)
+    if not course_dict:
+        return None
+    
+    return Course(
+        code=course_dict["code"],
+        name=course_dict["name"],
+        description=course_dict["description"],
+        required_skills=course_dict["required_skills"]
+    )
+
+def get_all_courses_as_schemas() -> List[Course]:
+    """Get all courses as Course schema objects"""
+    return [
+        Course(
+            code=course["code"],
+            name=course["name"],
+            description=course["description"],
+            required_skills=course["required_skills"]
+        )
+        for course in COURSES
+    ] 

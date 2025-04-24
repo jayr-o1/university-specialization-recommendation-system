@@ -89,8 +89,24 @@ def match_faculty_to_course(faculty: Faculty, course: Course) -> MatchResult:
                 exact_match_found = is_exact_match
                 best_matching_faculty_skill = faculty_skill
         
-        # Add to total score
-        total_score += best_match_score
+        # Add to total score - apply a weighting to make the match percentage more stringent
+        # Give more weight to exact matches and high scores
+        # This creates a more realistic assessment of skill match
+        if exact_match_found:
+            # Exact matches get full weight plus a small bonus
+            weighted_score = best_match_score * 1.1
+        else:
+            # Non-exact matches are weighted lower based on score
+            if best_match_score > 0.8:
+                weighted_score = best_match_score
+            elif best_match_score > 0.6:
+                weighted_score = best_match_score * 0.9
+            elif best_match_score > 0.4:
+                weighted_score = best_match_score * 0.8
+            else:
+                weighted_score = best_match_score * 0.7
+                
+        total_score += weighted_score
         
         # Check if the skill is missing or below required proficiency
         if best_match_score < 0.5:  # Threshold for considering a skill as "missing"
@@ -111,7 +127,19 @@ def match_faculty_to_course(faculty: Faculty, course: Course) -> MatchResult:
                 )
     
     # Calculate overall match percentage
-    match_percentage = (total_score / max_possible_score) * 100 if max_possible_score > 0 else 0
+    # Apply a scaling factor to make matches more realistic
+    raw_match = (total_score / max_possible_score) if max_possible_score > 0 else 0
+    match_percentage = raw_match * 100
+    
+    # Apply a curve to make high percentages harder to achieve
+    if match_percentage > 95:
+        match_percentage = 95 + (match_percentage - 95) * 0.5  # Cap at ~97.5%
+    elif match_percentage > 90:
+        match_percentage = 90 + (match_percentage - 90) * 0.6
+    elif match_percentage > 80:
+        match_percentage = 80 + (match_percentage - 80) * 0.7
+    elif match_percentage > 70:
+        match_percentage = 70 + (match_percentage - 70) * 0.8
     
     return MatchResult(
         faculty_id=getattr(faculty, 'id', None),

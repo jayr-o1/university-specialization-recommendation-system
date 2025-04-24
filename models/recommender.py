@@ -6,6 +6,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 import os
 
 from models.schemas import Faculty, Course, ProficiencyLevel, SkillProficiency, MatchResult
+from data.courses import COURSES  # Import course data to access required skills
 
 class SkillBasedRecommender:
     """
@@ -78,7 +79,7 @@ class SkillBasedRecommender:
         
         return course_factors_df
     
-    def get_similar_courses(self, course_code: str, top_n: int = 5) -> List[Tuple[str, float]]:
+    def get_similar_courses(self, course_code: str, top_n: int = 10) -> List[Tuple[str, float]]:
         """Get the most similar courses to a given course"""
         if not self.is_trained:
             raise ValueError("Model not trained. Call train() first.")
@@ -130,10 +131,10 @@ class SkillBasedRecommender:
         
         return skill_vector
     
-    def recommend_courses(self, faculty: Faculty, top_n: int = 5) -> List[MatchResult]:
+    def recommend_courses(self, faculty: Faculty, top_n: int = 10) -> List[MatchResult]:
         """
         Recommend courses for a faculty member based on their skills.
-        Returns a list of MatchResult objects with match percentages.
+        Returns a list of MatchResult objects with match percentages and skill details.
         """
         if not self.is_trained:
             raise ValueError("Model not trained. Call train() first.")
@@ -153,20 +154,84 @@ class SkillBasedRecommender:
         # Get top N course indices
         top_indices = np.argsort(match_percentages)[::-1][:top_n]
         
-        # Create match results
+        # Create match results with detailed skill information
         results = []
         for idx in top_indices:
             course_code = self.course_codes[idx]
             match_percentage = round(match_percentages[idx], 2)
             
-            # For completeness, we should find missing skills
-            # This would require comparing with the original course data
-            # For now, we'll leave missing_skills empty
+            # Find the course data to get required skills
+            course_data = None
+            for course in COURSES:
+                if course["code"] == course_code:
+                    course_data = course
+                    break
+            
+            # If we found the course data, determine matched and missing skills
+            missing_skills = []
+            matched_skills = []
+            if course_data:
+                # Check each required skill
+                for skill_name, required_level in course_data["required_skills"].items():
+                    # Find if faculty has this skill
+                    faculty_has_skill = False
+                    faculty_skill_level = None
+                    
+                    for faculty_skill in faculty.skills:
+                        if faculty_skill.skill.lower() == skill_name.lower():
+                            faculty_has_skill = True
+                            faculty_skill_level = faculty_skill.proficiency
+                            break
+                    
+                    # If faculty doesn't have the skill or level is too low, add to missing skills
+                    if not faculty_has_skill:
+                        missing_skills.append(
+                            SkillProficiency(
+                                skill=skill_name,
+                                proficiency=required_level
+                            )
+                        )
+                    else:
+                        # Convert enum levels to numeric for comparison
+                        faculty_level_value = {
+                            ProficiencyLevel.BEGINNER: 1,
+                            ProficiencyLevel.INTERMEDIATE: 2,
+                            ProficiencyLevel.ADVANCED: 3,
+                            ProficiencyLevel.EXPERT: 4
+                        }[faculty_skill_level]
+                        
+                        required_level_value = {
+                            ProficiencyLevel.BEGINNER: 1,
+                            ProficiencyLevel.INTERMEDIATE: 2,
+                            ProficiencyLevel.ADVANCED: 3,
+                            ProficiencyLevel.EXPERT: 4
+                        }[required_level]
+                        
+                        # If faculty level is lower than required, add to missing skills
+                        if faculty_level_value < required_level_value:
+                            missing_skills.append(
+                                SkillProficiency(
+                                    skill=skill_name,
+                                    proficiency=required_level
+                                )
+                            )
+                        else:
+                            # Add to matched skills if proficiency is sufficient
+                            matched_skills.append(
+                                SkillProficiency(
+                                    skill=skill_name,
+                                    proficiency=faculty_skill_level
+                                )
+                            )
+            
+            # Create the match result
             result = MatchResult(
-                faculty_id=faculty.id,
+                faculty_id=getattr(faculty, 'id', None),
                 course_code=course_code,
+                course_name=course_data.get("name") if course_data else None,
                 match_percentage=match_percentage,
-                missing_skills=[]  # Would need the full course data to determine missing skills
+                matched_skills=matched_skills,
+                missing_skills=missing_skills
             )
             results.append(result)
         

@@ -35,12 +35,19 @@ class Faculty(BaseModel):
     
     
 class MatchResult(BaseModel):
-    faculty_id: str
+    faculty_id: Optional[str] = None
     course_code: str
+    course_name: Optional[str] = None
     match_percentage: float
+    matched_skills: List[SkillProficiency] = []
     missing_skills: List[SkillProficiency] = []
     
     
 class RecommendationRequest(BaseModel):
-    faculty_id: str
+    faculty_id: Optional[str] = None
+    skills: List[SkillProficiency]
+
+
+class SkillOnlyRequest(BaseModel):
+    """Request model for providing only skills and proficiencies"""
     skills: List[SkillProficiency] 

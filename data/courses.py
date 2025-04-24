@@ -95,5 +95,89 @@ COURSES = [
             "Data Visualization": ProficiencyLevel.INTERMEDIATE,
             "Data Analysis": ProficiencyLevel.ADVANCED
         }
+    },
+    {
+        "code": "AIML",
+        "name": "Artificial Intelligence and Machine Learning",
+        "description": "Fundamentals of AI, machine learning algorithms, and applications.",
+        "required_skills": {
+            "Python": ProficiencyLevel.ADVANCED,
+            "Linear Algebra": ProficiencyLevel.INTERMEDIATE,
+            "Machine Learning": ProficiencyLevel.ADVANCED,
+            "Probability": ProficiencyLevel.INTERMEDIATE
+        }
+    },
+    {
+        "code": "CLOUDCOMP",
+        "name": "Cloud Computing",
+        "description": "Cloud architectures, services, and deployment models.",
+        "required_skills": {
+            "AWS": ProficiencyLevel.INTERMEDIATE,
+            "Cloud Security": ProficiencyLevel.INTERMEDIATE,
+            "Virtualization": ProficiencyLevel.ADVANCED,
+            "Networking": ProficiencyLevel.INTERMEDIATE
+        }
+    },
+    {
+        "code": "DIGIMKT",
+        "name": "Digital Marketing",
+        "description": "Online marketing strategies, SEO, and social media marketing.",
+        "required_skills": {
+            "Marketing Fundamentals": ProficiencyLevel.INTERMEDIATE,
+            "SEO": ProficiencyLevel.INTERMEDIATE,
+            "Social Media": ProficiencyLevel.ADVANCED,
+            "Analytics": ProficiencyLevel.BEGINNER
+        }
+    },
+    {
+        "code": "ENTREP",
+        "name": "Entrepreneurship",
+        "description": "Starting and managing new business ventures.",
+        "required_skills": {
+            "Business Planning": ProficiencyLevel.INTERMEDIATE,
+            "Financial Management": ProficiencyLevel.INTERMEDIATE,
+            "Market Research": ProficiencyLevel.INTERMEDIATE
+        }
+    },
+    {
+        "code": "IOT",
+        "name": "Internet of Things",
+        "description": "Design and implementation of IoT systems.",
+        "required_skills": {
+            "Embedded Systems": ProficiencyLevel.INTERMEDIATE,
+            "Networking": ProficiencyLevel.INTERMEDIATE,
+            "Python": ProficiencyLevel.INTERMEDIATE,
+            "Sensor Technologies": ProficiencyLevel.BEGINNER
+        }
+    },
+    {
+        "code": "DIGIHUM",
+        "name": "Digital Humanities",
+        "description": "Application of computational tools to humanities research.",
+        "required_skills": {
+            "Text Analysis": ProficiencyLevel.INTERMEDIATE,
+            "Data Visualization": ProficiencyLevel.BEGINNER,
+            "Research Methods": ProficiencyLevel.ADVANCED
+        }
+    },
+    {
+        "code": "HEALTHIT",
+        "name": "Health Information Technology",
+        "description": "IT systems in healthcare settings.",
+        "required_skills": {
+            "Healthcare Systems": ProficiencyLevel.INTERMEDIATE,
+            "Data Privacy": ProficiencyLevel.ADVANCED,
+            "Database Management": ProficiencyLevel.INTERMEDIATE
+        }
+    },
+    {
+        "code": "DATALAW",
+        "name": "Data Privacy Law",
+        "description": "Legal aspects of data collection and usage.",
+        "required_skills": {
+            "Legal Research": ProficiencyLevel.ADVANCED,
+            "Data Protection": ProficiencyLevel.INTERMEDIATE,
+            "Policy Analysis": ProficiencyLevel.INTERMEDIATE
+        }
     }
 ] 

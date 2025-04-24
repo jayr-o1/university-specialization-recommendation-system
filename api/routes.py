@@ -2,7 +2,7 @@ from fastapi import APIRouter, HTTPException, Path, Body, Query
 from typing import List, Optional
 import os
 
-from models.schemas import Faculty, Course, SkillProficiency, MatchResult, RecommendationRequest
+from models.schemas import Faculty, Course, SkillProficiency, MatchResult, RecommendationRequest, SkillOnlyRequest
 from utils.data_access import (
     load_all_courses, 
     get_course_by_code, 
@@ -114,7 +114,7 @@ async def match_to_course(
 @router.get("/recommendations/faculty/{faculty_id}", response_model=List[MatchResult])
 async def get_recommendations(
     faculty_id: str = Path(..., title="The faculty ID"),
-    top_n: int = 5,
+    top_n: int = 10,
     use_model: bool = Query(False, title="Use model-based recommendation")
 ):
     """Get top N course recommendations for a faculty member."""
@@ -137,7 +137,7 @@ async def get_recommendations(
 @router.post("/recommendations/custom", response_model=List[MatchResult])
 async def get_custom_recommendations(
     request: RecommendationRequest,
-    top_n: int = 5,
+    top_n: int = 10,
     use_model: bool = Query(False, title="Use model-based recommendation")
 ):
     """Get course recommendations based on custom skills input."""
@@ -165,13 +165,59 @@ async def get_custom_recommendations(
         courses = load_all_courses()
         match_results = get_top_course_matches(faculty, courses, top_n)
     
+    # Add course names
+    for result in match_results:
+        course = get_course_by_code(result.course_code)
+        if course:
+            result.course_name = course.name
+    
+    return match_results
+
+
+@router.post("/skills-to-courses", response_model=List[MatchResult])
+async def skills_to_courses(
+    request: SkillOnlyRequest,
+    top_n: int = 10,
+    use_model: bool = Query(True, title="Use model-based recommendation")
+):
+    """
+    Simplified endpoint to get course recommendations based only on skills and proficiencies.
+    No faculty information is required.
+    """
+    # Create a simplified faculty object with just the skills
+    faculty = Faculty(
+        id="temp",
+        name="Temporary",
+        department="Temporary",
+        skills=request.skills
+    )
+    
+    if use_model:
+        # Use model-based recommendations
+        recommender = get_recommender()
+        match_results = recommender.recommend_courses(faculty, top_n)
+    else:
+        # Use semantic-based recommendations
+        courses = load_all_courses()
+        match_results = get_top_course_matches(faculty, courses, top_n)
+    
+    # Add course names and clean up faculty information
+    for result in match_results:
+        # Clean up faculty information
+        result.faculty_id = None
+        
+        # Add course name
+        course = get_course_by_code(result.course_code)
+        if course:
+            result.course_name = course.name
+    
     return match_results
 
 
 @router.get("/similar-courses/{course_code}", response_model=List[dict])
 async def get_similar_courses(
     course_code: str = Path(..., title="The course code"),
-    top_n: int = 5
+    top_n: int = 10
 ):
     """Get courses similar to the specified course."""
     # Check if course exists

@@ -53,7 +53,7 @@ def main():
         )
         
         print(f"\nExample recommendations for {faculty.name}:")
-        recommendations = recommender.recommend_courses(faculty, top_n=3)
+        recommendations = recommender.recommend_courses(faculty, top_n=10)
         
         # Get course names
         course_dict = {course["code"]: course["name"] for course in COURSES}
@@ -61,13 +61,29 @@ def main():
         # Display recommendations
         for i, rec in enumerate(recommendations, 1):
             course_name = course_dict.get(rec.course_code, "Unknown Course")
-            print(f"{i}. {course_name} (Code: {rec.course_code}) - Match: {rec.match_percentage:.2f}%")
+            print(f"\n{i}. {course_name} (Code: {rec.course_code}) - Match: {rec.match_percentage:.2f}%")
+            
+            # Display matched skills
+            if rec.matched_skills:
+                print("  Matched Skills:")
+                for skill in rec.matched_skills:
+                    print(f"    - {skill.skill} ({skill.proficiency.value})")
+            else:
+                print("  Matched Skills: None")
+            
+            # Display missing skills
+            if rec.missing_skills:
+                print("  Missing Skills (Recommended Training):")
+                for skill in rec.missing_skills:
+                    print(f"    - {skill.skill} ({skill.proficiency.value})")
+            else:
+                print("  Missing Skills: None")
     
         # Show similar courses for a course
         if COURSES:
             course_code = COURSES[0]["code"]
             print(f"\nCourses similar to {course_code}:")
-            similar_courses = recommender.get_similar_courses(course_code, top_n=3)
+            similar_courses = recommender.get_similar_courses(course_code, top_n=10)
             
             for i, (similar_code, similarity) in enumerate(similar_courses, 1):
                 course_name = course_dict.get(similar_code, "Unknown Course")

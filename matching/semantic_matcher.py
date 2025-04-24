@@ -69,11 +69,13 @@ def match_faculty_to_course(faculty: Faculty, course: Course) -> MatchResult:
     total_score = 0.0
     max_possible_score = len(course.required_skills)
     missing_skills = []
+    matched_skills = []
     
     # For each required skill in the course
     for skill_name, required_proficiency in course.required_skills.items():
         best_match_score = 0.0
         exact_match_found = False
+        best_matching_faculty_skill = None
         
         # Find the best matching faculty skill
         for faculty_skill in faculty.skills:
@@ -84,6 +86,7 @@ def match_faculty_to_course(faculty: Faculty, course: Course) -> MatchResult:
             if match_score > best_match_score:
                 best_match_score = match_score
                 exact_match_found = is_exact_match
+                best_matching_faculty_skill = faculty_skill
         
         # Add to total score
         total_score += best_match_score
@@ -96,19 +99,30 @@ def match_faculty_to_course(faculty: Faculty, course: Course) -> MatchResult:
                     proficiency=required_proficiency
                 )
             )
+        else:
+            # Add to matched skills if there's a good match
+            if best_matching_faculty_skill:
+                matched_skills.append(
+                    SkillProficiency(
+                        skill=skill_name,
+                        proficiency=best_matching_faculty_skill.proficiency
+                    )
+                )
     
     # Calculate overall match percentage
     match_percentage = (total_score / max_possible_score) * 100 if max_possible_score > 0 else 0
     
     return MatchResult(
-        faculty_id=faculty.id,
+        faculty_id=getattr(faculty, 'id', None),
         course_code=course.code,
+        course_name=course.name,
         match_percentage=round(match_percentage, 2),
+        matched_skills=matched_skills,
         missing_skills=missing_skills
     )
 
 
-def get_top_course_matches(faculty: Faculty, courses: List[Course], top_n: int = 5) -> List[MatchResult]:
+def get_top_course_matches(faculty: Faculty, courses: List[Course], top_n: int = 10) -> List[MatchResult]:
     """Get top N course matches for a faculty member."""
     matches = []
     

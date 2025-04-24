@@ -73,5 +73,74 @@ FACULTIES = [
             {"skill": "Firewall Configuration", "proficiency": ProficiencyLevel.EXPERT},
             {"skill": "Threat Modeling", "proficiency": ProficiencyLevel.ADVANCED}
         ]
+    },
+    {
+        "id": "F007",
+        "name": "Dr. Lisa Zhang",
+        "department": "Computer Science",
+        "skills": [
+            {"skill": "Machine Learning", "proficiency": ProficiencyLevel.EXPERT},
+            {"skill": "Deep Learning", "proficiency": ProficiencyLevel.ADVANCED},
+            {"skill": "Python", "proficiency": ProficiencyLevel.EXPERT},
+            {"skill": "TensorFlow", "proficiency": ProficiencyLevel.ADVANCED},
+            {"skill": "Data Analysis", "proficiency": ProficiencyLevel.ADVANCED}
+        ]
+    },
+    {
+        "id": "F008",
+        "name": "Prof. Mark Thompson",
+        "department": "Information Technology",
+        "skills": [
+            {"skill": "AWS", "proficiency": ProficiencyLevel.EXPERT},
+            {"skill": "Azure", "proficiency": ProficiencyLevel.ADVANCED},
+            {"skill": "DevOps", "proficiency": ProficiencyLevel.ADVANCED},
+            {"skill": "Kubernetes", "proficiency": ProficiencyLevel.INTERMEDIATE},
+            {"skill": "Cloud Computing", "proficiency": ProficiencyLevel.EXPERT}
+        ]
+    },
+    {
+        "id": "F009",
+        "name": "Dr. Olivia Martinez",
+        "department": "Business Administration",
+        "skills": [
+            {"skill": "Digital Marketing", "proficiency": ProficiencyLevel.EXPERT},
+            {"skill": "Consumer Behavior", "proficiency": ProficiencyLevel.ADVANCED},
+            {"skill": "Market Research", "proficiency": ProficiencyLevel.EXPERT},
+            {"skill": "Business Analytics", "proficiency": ProficiencyLevel.INTERMEDIATE}
+        ]
+    },
+    {
+        "id": "F010",
+        "name": "Prof. Raj Patel",
+        "department": "Electrical Engineering",
+        "skills": [
+            {"skill": "Embedded Systems", "proficiency": ProficiencyLevel.EXPERT},
+            {"skill": "Arduino", "proficiency": ProficiencyLevel.ADVANCED},
+            {"skill": "Raspberry Pi", "proficiency": ProficiencyLevel.ADVANCED},
+            {"skill": "IoT Security", "proficiency": ProficiencyLevel.INTERMEDIATE},
+            {"skill": "Sensor Networks", "proficiency": ProficiencyLevel.ADVANCED}
+        ]
+    },
+    {
+        "id": "F011",
+        "name": "Dr. Sophia Williams",
+        "department": "Humanities",
+        "skills": [
+            {"skill": "Digital Archives", "proficiency": ProficiencyLevel.ADVANCED},
+            {"skill": "Text Mining", "proficiency": ProficiencyLevel.INTERMEDIATE},
+            {"skill": "Cultural Analytics", "proficiency": ProficiencyLevel.ADVANCED},
+            {"skill": "Natural Language Processing", "proficiency": ProficiencyLevel.INTERMEDIATE}
+        ]
+    },
+    {
+        "id": "F012",
+        "name": "Dr. Michael Brown",
+        "department": "Health Sciences",
+        "skills": [
+            {"skill": "Healthcare IT", "proficiency": ProficiencyLevel.EXPERT},
+            {"skill": "HIPAA Compliance", "proficiency": ProficiencyLevel.ADVANCED},
+            {"skill": "Medical Databases", "proficiency": ProficiencyLevel.ADVANCED},
+            {"skill": "Electronic Health Records", "proficiency": ProficiencyLevel.EXPERT}
+        ]
     }
 ] 

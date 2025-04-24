@@ -21,6 +21,7 @@ This system helps university departments:
 -   Similar course recommendations based on skill profiles
 -   Skill importance analysis across latent factors
 -   API for programmatic access and integration
+-   Provides at least 10 specialization recommendations by default
 
 ## Technology Stack
 
@@ -111,13 +112,34 @@ The system provides a RESTful API with the following endpoints:
 -   `GET /match/faculty/{faculty_id}/course/{course_code}` - Match faculty to specific course
 -   `GET /recommendations/faculty/{faculty_id}` - Get course recommendations for faculty
     -   Add `?use_model=true` to use ML-based recommendations
-    -   Add `?top_n=10` to customize number of results
+    -   Add `?top_n=15` to customize number of results (default is 10)
 -   `POST /recommendations/custom` - Get recommendations based on custom skills
     -   Add `?use_model=true` to use ML-based recommendations
 
+### Simplified Skills-Only Endpoint
+
+-   `POST /skills-to-courses` - Get course recommendations based only on skills (no faculty information needed)
+    -   Uses the ML model by default
+    -   Returns matched and missing skills for each recommendation
+    -   Example request body:
+        ```json
+        {
+            "skills": [
+                {
+                    "skill": "Python",
+                    "proficiency": "Expert"
+                },
+                {
+                    "skill": "Machine Learning",
+                    "proficiency": "Intermediate"
+                }
+            ]
+        }
+        ```
+
 ### Model-specific Endpoints
 
--   `GET /similar-courses/{course_code}` - Find courses similar to a given course
+-   `GET /similar-courses/{course_code}` - Find courses similar to a given course (returns 10 by default)
 -   `GET /skill-importance` - Get the importance of skills across latent factors
 
 For detailed API documentation with request/response schemas, visit `/docs` after starting the server.

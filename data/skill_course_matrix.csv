@@ -1,9 +1,17 @@
-course_code,MSSQL,Problem Solving,Cryptography,Operating Systems,Data Visualization,Data Modeling,CSS,Programming Fundamentals,Agile Methodologies,Computational Complexity,Data Structures,System Administration,Threat Modeling,Software Testing,Cloud Computing,JavaScript,File Systems,Statistics,Web Frameworks,Software Development,SQL,Database Design,API Integration,Project Management,Python,Machine Learning,Firewall Configuration,Data Analysis,Algorithm Analysis,Network Protocols,HTML,Virtualization,UML,Security Analysis,Logic Development
-IMDBSYS32,2,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,3,0,0,0,2,2,0,0,0,0,0,0,0,0,0,0,0,0,0
-DASTRUCT,0,3,0,0,0,0,0,0,0,2,3,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,2,0,0,0,0,0,0
-INTPROG,0,2,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,2
-PLATECH,0,0,0,2,0,0,0,0,0,0,0,2,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0
-WEBDEVT,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,2,0,0,2,0,0,0,2,0,0,0,0,0,0,0,3,0,0,0,0
-NETSEC,0,0,2,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,3,0,0,0,2,0
-SOFTENG,0,0,0,0,0,0,0,0,2,0,0,0,0,2,0,0,0,0,0,3,0,0,0,2,0,0,0,0,0,0,0,0,2,0,0
-DATASCI,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,3,2,0,3,0,0,0,0,0,0,0
+course_code,Legal Research,Probability,AWS,Data Analysis,Embedded Systems,MSSQL,Operating Systems,Python,Data Visualization,Software Development,Security Analysis,Sensor Technologies,Data Structures,Network Protocols,Agile Methodologies,Computational Complexity,Networking,SQL,Linear Algebra,Social Media,Programming Fundamentals,Software Testing,Web Frameworks,System Administration,Threat Modeling,Virtualization,Data Protection,JavaScript,Financial Management,Market Research,HTML,Research Methods,File Systems,UML,Analytics,Machine Learning,SEO,Business Planning,Healthcare Systems,Policy Analysis,Cloud Security,Database Design,Problem Solving,CSS,Data Modeling,Algorithm Analysis,Logic Development,Cryptography,Marketing Fundamentals,Data Privacy,Database Management,Cloud Computing,Text Analysis,Project Management,Firewall Configuration,API Integration,Statistics
+IMDBSYS32,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,2,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0
+DASTRUCT,0,0,0,0,0,0,0,2,0,0,0,0,3,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,2,0,0,0,0,0,0,0,0,0,0,0
+INTPROG,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,2,0,0,0,0,0,0,0,0,0,0
+PLATECH,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0
+WEBDEVT,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,2,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,2,0
+NETSEC,0,0,0,0,0,0,0,0,0,0,2,0,0,3,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,2,0,0
+SOFTENG,0,0,0,0,0,0,0,0,0,3,0,0,0,0,2,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0
+DATASCI,0,0,0,3,0,0,0,3,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3
+AIML,0,2,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+CLOUDCOMP,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+DIGIMKT,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,2,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0
+ENTREP,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+IOT,0,0,0,0,2,0,0,2,0,0,0,1,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+DIGIHUM,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0
+HEALTHIT,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,3,2,0,0,0,0,0,0
+DATALAW,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0

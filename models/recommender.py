@@ -247,12 +247,15 @@ class SkillBasedRecommender:
             models_dir = os.path.dirname(os.path.abspath(__file__))
             model_path = os.path.join(models_dir, "recommender_model.npz")
         
+        # Ensure course_codes is saved as object array to preserve strings
         np.savez(
             model_path,
             W=self.W,
             H=self.H,
-            course_codes=self.course_codes,
-            skill_names=np.array(self.skill_names)
+            course_codes=np.array(self.course_codes, dtype=object),
+            skill_names=np.array(self.skill_names, dtype=object),
+            n_components=self.n_components,
+            random_state=self.random_state
         )
         
         return model_path
@@ -260,15 +263,31 @@ class SkillBasedRecommender:
     def load_model(self, model_path: str):
         """Load a previously trained model"""
         # Load the model components
-        with np.load(model_path) as data:
+        with np.load(model_path, allow_pickle=True) as data:
             self.W = data['W']
             self.H = data['H']
             self.course_codes = data['course_codes']
             self.skill_names = data['skill_names'].tolist()
+            
+            # Update n_components if available
+            if 'n_components' in data:
+                self.n_components = int(data['n_components'])
+            else:
+                # Infer from the shape of H
+                self.n_components = self.H.shape[0]
+        
+        # Recreate the NMF model with the correct n_components
+        self.model = NMF(n_components=self.n_components, init='random', random_state=self.random_state, max_iter=500)
         
         # Reconstruct the model state
         self.course_factors = self.W
         self.course_similarities = cosine_similarity(self.course_factors)
+        
+        # Create a fitted NMF model (needed for transform method)
+        self.model.components_ = self.H
+        self.model.n_components_ = self.H.shape[0]
+        self.model.n_features_in_ = self.H.shape[1]
+        
         self.is_trained = True
         
         return self 

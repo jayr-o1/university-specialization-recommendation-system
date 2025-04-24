@@ -1,6 +1,7 @@
 from fastapi import APIRouter, HTTPException, Path, Body, Query
 from typing import List, Optional
 import os
+import numpy as np
 
 from models.schemas import Faculty, Course, SkillProficiency, MatchResult, RecommendationRequest, SkillOnlyRequest
 from utils.data_access import (
@@ -31,22 +32,58 @@ def get_recommender():
         models_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'models'))
         model_path = os.path.join(models_dir, "recommender_model.npz")
         
-        if os.path.exists(model_path):
-            # Load existing model
-            _recommender = SkillBasedRecommender()
-            _recommender.load_model(model_path)
-        else:
-            # Create new model
+        try:
+            if os.path.exists(model_path):
+                # Check the n_components value in the saved model
+                with np.load(model_path, allow_pickle=True) as data:
+                    if 'n_components' in data:
+                        n_components = int(data['n_components'])
+                    else:
+                        # Default to 5 if not found
+                        n_components = 5
+                
+                # Load existing model with the correct number of components
+                print(f"Loading model from {model_path} with {n_components} components")
+                _recommender = SkillBasedRecommender(n_components=n_components)
+                _recommender.load_model(model_path)
+                
+                # Verify the model is properly loaded
+                if not _recommender.is_trained:
+                    raise ValueError("Model loaded but not marked as trained")
+            else:
+                # Create new model
+                print("Model file not found. Training new model...")
+                from data.dataset import save_dataset_as_csv
+                save_dataset_as_csv()
+                
+                data_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'data'))
+                skill_matrix_path = os.path.join(data_dir, "skill_course_matrix.csv")
+                
+                # Use 5 components for consistency
+                n_components = 5
+                _recommender = SkillBasedRecommender(n_components=n_components)
+                _recommender.load_data(skill_matrix_path)
+                _recommender.train()
+                _recommender.save_model(model_path)
+                print(f"New model trained and saved to {model_path}")
+                
+        except Exception as e:
+            print(f"Error loading/creating recommender model: {str(e)}")
+            # If there's any error, let's just train a new model
+            print("Training new model due to error...")
             from data.dataset import save_dataset_as_csv
             save_dataset_as_csv()
             
             data_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'data'))
             skill_matrix_path = os.path.join(data_dir, "skill_course_matrix.csv")
             
-            _recommender = SkillBasedRecommender(n_components=5)
+            # Use 5 components for consistency
+            n_components = 5
+            _recommender = SkillBasedRecommender(n_components=n_components)
             _recommender.load_data(skill_matrix_path)
             _recommender.train()
-            _recommender.save_model()
+            _recommender.save_model(model_path)
+            print(f"New model trained and saved to {model_path}")
     
     return _recommender
 

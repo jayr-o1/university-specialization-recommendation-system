@@ -1,0 +1,1669 @@
+{
+    "Communication Arts": {
+        "required_skills": [
+            "Public Speaking",
+            "Academic Writing",
+            "Interpersonal Communication",
+            "Speech Communication",
+            "Group Communication",
+            "Argumentation and Debate",
+            "Cross-Cultural Communication",
+            "Nonverbal Communication",
+            "Listening and Feedback",
+            "Communication Theory",
+            "Rhetorical Theory",
+            "Semiotics and Symbolic Interaction",
+            "Media and Communication Ethics",
+            "Persuasion Theory",
+            "Discourse Analysis",
+            "Sociolinguistics",
+            "Academic Literacy",
+            "Technical Writing",
+            "Creative Writing",
+            "Research Writing",
+            "Grammar and Syntax",
+            "Textual Analysis",
+            "Digital Presentation Tools",
+            "Audio/Visual Communication",
+            "Voice Modulation and Clarity",
+            "Media Literacy",
+            "Podcasting and Video Production Basics",
+            "Lesson Planning",
+            "Curriculum Development",
+            "Educational Technology Use",
+            "Assessment Design and Rubric Development",
+            "Classroom Management",
+            "Instructional Communication",
+            "Inclusive Teaching Practices",
+            "Student Engagement Strategies",
+            "Qualitative Research Methods",
+            "Quantitative Research Methods",
+            "Literature Review Skills",
+            "Academic Publishing and Peer Review",
+            "Citation and Referencing Styles",
+            "English Language Proficiency",
+            "Linguistics Fundamentals",
+            "Critical Reading Skills"
+        ]
+    },
+    "Gender and Society": {
+        "required_skills": [
+            "Gender Studies",
+            "Sociological Theory",
+            "Research Methods",
+            "Social Psychology",
+            "Feminist Theory",
+            "Intersectionality",
+            "Qualitative Research",
+            "Quantitative Research",
+            "Social Justice",
+            "Critical Race Theory",
+            "Sexuality Studies",
+            "Cultural Anthropology",
+            "Discourse Analysis",
+            "Human Rights and Advocacy",
+            "Curriculum Development",
+            "Facilitation of Sensitive Topics",
+            "Inclusive Pedagogy",
+            "Policy Analysis",
+            "Ethics in Social Research",
+            "Academic Writing",
+            "Public Speaking",
+            "Media Literacy"
+        ]
+    },
+    "College Mathematics": {
+        "required_skills": [
+            "Algebra",
+            "Trigonometry",
+            "Calculus",
+            "Mathematical Reasoning",
+            "Problem Solving",
+            "Number Theory",
+            "Mathematical Proofs",
+            "Statistical Thinking",
+            "Geometry",
+            "Pre-Calculus",
+            "Linear Equations and Inequalities",
+            "Functions and Graphs",
+            "Logic and Set Theory",
+            "Mathematics Pedagogy",
+            "Lesson Planning",
+            "Use of Educational Technology (e.g., GeoGebra, Desmos)",
+            "Assessment and Feedback Design",
+            "Mathematics Communication",
+            "Critical Thinking",
+            "Numerical Methods",
+            "Basic Statistics",
+            "Mathematical Modeling",
+            "Time Management and Pacing for Instruction"
+        ]
+    },
+    "Understanding the Self": {
+        "required_skills": [
+            "Psychological Theory",
+            "Personality Psychology",
+            "Social Psychology",
+            "Developmental Psychology",
+            "Counseling Techniques",
+            "Self and Identity Theory",
+            "Cognitive Psychology",
+            "Emotional Intelligence",
+            "Motivation and Behavior",
+            "Humanistic Psychology",
+            "Mindfulness and Self-Awareness",
+            "Reflective Practice",
+            "Life-Span Development",
+            "Cultural Psychology",
+            "Interpersonal Communication",
+            "Ethics in Psychology",
+            "Educational Psychology",
+            "Lesson Facilitation and Student Engagement",
+            "Active Listening and Empathy",
+            "Psychological Assessment Literacy",
+            "Research Methods in Psychology"
+        ]
+    },
+    "Introduction to Computing": {
+        "required_skills": [
+            "Computer Fundamentals",
+            "Computing History",
+            "Operating Systems",
+            "Computer Hardware",
+            "Digital Literacy",
+            "Information and Communication Technology (ICT)",
+            "Software Applications (Word Processing, Spreadsheets, Presentations)",
+            "File Management and Organization",
+            "Internet and Web Basics",
+            "Basic Programming Concepts",
+            "Binary and Data Representation",
+            "Introduction to Algorithms",
+            "Cybersecurity Awareness",
+            "Computer Ethics and Legal Issues",
+            "Educational Technology Tools (e.g., LMS, Google Workspace)",
+            "Technical Troubleshooting",
+            "Instructional Design for Tech Subjects",
+            "Digital Communication and Collaboration",
+            "Keyboarding and Typing Proficiency"
+        ]
+    },
+    "Computer Programming 1": {
+        "required_skills": [
+            "Object-Oriented Programming",
+            "Data Structures",
+            "Program Design",
+            "Algorithm Analysis",
+            "Software Development",
+            "Debugging Techniques",
+            "Code Optimization",
+            "Version Control",
+            "Programming Logic and Flow Control",
+            "Syntax and Semantics of Programming Languages",
+            "File I/O Operations",
+            "Error Handling and Exception Management",
+            "Integrated Development Environments (IDEs)",
+            "Code Documentation",
+            "Software Testing and Unit Testing",
+            "Recursion",
+            "Intro to Databases (CRUD Operations)",
+            "Basic Software Engineering Principles",
+            "Agile or Iterative Development Concepts",
+            "Collaborative Coding Practices",
+            "Git and GitHub Basics",
+            "Problem Solving and Computational Thinking",
+            "Teaching Programming Concepts",
+            "Student Code Review and Feedback"
+        ]
+    },
+    "Web Design & Development": {
+        "required_skills": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Web Design Principles",
+            "Responsive Design",
+            "User Interface (UI) Design",
+            "User Experience (UX) Design",
+            "Mobile-First Design",
+            "Web Accessibility (WCAG Guidelines)",
+            "CSS Frameworks (e.g., Bootstrap, Tailwind CSS)",
+            "JavaScript Libraries (e.g., jQuery)",
+            "Version Control (Git/GitHub)",
+            "Browser Developer Tools",
+            "Web Hosting and Deployment",
+            "Basic SEO Principles",
+            "Web Typography",
+            "Cross-Browser Compatibility",
+            "Web Project Planning",
+            "Design Prototyping Tools (e.g., Figma, Adobe XD)",
+            "Client-Side Debugging",
+            "Web Standards and Best Practices",
+            "Digital Communication with Stakeholders",
+            "Instructional Design for Tech Courses",
+            "Code Review and Visual Feedback Techniques"
+        ]
+    },
+    "Movement Competency Training (PATHFit 1)": {
+        "required_skills": [
+            "Physical Education Theory",
+            "Movement Analysis",
+            "Exercise Physiology",
+            "Sports Science",
+            "Fitness Assessment",
+            "Motor Learning and Control",
+            "Biomechanics",
+            "Anatomy and Kinesiology",
+            "Physical Fitness Programming",
+            "Functional Movement Screening (FMS)",
+            "Health and Wellness Coaching",
+            "Injury Prevention and Management",
+            "Behavioral Coaching and Motivation",
+            "Instructional Strategies in PE",
+            "Assessment and Feedback in Physical Activities",
+            "Inclusive and Adaptive Physical Education",
+            "Team and Individual Sports Fundamentals",
+            "Nutrition and Lifestyle Education",
+            "CPR and First Aid Certification",
+            "Use of PE Technology and Wearables"
+        ]
+    },
+    "National Service Training Program 1": {
+        "required_skills": [
+            "Civic Responsibility",
+            "Community Development",
+            "Leadership",
+            "Philippine Society and Culture",
+            "Disaster Preparedness",
+            "Volunteerism and Service Learning",
+            "Social Advocacy and Civic Engagement",
+            "Public Service Ethics",
+            "Environmental Awareness and Sustainability",
+            "Human Rights Education",
+            "Project Planning and Implementation",
+            "Team Building and Group Facilitation",
+            "Conflict Resolution and Mediation",
+            "Communication for Development (C4D)",
+            "Risk Reduction and Emergency Response",
+            "Cultural Sensitivity and Inclusion",
+            "Basic First Aid and Emergency Skills",
+            "Educational Facilitation in Communities",
+            "Documentation and Reporting of Service Activities",
+            "Policy Literacy (e.g., NSTP Law, civic laws)"
+        ]
+    },
+    "Purposive Communication": {
+        "required_skills": [
+            "Business Communication",
+            "Technical Writing",
+            "Communication Theory",
+            "Critical Thinking",
+            "Presentation Skills",
+            "Interpersonal Communication",
+            "Report Writing",
+            "Speech Writing and Delivery",
+            "Cross-Cultural Communication",
+            "Negotiation and Persuasion Techniques",
+            "Digital Communication (Email, Social Media, Online Presentations)",
+            "Public Speaking",
+            "Listening and Feedback Skills",
+            "Audience Analysis and Adaptation",
+            "Group Communication and Teamwork",
+            "Crisis Communication",
+            "Nonverbal Communication",
+            "Ethics in Communication",
+            "Communication in Conflict Resolution",
+            "Language and Media Criticism",
+            "Writing for Different Audiences (e.g., technical, lay, academic)",
+            "Communication in Professional Settings"
+        ]
+    },
+    "The Entrepreneurial Mind": {
+        "required_skills": [
+            "Entrepreneurship Principles",
+            "Business Planning",
+            "Market Analysis",
+            "Innovation Management",
+            "Financial Literacy",
+            "Opportunity Recognition",
+            "Business Model Development",
+            "Risk Management",
+            "Marketing and Sales Strategies",
+            "Supply Chain and Operations Management",
+            "Startup Ecosystem Understanding",
+            "Pitching and Investor Relations",
+            "Legal Aspects of Business (e.g., business structure, IP)",
+            "Financial Forecasting and Budgeting",
+            "Business Ethics and Social Responsibility",
+            "Leadership in Startups",
+            "Negotiation Skills for Entrepreneurs",
+            "Customer Relationship Management",
+            "Creative Thinking and Problem-Solving",
+            "Networking and Collaboration for Entrepreneurs",
+            "Time Management and Productivity",
+            "E-Commerce and Digital Business Models",
+            "Business Communication for Entrepreneurs"
+        ]
+    },
+    "Mathematics in the Modern World": {
+        "required_skills": [
+            "Applied Mathematics",
+            "Statistics",
+            "Mathematical Modeling",
+            "Data Analysis",
+            "Logic and Set Theory",
+            "Linear Algebra",
+            "Probability Theory",
+            "Quantitative Reasoning",
+            "Mathematical Proofs",
+            "Computational Mathematics",
+            "Graph Theory",
+            "Mathematical Software Tools (e.g., MATLAB, R)",
+            "Optimization Techniques",
+            "Survey Design and Sampling Techniques",
+            "Mathematics for Social Sciences and Business",
+            "Data Visualization and Interpretation",
+            "Trigonometry and Geometry in Applications",
+            "Understanding Algorithms and Computation",
+            "Critical Thinking and Problem Solving",
+            "Ethics in Data Collection and Analysis",
+            "Modeling Real-World Problems (e.g., economics, biology)"
+        ]
+    },
+    "Readings in Philippine History": {
+        "required_skills": [
+            "Philippine History",
+            "Historical Research",
+            "Historiography",
+            "Cultural Anthropology",
+            "Political Science",
+            "Historical Methodology",
+            "Primary Source Analysis",
+            "Oral History Techniques",
+            "Political History of the Philippines",
+            "Social Movements and Revolution",
+            "Colonialism and Post-Colonial Studies",
+            "Public History and Museum Studies",
+            "History of Filipino Identity and Culture",
+            "Philippine Economic History",
+            "Philippine Literature in History",
+            "Global Historical Context of the Philippines",
+            "Contemporary Philippine Issues in Historical Perspective",
+            "Nationalism and Independence Movements",
+            "History and Education (Pedagogy of History)",
+            "Critical Thinking and Historical Analysis",
+            "Ethics in Historical Interpretation"
+        ]
+    },
+    "Art Appreciation": {
+        "required_skills": [
+            "Art History",
+            "Aesthetic Theory",
+            "Visual Arts",
+            "Cultural Studies",
+            "Art Criticism",
+            "Art Movements and Periods (e.g., Renaissance, Baroque, Modernism)",
+            "Techniques and Media in Visual Arts (Painting, Sculpture, Photography)",
+            "Iconography and Symbolism in Art",
+            "Museum and Gallery Studies",
+            "Art and Society (Art as Reflection of Culture and Politics)",
+            "Visual Literacy",
+            "Art Education and Pedagogy",
+            "Interdisciplinary Approaches to Art (e.g., History, Sociology, Psychology)",
+            "Art Theory and Philosophical Perspectives",
+            "Art Conservation and Restoration",
+            "Public Art and Urban Art",
+            "Non-Western Art Traditions",
+            "Art Appreciation Techniques and Teaching Methods",
+            "Art in the Digital Age (Digital Art, Multimedia)",
+            "Art and Popular Culture",
+            "Critical Thinking and Visual Analysis"
+        ]
+    },
+    "Computer Programming 2": {
+        "required_skills": [
+            "Object-Oriented Programming",
+            "Data Structures",
+            "Program Design",
+            "Algorithm Analysis",
+            "Software Development",
+            "Recursion and Recursive Algorithms",
+            "Advanced Sorting and Searching Algorithms",
+            "Graph Algorithms",
+            "Dynamic Programming",
+            "Memory Management and Optimization",
+            "Software Engineering Practices",
+            "Version Control Systems (Git)",
+            "Testing and Debugging Techniques",
+            "Multithreading and Concurrency",
+            "Design Patterns (e.g., Singleton, Factory, Observer)",
+            "Database Management and Integration",
+            "Web Programming (e.g., Front-end, Back-end basics)",
+            "API Design and Integration",
+            "User Interface (UI) and User Experience (UX) Design",
+            "Code Refactoring and Maintenance",
+            "Performance Tuning and Profiling",
+            "Secure Coding Practices",
+            "Collaborative Software Development (Agile, Scrum)"
+        ]
+    },
+    "Discrete Structures": {
+        "required_skills": [
+            "Discrete Mathematics",
+            "Set Theory",
+            "Graph Theory",
+            "Mathematical Logic",
+            "Combinatorics",
+            "Number Theory",
+            "Algorithms in Discrete Mathematics",
+            "Boolean Algebra and Boolean Functions",
+            "Relations and Functions",
+            "Trees and Tree Algorithms",
+            "Mathematical Proof Techniques (Induction, Contradiction)",
+            "Recursion and Recursive Structures",
+            "Finite Automata and Formal Languages",
+            "Graph Algorithms (e.g., BFS, DFS, Shortest Path)",
+            "Planarity and Graph Coloring",
+            "Combinatorial Optimization",
+            "Discrete Probability",
+            "Cryptography and Information Security (Introduction)",
+            "Turing Machines and Computational Complexity",
+            "Mathematical Modelling of Real-world Problems",
+            "Applications of Discrete Structures in Computer Science"
+        ]
+    },
+    "Exercise-based Fitness Activities (PATHFit 2)": {
+        "required_skills": [
+            "Fitness Program Design",
+            "Exercise Science",
+            "Health Promotion",
+            "Training Principles",
+            "Group Exercise Instruction",
+            "Exercise Physiology",
+            "Movement Analysis and Biomechanics",
+            "Strength and Conditioning Techniques",
+            "Cardiovascular Fitness Programming",
+            "Flexibility and Mobility Training",
+            "Behavioral Science in Fitness",
+            "Nutrition for Fitness and Health",
+            "Injury Prevention and Management",
+            "Fitness Assessment and Testing",
+            "Motivational Strategies for Clients",
+            "Exercise for Special Populations (e.g., elderly, pregnant women)",
+            "Sports Psychology and Mental Toughness",
+            "Fitness Technology (e.g., wearables, apps)",
+            "Functional Fitness Training",
+            "Exercise Program Monitoring and Adaptation",
+            "Health and Fitness Certification Knowledge",
+            "Community Fitness Initiatives"
+        ]
+    },
+    "National Service Training Program 2": {
+        "required_skills": [
+            "Community Service",
+            "Teambuilding",
+            "Social Responsibility",
+            "Public Service Ethics",
+            "Community Development",
+            "Leadership",
+            "Philippine Society and Culture",
+            "Disaster Preparedness",
+            "Volunteerism and Service Learning",
+            "Social Advocacy and Civic Engagement",
+            "Environmental Awareness and Sustainability",
+            "Human Rights Education",
+            "Project Planning and Implementation",
+            "Team Building and Group Facilitation",
+            "Conflict Resolution and Mediation",
+            "Communication for Development (C4D)",
+            "Risk Reduction and Emergency Response",
+            "Cultural Sensitivity and Inclusion",
+            "Basic First Aid and Emergency Skills",
+            "Educational Facilitation in Communities",
+            "Documentation and Reporting of Service Activities",
+            "Policy Literacy (e.g., NSTP Law, civic laws)"
+        ]
+    },
+    "The Contemporary World": {
+        "required_skills": [
+            "Global Issues",
+            "International Relations",
+            "Sociological Analysis",
+            "Contemporary Politics",
+            "Cultural Globalization",
+            "International Relations and Diplomacy",
+            "Cultural Globalization and its Impact on Society",
+            "Global Governance and International Organizations",
+            "International Political Economy",
+            "Human Rights and Global Justice",
+            "Transnational Movements and Global Activism",
+            "Comparative Politics",
+            "Global Environmental Issues and Sustainability",
+            "Migration and Refugee Studies",
+            "Global Conflict and Peacebuilding",
+            "Post-Colonialism and Global Inequality",
+            "Digital Globalization and the Internet",
+            "Cultural and Economic Imperialism",
+            "International Law and Global Security",
+            "Foreign Policy and Global Diplomacy",
+            "Social Movements and Global Change",
+            "Global Health and Pandemic Responses"
+        ]
+    },
+    "Life, Works & Writings of Dr. Jose Rizal": {
+        "required_skills": [
+            "Rizal Studies",
+            "Philippine History",
+            "Literary Analysis",
+            "Nationalism",
+            "Historical Biography",
+            "History of Philippine Revolution",
+            "Social and Political Context of Rizal's Time",
+            "Analysis of Rizal's Novels (e.g., Noli Me Tangere, El Filibusterismo)",
+            "Philippine Colonial History",
+            "Rizal's Influence on Philippine Independence",
+            "Comparative Analysis of Rizal's Writings and Other Nationalist Texts",
+            "Rizal's Role in the Reform Movement",
+            "Literary Devices in Rizal's Writings",
+            "Rizal's Philosophy and Ideology",
+            "Cultural and Ethical Implications of Rizal's Works",
+            "Rizal and the Catholic Church in the Philippines",
+            "The Legacy of Dr. Jose Rizal in Modern Philippine Society",
+            "Research Methods in Rizal Studies",
+            "Rizal and the Concept of Filipino Identity",
+            "Rizal's Personal Life and Works (Letters, Diaries, Poetry)",
+            "Critical Thinking and Evaluation of Rizal's Contributions"
+        ]
+    },
+    "Digital Logic Design": {
+        "required_skills": [
+            "Digital Electronics",
+            "Boolean Algebra",
+            "Circuit Design",
+            "Logic Gates",
+            "Computer Architecture",
+            "Digital Logic Design Fundamentals",
+            "Boolean Algebra and Logic Gates",
+            "Combinational Logic Design",
+            "Sequential Logic Design",
+            "Digital Circuit Design",
+            "Digital Logic Design Tools (e.g., VHDL, Verilog)",
+            "Digital Logic Design Applications",
+            "Digital Logic Design Projects",
+            "Finite State Machines (FSM)",
+            "Flip-Flops and Registers",
+            "Multiplexers, Decoders, and Encoders",
+            "Arithmetic Logic Unit (ALU) Design",
+            "Synthesis of Digital Circuits",
+            "Timing Analysis and Optimization",
+            "Digital System Simulation and Testing",
+            "CAD Tools for Circuit Design",
+            "Microprocessor and Microcontroller Design",
+            "Low-Level Digital Design (e.g., FPGA, ASIC)",
+            "Digital Circuit Troubleshooting"
+        ]
+    },
+    "Object Oriented Programming": {
+        "required_skills": [
+            "OOP Principles",
+            "Java Programming",
+            "Software Design Patterns",
+            "UML Modeling",
+            "Code Refactoring",
+            "Object-Oriented Programming Fundamentals",
+            "Java Language Features",
+            "Software Design Patterns and UML",
+            "Object-Oriented Analysis and Design",
+            "Software Development Methodologies",
+            "Software Testing and Debugging",
+            "Software Documentation and Maintenance",
+            "Software Engineering Practices",
+            "Software Development Tools (e.g., Eclipse, IntelliJ IDEA)",
+            "Software Development Environments (e.g., Spring, Hibernate)",
+            "Version Control Systems (e.g., Git)",
+            "Agile Development Practices",
+            "Unit Testing and Test-Driven Development (TDD)",
+            "Refactoring Techniques and Best Practices",
+            "Performance Optimization and Code Profiling",
+            "Design and Implementation of Reusable Components",
+            "Multithreading and Concurrency in Java",
+            "Exception Handling and Debugging",
+            "Collaboration and Pair Programming Techniques",
+            "Project Management Tools (e.g., JIRA, Trello)"
+        ]
+    },
+    "System Analysis & Design": {
+        "required_skills": [
+            "Requirements Engineering",
+            "Process Modeling",
+            "Systems Thinking",
+            "UML Diagrams",
+            "Project Management",
+            "System Analysis and Design Fundamentals",
+            "UML Modeling and Design Patterns",
+            "Software Development Methodologies",
+            "Requirements Engineering and Analysis",
+            "Process Modeling and UML Diagrams",
+            "System Architecture and Design Patterns",
+            "Software Testing and Quality Assurance",
+            "Software Documentation and Maintenance",
+            "Software Engineering Practices",
+            "Software Development Tools (e.g., UML tools, CASE tools)",
+            "Agile Development Practices",
+            "Object-Oriented Design and Analysis",
+            "Database Modeling and Design",
+            "Data Flow Diagrams and Entity-Relationship Diagrams",
+            "System Integration and Testing",
+            "Risk Management and Mitigation",
+            "Change Management in System Development",
+            "User-Centered Design (UCD) and Human-Computer Interaction (HCI)",
+            "Stakeholder Communication and Collaboration",
+            "Version Control and Configuration Management",
+            "System Documentation and Reporting"
+        ]
+    },
+    "Accounting for IT": {
+        "required_skills": [
+            "Accounting Principles",
+            "Information Systems",
+            "Financial Analysis",
+            "Business Process",
+            "IT Budgeting",
+            "Accounting Principles and Concepts",
+            "Financial Accounting and Reporting",
+            "Managerial Accounting and Decision Making",
+            "IT-Specific Accounting Issues",
+            "Cost Accounting and Management",
+            "Auditing and Internal Controls",
+            "Taxation and Financial Reporting Standards",
+            "Financial Statement Analysis",
+            "Budgeting and Forecasting",
+            "Performance Evaluation and Reporting",
+            "IT-Specific Accounting Standards",
+            "Asset Management and Capital Budgeting in IT",
+            "Revenue Recognition in IT",
+            "Cloud Computing and IT Financial Management",
+            "IT Project Financials and Cost Tracking",
+            "Financial Reporting for IT Projects",
+            "Data-Driven Financial Decision Making",
+            "Internal Audits and IT Compliance",
+            "Risk Management in IT Finance",
+            "Cost Allocation and Cost Management in IT"
+        ]
+    },
+    "Technical Writing & Presentation Skills in IT": {
+        "required_skills": [
+            "Technical Writing",
+            "Documentation",
+            "Presentation Techniques",
+            "Communication for IT",
+            "Visual Communication",
+            "Technical Writing Fundamentals",
+            "Documentation Standards and Best Practices",
+            "Documentation Tools and Techniques",
+            "Documentation and Documentation Management",
+            "Technical Writing for IT Audiences",
+            "Clear and Concise Communication in IT",
+            "User Manuals and Guides for IT Systems",
+            "Report Writing for IT Projects",
+            "Online Help Systems and FAQs",
+            "IT Project Documentation and Tracking",
+            "Technical Blogging and Online Content Creation",
+            "Presentation Skills for IT Professionals",
+            "Designing Effective Technical Presentations",
+            "Visual Aids and Infographics for Technical Content",
+            "PowerPoint and Other Presentation Tools",
+            "Communication with Non-Technical Audiences",
+            "Document Version Control and Collaboration Tools",
+            "Technical Proposals and RFPs",
+            "Editing and Proofreading Technical Content"
+        ]
+    },
+    "Sports and Dance (PATHFit 3)": {
+        "required_skills": [
+            "Sports Pedagogy",
+            "Dance Instruction",
+            "Choreography",
+            "Sports Coaching",
+            "Performance Assessment",
+            "Sports Pedagogy and Teaching Methods",
+            "Dance Instruction for Different Levels",
+            "Choreography and Dance Routines",
+            "Sports Coaching Techniques and Strategies",
+            "Sports Injury Prevention and Rehabilitation",
+            "Fitness and Conditioning for Athletes",
+            "Performance Feedback and Evaluation",
+            "Sports Psychology and Motivation Techniques",
+            "Team Dynamics and Communication",
+            "Competitive Sports and Team Building",
+            "Cultural and Traditional Dance Styles",
+            "Dance Performance Analysis",
+            "Dance Movements and Physical Conditioning",
+            "Sport-Specific Drills and Training Methods",
+            "Athlete Development and Long-Term Training Plans",
+            "Event Management and Coordination for Sports and Dance",
+            "Public Speaking and Presentation for Sports Events"
+        ]
+    },
+    "Science, Technology & Society": {
+        "required_skills": [
+            "Science and Technology Studies",
+            "Ethics of Technology",
+            "History of Science",
+            "Sociological Theory",
+            "Philosophy of Science",
+            "Science and Technology in Society",
+            "Ethical Implications of Emerging Technologies",
+            "History of Scientific Development and Innovation",
+            "Social and Cultural Impact of Technology",
+            "Philosophical Foundations of Scientific Inquiry",
+            "Technological Determinism vs. Social Shaping of Technology",
+            "Environmental Impact of Technology",
+            "Technological Innovation and Social Change",
+            "Global Technology and Policy Issues",
+            "Technological Risk and Uncertainty",
+            "Science Communication and Public Engagement",
+            "Technology and Society Debates (e.g., Privacy, AI, Biotechnology)",
+            "Ethics of Artificial Intelligence and Automation",
+            "Digital Technology and Social Networks",
+            "Technology and Economic Development",
+            "Sociology of Knowledge and Technology",
+            "Ethical Decision-Making in Technology Design and Use"
+        ]
+    },
+    "Ethics": {
+        "required_skills": [
+            "Ethical Theory",
+            "Moral Philosophy",
+            "Applied Ethics",
+            "Critical Thinking",
+            "Philosophical Analysis",
+            "Ethics and Moral Philosophy",
+            "Applied Ethics and Moral Decision-Making",
+            "Ethical Analysis and Moral Reasoning",
+            "Ethical Theories and Philosophical Foundations",
+            "Ethical Decision-Making Models",
+            "Moral Dilemmas and Ethical Case Studies",
+            "Normative Ethics",
+            "Meta-Ethics",
+            "Virtue Ethics",
+            "Deontological Ethics",
+            "Utilitarianism",
+            "Ethics of Technology and AI",
+            "Bioethics and Medical Ethics",
+            "Environmental Ethics",
+            "Business Ethics and Corporate Social Responsibility",
+            "Human Rights and Global Justice",
+            "Social and Political Ethics",
+            "Ethical Leadership and Governance",
+            "Ethics in Research and Scientific Integrity",
+            "Philosophical Writing and Argumentation",
+            "Philosophical Debate and Discussion"
+        ]
+    },
+    "Quantitative Methods w/ Prob. Stat.": {
+        "required_skills": [
+            "Statistics",
+            "Probability Theory",
+            "Quantitative Analysis",
+            "Data Interpretation",
+            "Research Methods",
+            "Statistics Fundamentals",
+            "Probability Theory and Distribution",
+            "Quantitative Data Analysis",
+            "Statistical Inference",
+            "Research Methods and Experimental Design",
+            "Statistical Software (e.g., SPSS, R, SAS)",
+            "Hypothesis Testing and Confidence Intervals",
+            "Regression Analysis",
+            "Correlation Analysis",
+            "Data Visualization Techniques",
+            "Sampling Methods and Techniques",
+            "Bayesian Statistics",
+            "Multivariate Analysis",
+            "Time Series Analysis",
+            "Survey Design and Questionnaire Development",
+            "Experimental and Observational Studies",
+            "Data Cleaning and Preparation",
+            "Statistical Power and Sample Size Calculation",
+            "Quantitative Research Reporting"
+        ]
+    },
+    "Platform Technologies w/ Op. Sys.": {
+        "required_skills": [
+            "Operating Systems",
+            "Platform Architecture",
+            "Virtualization",
+            "System Administration",
+            "Cloud Computing",
+            "Operating Systems Fundamentals",
+            "Platform Architecture and Virtualization",
+            "System Administration and Cloud Computing",
+            "Cloud Platforms and Services",
+            "Virtualization Technologies",
+            "Operating System Management",
+            "Cloud Computing Fundamentals",
+            "Virtualization and Containerization",
+            "Cloud Security and Management",
+            "Cloud Computing and Virtualization",
+            "Linux/Unix Systems Administration",
+            "Windows Systems Administration",
+            "Network Management in Cloud Environments",
+            "Platform Integration and Scalability",
+            "Containerized Application Deployment (e.g., Docker, Kubernetes)",
+            "Virtual Machines and Hypervisor Technologies",
+            "Operating System Troubleshooting and Performance Tuning",
+            "Cloud Migration and Integration",
+            "Cloud Infrastructure as a Service (IaaS)"
+        ]
+    },
+    "Applications Dev't & Emerging Tech.": {
+        "required_skills": [
+            "Application Development",
+            "Software Engineering",
+            "UI/UX Design",
+            "Emerging Technologies",
+            "Mobile Development",
+            "Software Development Lifecycle",
+            "Agile Development Methodologies",
+            "UI/UX Principles and Design Thinking",
+            "Mobile Application Development (iOS, Android)",
+            "Cross-Platform Development Frameworks (e.g., React Native, Flutter)",
+            "Cloud Integration and Services",
+            "Web Development Frameworks (e.g., Angular, React)",
+            "Microservices Architecture",
+            "Software Testing and Quality Assurance",
+            "Version Control Systems (e.g., Git)",
+            "Continuous Integration/Continuous Deployment (CI/CD)",
+            "Cloud-Native Development and Deployment",
+            "Artificial Intelligence and Machine Learning (AI/ML) Integration",
+            "Internet of Things (IoT) Integration",
+            "Blockchain Technologies",
+            "Augmented Reality (AR) and Virtual Reality (VR)",
+            "Big Data and Data Processing Techniques",
+            "API Development and Integration",
+            "Database Management Systems (DBMS)"
+        ]
+    },
+    "Data Structures & Algorithms": {
+        "required_skills": [
+            "Data Structures",
+            "Algorithm Design",
+            "Computational Complexity",
+            "Problem Solving",
+            "Programming",
+            "Time and Space Complexity Analysis",
+            "Big-O Notation",
+            "Recursion and Recursive Algorithms",
+            "Sorting Algorithms (e.g., QuickSort, MergeSort)",
+            "Searching Algorithms (e.g., Binary Search, Hashing)",
+            "Graph Theory and Algorithms",
+            "Dynamic Programming",
+            "Greedy Algorithms",
+            "Divide and Conquer Algorithms",
+            "Data Structures Implementation (e.g., Arrays, Linked Lists, Trees)",
+            "Heap Data Structure",
+            "Priority Queues and Heaps",
+            "Binary Search Trees (BSTs)",
+            "Graph Representations (e.g., Adjacency List, Matrix)",
+            "Depth-First Search (DFS) and Breadth-First Search (BFS)",
+            "Algorithm Optimization and Refactoring",
+            "Advanced Data Structures (e.g., Red-Black Trees, AVL Trees)",
+            "Graph Algorithms (e.g., Dijkstra's Algorithm, A* Search)",
+            "String Matching Algorithms",
+            "Complexity Classes and NP-Complete Problems",
+            "Computational Geometry Algorithms",
+            "Parallel Algorithms",
+            "Distributed Algorithms"
+        ]
+    },
+    "Data Communications": {
+        "required_skills": [
+            "Networking Fundamentals",
+            "Data Transmission",
+            "Communication Protocols",
+            "Network Architecture",
+            "Signal Processing",
+            "OSI Model and TCP/IP Protocol Stack",
+            "Data Link Layer and Physical Layer Protocols",
+            "Routing and Switching Protocols",
+            "Wireless Communications",
+            "Network Security and Encryption",
+            "Bandwidth Management",
+            "Error Detection and Correction",
+            "Network Topologies",
+            "LAN/WAN Technologies",
+            "Multiplexing and Demultiplexing",
+            "Modulation Techniques",
+            "Signal Processing Algorithms",
+            "Ethernet and Wi-Fi Technologies",
+            "Internet Protocol (IP) and Addressing",
+            "IP Routing and Subnetting",
+            "Transmission Media (e.g., Fiber Optic, Copper Cables)",
+            "Network Performance Analysis and Optimization",
+            "Quality of Service (QoS)",
+            "Telecommunication Systems and Standards",
+            "VoIP and Video Conferencing Protocols",
+            "Network Troubleshooting and Diagnostics",
+            "Network Monitoring Tools (e.g., Wireshark, NetFlow)"
+        ]
+    },
+    "Sports/Outdoor Adventure (PATHFit 4)": {
+        "required_skills": [
+            "Outdoor Education",
+            "Adventure Activities",
+            "Risk Management",
+            "Environmental Ethics",
+            "Team Building",
+            "Wilderness Survival Skills",
+            "First Aid and Emergency Response",
+            "Outdoor Leadership",
+            "Outdoor Safety Protocols",
+            "Navigation and Orienteering",
+            "Physical Conditioning for Outdoor Activities",
+            "Environmental Conservation",
+            "Climbing and Rappelling Techniques",
+            "Water Sports (e.g., Kayaking, Rafting)",
+            "Trail Maintenance and Outdoor Stewardship",
+            "Adventure Program Design and Implementation",
+            "Group Dynamics in Outdoor Settings",
+            "Outdoor Recreation Program Planning",
+            "Cultural Awareness and Sensitivity in Outdoor Adventures",
+            "Sustainable Practices in Outdoor Activities",
+            "Survival Strategies and Techniques"
+        ]
+    },
+    "Information Management (DB Sys.1)": {
+        "required_skills": [
+            "Database Design",
+            "SQL",
+            "Data Modeling",
+            "Relational Database Theory",
+            "Database Administration",
+            "Normalization and Denormalization",
+            "Entity-Relationship Diagrams (ERD)",
+            "Database Management Systems (DBMS)",
+            "Indexing and Query Optimization",
+            "Transactions and Concurrency Control",
+            "Backup and Recovery Techniques",
+            "SQL Query Writing and Optimization",
+            "Database Security and User Management",
+            "Data Integrity and Constraints",
+            "ACID Properties of Transactions",
+            "Stored Procedures and Triggers",
+            "Database Architecture and Design Patterns",
+            "NoSQL Databases",
+            "Big Data Concepts and Tools",
+            "Distributed Databases",
+            "Data Warehousing Concepts",
+            "Database Performance Tuning"
+        ]
+    },
+    "Computer Networks": {
+        "required_skills": [
+            "Network Protocols",
+            "Network Design",
+            "Network Security",
+            "Routing and Switching",
+            "Network Management",
+            "TCP/IP Protocol Suite",
+            "OSI Model",
+            "Subnetting and IP Addressing",
+            "Wireless Networking",
+            "Firewall and VPN Configuration",
+            "Bandwidth Management and QoS",
+            "Network Troubleshooting",
+            "Routing Protocols (e.g., OSPF, BGP)",
+            "Switching Techniques (e.g., VLAN, STP)",
+            "Network Performance Monitoring",
+            "Network Security Fundamentals",
+            "Cryptography and Encryption Protocols",
+            "Intrusion Detection Systems (IDS) and Prevention Systems (IPS)",
+            "Network Configuration Management",
+            "IPv4 and IPv6 Addressing and Routing",
+            "Software-Defined Networking (SDN)",
+            "Network Automation Tools",
+            "Cloud Networking",
+            "Network Virtualization"
+        ]
+    },
+    "Testing & Quality Assurance": {
+        "required_skills": [
+            "Software Testing",
+            "Quality Assurance",
+            "Test Automation",
+            "Software Metrics",
+            "Software Development Lifecycle",
+            "Manual Testing Techniques",
+            "Automated Testing Tools (e.g., Selenium, JUnit)",
+            "Test Case Design",
+            "Regression Testing",
+            "Performance Testing",
+            "Load Testing",
+            "Continuous Integration (CI) and Continuous Testing (CT)",
+            "Bug Tracking and Issue Management",
+            "Testing Strategies and Methodologies (e.g., Agile, Waterfall)",
+            "Test-Driven Development (TDD)",
+            "Quality Assurance Standards (e.g., ISO, CMMI)",
+            "Static and Dynamic Testing",
+            "Functional and Non-Functional Testing",
+            "Code Coverage and Unit Testing",
+            "Risk-Based Testing",
+            "Defect Management and Root Cause Analysis",
+            "Software Validation and Verification",
+            "User Acceptance Testing (UAT)"
+        ]
+    },
+    "Human Computer Interaction": {
+        "required_skills": [
+            "User Experience Design",
+            "Usability Testing",
+            "Interaction Design",
+            "Cognitive Psychology",
+            "Interface Design",
+            "User-Centered Design (UCD)",
+            "Prototyping and Wireframing",
+            "Human Factors in Computing",
+            "Information Architecture",
+            "User Interface Guidelines and Standards",
+            "Accessibility Design",
+            "Visual Design Principles",
+            "Task Analysis",
+            "Heuristic Evaluation",
+            "Usability Heuristics and Principles",
+            "Interaction Styles (e.g., Touch, Voice, Gesture)",
+            "Contextual Inquiry and User Research",
+            "Mobile and Web Usability",
+            "User Feedback and Iterative Design",
+            "Ethnographic Research Methods",
+            "Cognitive Load and Memory in Design",
+            "Prototyping Tools (e.g., Sketch, Figma, Adobe XD)"
+        ]
+    },
+    "Methods of Research in Computing": {
+        "required_skills": [
+            "Research Methodology",
+            "Statistical Analysis",
+            "Scientific Writing",
+            "Computing Research",
+            "Literature Review",
+            "Quantitative Research Methods",
+            "Qualitative Research Methods",
+            "Data Collection Techniques",
+            "Hypothesis Testing",
+            "Survey Design and Analysis",
+            "Experimental Design",
+            "Data Interpretation and Analysis",
+            "Research Ethics",
+            "Academic Writing and Publishing",
+            "Research Paper Structuring",
+            "Systematic Reviews and Meta-Analysis",
+            "Statistical Software (e.g., SPSS, R, Python)",
+            "Presentation of Research Findings",
+            "Research Proposal Writing",
+            "Computing Innovations and Trends"
+        ]
+    },
+    "Information Management (DB Sys. 2)": {
+        "required_skills": [
+            "Advanced Database Systems",
+            "NoSQL Databases",
+            "Database Performance",
+            "Data Warehousing",
+            "Big Data Technologies",
+            "Database Optimization",
+            "SQL Performance Tuning",
+            "Distributed Databases",
+            "Data Replication and Sharding",
+            "Cloud-Based Database Management",
+            "Database Security",
+            "Data Integration and ETL",
+            "Data Governance and Compliance",
+            "Big Data Frameworks (e.g., Hadoop, Spark)",
+            "Data Lake Architecture",
+            "Machine Learning in Databases",
+            "Real-Time Data Processing",
+            "Database Administration and Maintenance"
+        ]
+    },
+    "Information Assurance & Security": {
+        "required_skills": [
+            "Cybersecurity",
+            "Cryptography",
+            "Security Protocols",
+            "Threat Analysis",
+            "Information Security Management",
+            "Ethical Hacking",
+            "Risk Assessment",
+            "Security Compliance",
+            "Incident Response",
+            "Security Auditing",
+            "Malware Analysis",
+            "Firewall Configuration and Management",
+            "Penetration Testing",
+            "Network Security",
+            "Identity and Access Management (IAM)",
+            "Cloud Security",
+            "Data Protection and Privacy",
+            "Cyber Threat Intelligence",
+            "Cybersecurity Operations",
+            "Cybersecurity Policy and Governance"
+        ]
+    },
+    "System Integration & Architecture": {
+        "required_skills": [
+            "System Architecture",
+            "Enterprise Integration",
+            "Middleware Technologies",
+            "Service-Oriented Architecture",
+            "Business Process Integration",
+            "System Design and Analysis",
+            "Cloud Integration",
+            "Distributed Systems",
+            "IT Infrastructure Management",
+            "Integration Patterns",
+            "API Management",
+            "Microservices Architecture",
+            "Containerization and Orchestration (e.g., Docker, Kubernetes)",
+            "Cloud Platforms (e.g., AWS, Azure, Google Cloud)",
+            "DevOps and CI/CD",
+            "Monitoring and Logging Tools",
+            "Cloud-Native Development",
+            "Cloud Security and Management",
+            "Cloud Architecture Patterns",
+            "Cloud Service Models (e.g., IaaS, PaaS, SaaS)",
+            "Cloud Deployment Models (e.g., Public, Private, Hybrid)",
+            "Cloud Cost Optimization"
+        ]
+    },
+    "Technopreneurship": {
+        "required_skills": [
+            "Technology Entrepreneurship",
+            "Business Model Canvas",
+            "Startup Management",
+            "Innovation Strategy",
+            "Technology Commercialization",
+            "Business Strategy and Planning",
+            "Product Development and Management",
+            "Market Research and Analysis",
+            "Venture Capital and Funding",
+            "Technology Transfer",
+            "Entrepreneurial Finance",
+            "Intellectual Property Management",
+            "Business Development and Sales",
+            "Strategic Partnerships and Alliances",
+            "Innovation Management",
+            "Technology Transfer and Licensing"
+        ]
+    },
+    "Integrative Prog'g & Technologies": {
+        "required_skills": [
+            "Systems Integration",
+            "API Development",
+            "Web Services",
+            "Microservices Architecture",
+            "Cloud Integration",
+            "DevOps Practices",
+            "Containerization (Docker, Kubernetes)",
+            "Continuous Integration/Continuous Deployment (CI/CD)",
+            "Database Management (SQL, NoSQL)",
+            "Automation Scripting (Python, Bash)",
+            "Security Best Practices",
+            "Agile Methodologies",
+            "Cloud Platforms (e.g., AWS, Azure, Google Cloud)",
+            "DevOps and CI/CD",
+            "Monitoring and Logging Tools",
+            "Cloud-Native Development",
+            "Cloud Security and Management",
+            "Cloud Architecture Patterns"
+        ]
+    },
+    "Systems Administration & Maintenance": {
+        "required_skills": [
+            "System Administration",
+            "Network Management",
+            "IT Infrastructure",
+            "Security Management",
+            "Troubleshooting",
+            "Cloud Infrastructure Management",
+            "Virtualization (VMware, Hyper-V)",
+            "Backup and Recovery Solutions",
+            "Operating Systems (Linux, Windows)",
+            "Automation Tools (Ansible, Puppet)",
+            "Monitoring and Logging (Nagios, Zabbix)",
+            "Disaster Recovery Planning",
+            "Firewall Management",
+            "Cloud Cost Optimization",
+            "Cloud Security and Management",
+            "Cloud Architecture Patterns"
+        ]
+    },
+    "Capstone Project 1": {
+        "required_skills": [
+            "Project Management",
+            "Software Development",
+            "Requirements Analysis",
+            "Technical Documentation",
+            "Research Methods",
+            "Agile Project Management",
+            "Database Design and Management",
+            "Software Testing and Quality Assurance",
+            "Version Control (Git, GitHub)",
+            "Team Collaboration and Communication",
+            "Risk Management",
+            "Cloud Platforms (AWS, Azure, Google Cloud)"
+        ]
+    },
+    "Professional Issues in Computing": {
+        "required_skills": [
+            "IT Ethics",
+            "Professional Practice",
+            "IT Law",
+            "Intellectual Property",
+            "Computing Ethics",
+            "Data Privacy and Protection",
+            "Cybersecurity Laws and Regulations",
+            "Risk Management in IT",
+            "Corporate Social Responsibility (CSR) in IT",
+            "Ethical Decision Making in Technology",
+            "IT Governance and Compliance",
+            "Sustainability in Computing"
+        ]
+    },
+    "Literatures of the World": {
+        "required_skills": [
+            "World Literature",
+            "Literary Analysis",
+            "Comparative Literature",
+            "Literary Theory",
+            "Cultural Studies",
+            "Historical Context of Literature",
+            "Postcolonial Studies",
+            "Gender Studies in Literature",
+            "Creative Writing",
+            "Transnational Literature",
+            "Critical Thinking",
+            "Interdisciplinary Approaches to Literature"
+        ]
+    },
+    "Capstone Project 2": {
+        "required_skills": [
+            "Software Engineering",
+            "Project Implementation",
+            "Quality Assurance",
+            "Technical Presentation",
+            "Documentation",
+            "Agile Methodologies",
+            "Version Control (Git, GitHub)",
+            "Database Management",
+            "System Architecture Design",
+            "Cloud Technologies (AWS, Azure, Google Cloud)",
+            "Automation Testing Tools (Selenium, JUnit)",
+            "Client Communication and Stakeholder Management"
+        ]
+    },
+    "Practicum": {
+        "required_skills": [
+            "Industry Experience",
+            "Professional Communication",
+            "Workplace Skills",
+            "Technical Application",
+            "Mentoring",
+            "Problem-Solving in Real-World Contexts",
+            "Team Collaboration and Leadership",
+            "Time Management and Prioritization",
+            "Client Interaction and Service Delivery",
+            "Project Management in Professional Settings",
+            "Ethical Decision Making in Professional Contexts",
+            "Continuous Learning and Adaptability"
+        ]
+    },
+    "PHP Programming Module 1": {
+        "required_skills": [
+            "PHP",
+            "Web Development",
+            "Database Integration",
+            "HTML/CSS",
+            "Web Security",
+            "JavaScript",
+            "Object-Oriented Programming (OOP)",
+            "Version Control (Git, GitHub)",
+            "RESTful API Development",
+            "Responsive Web Design",
+            "MVC Frameworks (Laravel, Symfony)",
+            "Database Optimization and Indexing",
+            "Error Handling and Debugging"
+        ]
+    },
+    "PHP Programming Module 2": {
+        "required_skills": [
+            "Advanced PHP",
+            "PHP Frameworks",
+            "Web Services",
+            "Application Architecture",
+            "API Development",
+            "Database Design and Optimization",
+            "Authentication and Authorization (OAuth, JWT)",
+            "Microservices Architecture",
+            "Unit Testing and Test-Driven Development (TDD)",
+            "Deployment and Continuous Integration (CI/CD)",
+            "Version Control (Git, GitHub)",
+            "Performance Tuning and Profiling"
+        ]
+    },
+    ".NET Programming Module 1": {
+        "required_skills": [
+            "C#",
+            ".NET Framework",
+            "Visual Studio",
+            "Object-Oriented Programming",
+            "Windows Development",
+            "ASP.NET",
+            "Entity Framework",
+            "Web Services (SOAP, REST)",
+            "Database Integration (SQL Server, MySQL)",
+            "Version Control (Git, GitHub)",
+            "Unit Testing and Test-Driven Development (TDD)",
+            "WPF (Windows Presentation Foundation)",
+            "Debugging and Performance Optimization"
+        ]
+    },
+    ".NET Programming Module 2": {
+        "required_skills": [
+            "ASP.NET",
+            "MVC Architecture",
+            "Web Services",
+            "Entity Framework",
+            "LINQ",
+            "RESTful API Development",
+            "Authentication and Authorization (OAuth, JWT)",
+            "Dependency Injection",
+            "Unit Testing (xUnit, NUnit)",
+            "Azure Cloud Services",
+            "SignalR (Real-time Communication)",
+            "Caching (Redis, MemoryCache)",
+            "Performance Optimization and Tuning"
+        ]
+    },
+    "ANDROID Programming Module 1": {
+        "required_skills": [
+            "Java",
+            "Android SDK",
+            "Mobile Development",
+            "UI Design",
+            "Android Lifecycle",
+            "Kotlin",
+            "RESTful APIs Integration",
+            "SQLite Database Integration",
+            "Version Control (Git, GitHub)",
+            "Android Debugging and Optimization",
+            "Material Design Principles",
+            "Google Play Store Deployment",
+            "Push Notifications (Firebase Cloud Messaging)"
+        ]
+    },
+    "ANDROID Programming Module 2": {
+        "required_skills": [
+            "Kotlin",
+            "Advanced Android",
+            "Mobile Architecture",
+            "API Integration",
+            "Mobile Testing",
+            "Jetpack Compose",
+            "MVVM Architecture",
+            "Room Database",
+            "Android Studio Optimization",
+            "Dependency Injection (Dagger, Hilt)",
+            "CI/CD for Mobile (Jenkins, Bitrise)",
+            "Unit Testing (JUnit, Espresso)",
+            "Push Notifications (Firebase, OneSignal)",
+            "Offline Data Sync"
+        ]
+    },
+    "CISCO: Scaling Networks": {
+        "required_skills": [
+            "Network Scaling",
+            "LAN Redundancy",
+            "Link Aggregation",
+            "Wireless LANs",
+            "OSPF Configuration"
+        ]
+    },
+    "CISCO: Connecting Networks": {
+        "required_skills": [
+            "WAN Technologies",
+            "Network Troubleshooting",
+            "Network Security",
+            "Quality of Service",
+            "Virtual Private Networks"
+        ]
+    },
+    "Embedded Systems & IoT": {
+        "required_skills": [
+            "Embedded Programming",
+            "IoT Architectures",
+            "Sensor Technology",
+            "Microcontrollers",
+            "Networking Protocols"
+        ]
+    },
+    "Fundamentals of Artificial Intelligence": {
+        "required_skills": [
+            "Machine Learning",
+            "AI Algorithms",
+            "Neural Networks",
+            "Python Programming",
+            "Data Science",
+            "Natural Language Processing",
+            "Computer Vision",
+            "Reinforcement Learning"
+        ]
+    },
+    "ASI-UC Jumpstart Program": {
+        "required_skills": [
+            "Industry Integration",
+            "Enterprise Systems",
+            "Business Applications",
+            "Project Management",
+            "IT Service Management"
+        ]
+    },
+    "Business Analytics Module 1": {
+        "required_skills": [
+            "Data Analysis",
+            "Business Intelligence",
+            "Statistics",
+            "Visualization Tools",
+            "SQL"
+        ]
+    },
+    "Business Analytics Module 2": {
+        "required_skills": [
+            "Predictive Analytics",
+            "Data Mining",
+            "Business Modeling",
+            "Advanced Statistics",
+            "Analytics Tools"
+        ]
+    },
+    "IBM-UC Integration Course 1": {
+        "required_skills": [
+            "IBM Technologies",
+            "Cloud Computing",
+            "Enterprise Solutions",
+            "Software Integration",
+            "Industry Standards"
+        ]
+    },
+    "IBM-UC Integration Course 2": {
+        "required_skills": [
+            "Advanced IBM Technologies",
+            "Enterprise Architecture",
+            "Solution Design",
+            "Business Process Management",
+            "Industry Applications"
+        ]
+    },
+    "IBM-UC Integration Course 3": {
+        "required_skills": [
+            "IBM Cloud Services",
+            "Cognitive Computing",
+            "AI Applications",
+            "Advanced Integration",
+            "Industry Solutions"
+        ]
+    },
+    "IBM-UC Integration Course 4": {
+        "required_skills": [
+            "Enterprise IBM Solutions",
+            "Industry Projects",
+            "Solution Implementation",
+            "IT Strategy",
+            "Business Value Creation"
+        ]
+    },
+    "Principles of Design Thinking": {
+        "required_skills": [
+            "Design Thinking",
+            "User Research",
+            "Prototyping",
+            "Innovation Methods",
+            "Problem Framing"
+        ]
+    },
+    "Foreign Language": {
+        "required_skills": [
+            "Language Teaching",
+            "Linguistics",
+            "Foreign Language Proficiency",
+            "Cultural Awareness",
+            "Language Assessment"
+        ]
+    },
+    "Introduction to Intellectual Property": {
+        "required_skills": [
+            "IP Law",
+            "Copyright",
+            "Patents",
+            "Trademarks",
+            "Legal Research"
+        ]
+    },
+    "Emerging Technologies in ICT": {
+        "required_skills": [
+            "Technology Trends",
+            "Innovation Analysis",
+            "Digital Transformation",
+            "Industry 4.0",
+            "Disruptive Technologies"
+        ]
+    },
+    "Introduction to Project Management": {
+        "required_skills": [
+            "Project Management",
+            "PMBOK Knowledge",
+            "Project Planning",
+            "Resource Management",
+            "Project Evaluation"
+        ]
+    },
+    "Cloud Infrastructure Services": {
+        "required_skills": [
+            "Cloud Computing",
+            "Infrastructure as a Service",
+            "Cloud Security",
+            "Virtualization",
+            "Cloud Architecture"
+        ]
+    },
+    "Information Storage Management": {
+        "required_skills": [
+            "Storage Technologies",
+            "Data Management",
+            "Backup Solutions",
+            "Disaster Recovery",
+            "Enterprise Storage"
+        ]
+    },
+    "Introduction to Digital Transformation": {
+        "required_skills": [
+            "Digital Transformation",
+            "Business Process Redesign",
+            "Technology Integration",
+            "Change Management",
+            "Strategic Innovation"
+        ]
+    },
+    "Lean Startup Methodology": {
+        "required_skills": [
+            "Lean Methodology",
+            "MVP Development",
+            "Customer Development",
+            "Agile Practices",
+            "Business Model Innovation",
+            "Pitching Techniques",
+            "Market Validation",
+            "Startup Finance"
+        ]
+    },
+    "Know-Your-Industry/Corporate Readiness": {
+        "required_skills": [
+            "Industry Knowledge",
+            "Professional Development",
+            "Career Planning",
+            "Corporate Culture",
+            "Workplace Ethics"
+        ]
+    },
+    "Introduction to Computer Science": {
+        "required_skills": [
+            "Programming Fundamentals",
+            "Algorithm Design",
+            "Python",
+            "Problem Solving",
+            "Computational Thinking"
+        ]
+    },
+    "Data Structures and Algorithms": {
+        "required_skills": [
+            "Algorithm Analysis",
+            "Data Structures",
+            "Java",
+            "Problem Solving",
+            "Software Design"
+        ]
+    },
+    "Fundamentals of Data Science": {
+        "required_skills": [
+            "Python",
+            "NumPy",
+            "Pandas",
+            "Data Analysis",
+            "Statistics",
+            "Data Visualization"
+        ]
+    },
+    "Machine Learning": {
+        "required_skills": [
+            "TensorFlow",
+            "PyTorch",
+            "Scikit-learn",
+            "NumPy",
+            "Statistical Modeling",
+            "Neural Networks"
+        ]
+    },
+    "Information Technology Fundamentals": {
+        "required_skills": [
+            "Computer Fundamentals",
+            "Information Systems",
+            "Digital Literacy",
+            "Office Productivity"
+        ]
+    },
+    "Software Engineering": {
+        "required_skills": [
+            "Software Development",
+            "UML",
+            "Requirements Analysis",
+            "Agile Methodologies",
+            "Testing"
+        ]
+    },
+    "Advanced Data Science": {
+        "required_skills": [
+            "Machine Learning",
+            "TensorFlow",
+            "Deep Learning",
+            "NumPy",
+            "Data Mining",
+            "Big Data"
+        ]
+    },
+    "Database Management": {
+        "required_skills": [
+            "SQL",
+            "Database Design",
+            "Data Modeling",
+            "MySQL",
+            "NoSQL"
+        ]
+    },
+    "Web Development": {
+        "required_skills": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Responsive Design",
+            "Web Frameworks"
+        ]
+    },
+    "Artificial Intelligence": {
+        "required_skills": [
+            "Python",
+            "TensorFlow",
+            "Machine Learning",
+            "Neural Networks",
+            "Computer Vision"
+        ]
+    }
+}

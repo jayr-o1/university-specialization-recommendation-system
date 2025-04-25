@@ -1,53 +1,143 @@
-# Python bytecode
+# Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
 
+# C extensions
+*.so
+
 # Distribution / packaging
-dist/
+.Python
 build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
 *.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
 
-# Virtual environments
-venv/
-env/
-ENV/
-.env/
+# PyInstaller
+*.manifest
+*.spec
 
-# IDE specific files
-.idea/
-.vscode/
-*.swp
-*.swo
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
 
-# spaCy language models
-.spacy
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
 
 # Jupyter Notebook
 .ipynb_checkpoints
 
-# Log files
-*.log
+# IPython
+profile_default/
+ipython_config.py
 
-# Local development settings
+# pyenv
+.python-version
+
+# celery beat schedule file
+celerybeat-schedule
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
 .env
-.env.local
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# PyCharm
+.idea/
+
+# Model files and data
+*.pkl
+*.h5
+*.npz
+*.npy
+models/saved_models/*
+!models/saved_models/.gitkeep
+
+# Data files
+data/*
+!data/.gitkeep
+*.csv
+*.json
+!course_skills.json
+!faculties.json
+
+# Logs
+logs/
+*.log
 
 # OS specific files
 .DS_Store
-Thumbs.db
-
-# Model files
-*.pkl
-*.h5
-*.model
-
-# Testing
-.coverage
-htmlcov/
-.pytest_cache/
-.tox/
-.hypothesis/
-
-# FastAPI
-__pycache__/ 
+Thumbs.db 

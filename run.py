@@ -5,8 +5,8 @@ import subprocess
 
 def main():
     parser = argparse.ArgumentParser(description='University Specialization Recommendation System')
-    parser.add_argument('action', choices=['train', 'cli', 'api', 'web', 'test'], 
-                        help='Action to perform: train model, run CLI, start API, start web app, or run tests')
+    parser.add_argument('action', choices=['train', 'cli', 'enhanced', 'api', 'web', 'test', 'build-graph'], 
+                        help='Action to perform: train model, run CLI, run enhanced CLI, start API, start web app, run tests, or build skill graph')
     
     args = parser.parse_args()
     
@@ -15,8 +15,32 @@ def main():
         subprocess.run([sys.executable, 'models/train_model.py'])
     
     elif args.action == 'cli':
-        print("Starting the command-line interface...")
+        print("Starting the basic command-line interface...")
         subprocess.run([sys.executable, 'src/recommendation_app.py'])
+    
+    elif args.action == 'enhanced':
+        print("Starting the enhanced command-line interface...")
+        
+        # Check if required packages are installed
+        try:
+            import networkx
+            import matplotlib
+            import pandas
+            import numpy
+        except ImportError:
+            print("Installing required packages for enhanced mode...")
+            subprocess.run([sys.executable, '-m', 'pip', 'install', 'networkx', 'matplotlib', 'pandas', 'numpy', 'scikit-learn'])
+            
+        # Build skill graph if it doesn't exist
+        data_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data')
+        skill_graph_path = os.path.join(data_dir, 'skill_graph.json')
+        
+        if not os.path.exists(skill_graph_path):
+            print("Building skill knowledge graph...")
+            subprocess.run([sys.executable, 'utils/skill_graph.py'])
+            
+        # Run the enhanced recommendation app
+        subprocess.run([sys.executable, 'src/enhanced_recommendation_app.py'])
     
     elif args.action == 'api':
         print("Starting the API server...")
@@ -28,7 +52,21 @@ def main():
     
     elif args.action == 'test':
         print("Running the test with example input...")
-        subprocess.run([sys.executable, 'test_recommendation.py'])
+        subprocess.run([sys.executable, 'tests/test_recommendation.py'])
+        
+    elif args.action == 'build-graph':
+        print("Building the skill knowledge graph...")
+        
+        # Ensure required packages are installed
+        try:
+            import networkx
+            import matplotlib
+        except ImportError:
+            print("Installing required packages...")
+            subprocess.run([sys.executable, '-m', 'pip', 'install', 'networkx', 'matplotlib'])
+            
+        # Run the skill graph builder
+        subprocess.run([sys.executable, 'utils/skill_graph.py'])
 
 if __name__ == '__main__':
     main() 

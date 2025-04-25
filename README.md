@@ -1,14 +1,22 @@
 # University Specialization Recommendation System
 
-This system recommends university courses based on a user's skills and proficiency levels. It uses a cosine similarity algorithm to match user skills with course requirements and suggests the most suitable courses.
+An intelligent recommendation system that suggests university courses based on user skills and interests. The system analyzes the skills required for different courses and matches them with the user's proficiency levels to provide personalized recommendations.
 
 ## Features
 
-- Recommends courses based on user skills and proficiency levels
-- Provides match percentages and detailed skill matching information
-- Identifies missing skills for further training
-- Suggests similar courses where skills can be applied
-- Offers both a command-line interface and a REST API
+### Basic Features
+- Course recommendations based on user skills and proficiency levels
+- Similar course recommendations
+- Integration with course data sources
+- Command-line interface for interaction
+
+### Enhanced Features
+- **Skill Knowledge Graph**: Understands relationships between skills (prerequisites, complementary skills, etc.)
+- **Collaborative Filtering**: Considers ratings and preferences from other users
+- **Personalized Learning Paths**: Creates custom course sequences to reach career goals
+- **Next Skill Recommendations**: Suggests which skills to learn next based on your profile
+- **User Profiles**: Maintains user preferences, skills, and course history
+- **Popular and Top-Rated Courses**: Identifies trending and highly-rated courses
 
 ## Project Structure
 
@@ -30,46 +38,94 @@ This system recommends university courses based on a user's skills and proficien
 
 ## Installation
 
-1. Clone this repository
-2. Install the required dependencies:
+1. Clone the repository:
+   ```
+   git clone https://github.com/yourusername/university-specialization-recommendation-system.git
+   cd university-specialization-recommendation-system
+   ```
 
-```bash
-pip install -r requirements.txt
-```
+2. Install the required dependencies:
+   ```
+   pip install -r requirements.txt
+   ```
 
 ## Usage
 
-### Command Line Interface
+### Basic Mode
 
-Run the command-line application:
+Run the basic recommendation system:
 
-```bash
-python src/recommendation_app.py
+```
+python run.py cli
 ```
 
-Enter your skills in the format: `Skill1 : Proficiency1, Skill2 : Proficiency2`
+Enter your skills and proficiency levels when prompted (e.g., "MySQL : Intermediate, Database Design : Advanced").
 
-Example: `MySQL : Intermediate, Database Design : Advanced`
+### Enhanced Mode
 
-### REST API
+Run the enhanced recommendation system with additional features:
 
-Start the API server:
-
-```bash
-python src/api.py
+```
+python run.py enhanced
 ```
 
-#### API Endpoints
+The enhanced mode provides a command-line interface with the following commands:
 
-- **POST /recommend**: Get course recommendations based on skills
-  - Request body: `{"skills": {"MySQL": "Intermediate", "Database Design": "Advanced"}, "top_n": 5, "include_similar": true}`
-  - Alternative format: `{"skills": "MySQL : Intermediate, Database Design : Advanced"}`
+- `skills` - Enter your skills and get course recommendations
+- `path` - Generate a personalized learning path based on career goals
+- `rate` - Rate a course you've taken
+- `popular` - See the most popular courses
+- `top` - See the top-rated courses
+- `similar <course name>` - Find courses similar to a specific course
+- `nextskills` - Get recommendations for skills to learn next
+- `exit` - Exit the application
 
-- **GET /similar?course_code=CC-COMPROG11**: Find courses similar to a given course
+### Other Commands
 
-- **GET /courses**: Get all available courses
+- Train the recommendation model:
+  ```
+  python run.py train
+  ```
 
-- **GET /skills**: Get all skills in the system
+- Build the skill knowledge graph:
+  ```
+  python run.py build-graph
+  ```
+
+- Run tests:
+  ```
+  python run.py test
+  ```
+
+## Data Sources
+
+The system uses the following data files:
+
+- `data/course_skills.json` - Contains courses and their required skills
+- `data/user_ratings.json` - Contains user ratings for courses (used in collaborative filtering)
+- `data/skill_graph.json` - Contains the skill knowledge graph with skill relationships
+
+## System Architecture
+
+The system consists of several key components:
+
+1. **Content-Based Recommender**: Matches user skills with course requirements
+2. **Skill Knowledge Graph**: Models relationships between different skills
+3. **Learning Path Generator**: Creates personalized course sequences
+4. **Collaborative Filter**: Incorporates user ratings and preferences
+5. **Enhanced Recommendation Model**: Combines all approaches for better recommendations
+
+## Extensions and Future Work
+
+- Web interface for easier interaction
+- API for integration with other systems
+- Integration with real-time job market data
+- Natural language processing for skill extraction from course descriptions
+- User study to validate recommendation quality
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Proficiency Levels
 

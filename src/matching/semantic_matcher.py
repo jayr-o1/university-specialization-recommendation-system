@@ -29,7 +29,24 @@ def get_semantic_similarity(skill1: str, skill2: str) -> float:
     doc1 = nlp(skill1.lower())
     doc2 = nlp(skill2.lower())
     
-    # Return similarity score between 0 and 1
+    # Check if both documents have vectors before calculating similarity
+    if not doc1.has_vector or not doc2.has_vector or doc1.vector_norm == 0 or doc2.vector_norm == 0:
+        # If either document doesn't have a vector, use string matching as fallback
+        normalized_skill1 = skill1.lower().strip()
+        normalized_skill2 = skill2.lower().strip()
+        
+        # Exact match
+        if normalized_skill1 == normalized_skill2:
+            return 1.0
+        
+        # Partial string containment
+        if normalized_skill1 in normalized_skill2 or normalized_skill2 in normalized_skill1:
+            return 0.8
+        
+        # Default low similarity
+        return 0.2
+    
+    # Both documents have vectors, return similarity score between 0 and 1
     return doc1.similarity(doc2)
 
 

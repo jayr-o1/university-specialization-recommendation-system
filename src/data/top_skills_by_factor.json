@@ -1,842 +1,842 @@
 {
   "Factor_0": [
     [
-      "Public Speaking",
-      0.7095996121679693
-    ],
-    [
       "Lesson Planning",
-      0.7095930209904573
+      0.6757593797931924
     ],
     [
       "Academic Writing",
-      0.7095114075445936
+      0.6757534038008247
     ],
     [
       "Curriculum Development",
-      0.7095114075445936
+      0.6757534038008247
     ],
     [
-      "Communication Theory",
-      0.70947155068488
+      "Public Speaking",
+      0.6756971435680669
+    ],
+    [
+      "Interpersonal Communication",
+      0.6756578263280469
     ],
     [
       "Assessment Design and Rubric Development",
-      0.7094055180251783
+      0.6755803167702359
     ],
     [
-      "Rhetorical Theory",
-      0.7094055180251783
+      "Instructional Communication",
+      0.6755803167702359
     ],
     [
-      "Group Communication",
-      0.7094055180251783
+      "Voice Modulation and Clarity",
+      0.6755803167702359
     ],
     [
       "English Language Proficiency",
-      0.7094055180251783
+      0.6755803167702359
     ],
     [
-      "Academic Literacy",
-      0.7094055180251783
+      "Citation and Referencing Styles",
+      0.6755803167702359
     ]
   ],
   "Factor_1": [
     [
-      "Philippine History",
-      2.184072648659883
+      "Data Structures",
+      1.7674297572315258
     ],
     [
-      "Historical Methodology",
-      1.131353821530085
+      "Recursion and Recursive Algorithms",
+      1.2916714318783338
     ],
     [
-      "Critical Thinking and Historical Analysis",
-      1.131353821530085
+      "Dynamic Programming",
+      1.2916714318783338
     ],
     [
-      "Primary Source Analysis",
-      1.131353821530085
+      "Big-O Notation",
+      1.0227701203358457
     ],
     [
-      "Historical Research",
-      1.131353821530085
+      "Greedy Algorithms",
+      1.0227701203358457
     ],
     [
-      "History of Filipino Identity and Culture",
-      1.131353821530085
+      "Searching Algorithms (e.g., Binary Search, Hashing)",
+      1.0227701203358457
     ],
     [
-      "Critical Thinking and Evaluation of Rizal's Contributions",
-      1.0525958212821729
+      "Algorithm Design",
+      1.0227701203358457
     ],
     [
-      "Rizal Studies",
-      1.0525958212821729
+      "Programming",
+      1.0227701203358457
     ],
     [
-      "Rizal's Influence on Philippine Independence",
-      1.0525958212821729
+      "Computational Complexity",
+      1.0227701203358457
     ],
     [
-      "Analysis of Rizal's Novels (e.g., Noli Me Tangere, El Filibusterismo)",
-      1.0525958212821729
+      "Graph Theory and Algorithms",
+      1.0227701203358457
     ]
   ],
   "Factor_2": [
     [
-      "Recursion and Recursive Algorithms",
-      1.88954966951971
+      "Team Building and Group Facilitation",
+      2.2915630015410606
     ],
     [
-      "Dynamic Programming",
-      1.88954966951971
+      "Educational Facilitation in Communities",
+      2.2915630015410606
     ],
     [
-      "Data Structures",
-      1.8599786436973174
+      "Community Development",
+      2.2915630015410606
     ],
     [
-      "Problem Solving",
-      1.8431087337896643
+      "Social Advocacy and Civic Engagement",
+      2.2915630015410606
     ],
     [
-      "Big-O Notation",
-      1.8419793883027877
+      "Project Planning and Implementation",
+      2.2915630015410606
     ],
     [
-      "Computational Complexity",
-      1.8419793883027877
+      "Leadership",
+      2.2915630015410606
     ],
     [
-      "Searching Algorithms (e.g., Binary Search, Hashing)",
-      1.8419793883027877
+      "Policy Literacy (e.g., NSTP Law, civic laws)",
+      2.2915630015410606
     ],
     [
-      "Graph Theory and Algorithms",
-      1.8419793883027877
+      "Volunteerism and Service Learning",
+      2.2915630015410606
     ],
     [
-      "Sorting Algorithms (e.g., QuickSort, MergeSort)",
-      1.8419793883027877
+      "Public Service Ethics",
+      1.8988508476194523
     ],
     [
-      "Algorithm Design",
-      1.8419793883027877
+      "Documentation and Reporting of Service Activities",
+      1.5277086676940406
     ]
   ],
   "Factor_3": [
     [
-      "Cloud Security and Management",
-      2.717384122534688
+      "Data Interpretation and Analysis",
+      2.0942214852358356
     ],
     [
-      "Cloud Architecture Patterns",
-      2.260646021679826
+      "Experimental Design",
+      2.0942214852358356
     ],
     [
-      "Microservices Architecture",
-      1.9796482111479787
+      "Statistical Analysis",
+      2.0942214852358356
     ],
     [
-      "Cloud-Native Development",
-      1.7600275451319185
+      "Hypothesis Testing",
+      2.0942214852358356
     ],
     [
-      "Cloud Platforms (e.g., AWS, Azure, Google Cloud)",
-      1.7600275451319185
+      "Research Ethics",
+      2.0942214852358356
     ],
     [
-      "DevOps and CI/CD",
-      1.7600275451319185
+      "Computing Research",
+      2.0942214852358356
     ],
     [
-      "Cloud Integration",
-      1.7600275451319185
+      "Scientific Writing",
+      2.0942214852358356
     ],
     [
-      "Monitoring and Logging Tools",
-      1.7600275451319185
+      "Research Methodology",
+      2.0942214852358356
     ],
     [
-      "Web Services",
-      1.6275538209464697
+      "Quantitative Research Methods",
+      2.0942214780562773
     ],
     [
-      "API Development",
-      1.5332682226071173
+      "Computing Innovations and Trends",
+      1.3961476568238906
     ]
   ],
   "Factor_4": [
     [
-      "Software Engineering Practices",
-      2.414409039390678
+      "Critical Thinking",
+      2.2015530913978667
     ],
     [
-      "Agile Development Practices",
-      2.4124403737808358
+      "Ethical Analysis and Moral Reasoning",
+      2.1035042078378465
     ],
     [
-      "Software Documentation and Maintenance",
-      2.4124403737808358
+      "Philosophical Writing and Argumentation",
+      2.1035042078378465
     ],
     [
-      "Software Development Methodologies",
-      2.4124403737808358
+      "Ethics and Moral Philosophy",
+      2.1035042078378465
     ],
     [
-      "UML Diagrams",
-      2.1174371420083076
+      "Applied Ethics",
+      2.1035042078378465
     ],
     [
-      "Systems Thinking",
-      2.1174371420083076
+      "Virtue Ethics",
+      2.1035042078378465
     ],
     [
-      "System Analysis and Design Fundamentals",
-      2.1174371420083076
+      "Utilitarianism",
+      2.1035042078378465
     ],
     [
-      "Process Modeling",
-      2.1174371420083076
+      "Applied Ethics and Moral Decision-Making",
+      2.1035042078378465
     ],
     [
-      "Requirements Engineering",
-      2.1174371420083076
+      "Normative Ethics",
+      2.1035042078378465
     ],
     [
-      "Project Management",
-      1.9517061233129653
+      "Meta-Ethics",
+      2.1035042078378465
     ]
   ],
   "Factor_5": [
     [
-      "Interpersonal Communication",
-      3.288327195140092
+      "Operating Systems",
+      5.047128650454795
     ],
     [
-      "Critical Thinking",
-      3.1184917821249387
+      "Information and Communication Technology (ICT)",
+      3.2227513853253575
     ],
     [
-      "Listening and Feedback Skills",
-      2.9087466382226332
+      "Instructional Design for Tech Subjects",
+      3.2227513853253575
     ],
     [
-      "Ethics in Communication",
-      2.9087466382226332
+      "Digital Literacy",
+      3.2227513853253575
     ],
     [
-      "Business Communication",
-      2.9087466382226332
+      "Internet and Web Basics",
+      3.2227513853253575
     ],
     [
-      "Presentation Skills",
-      2.9087466382226332
+      "Software Applications (Word Processing, Spreadsheets, Presentations)",
+      3.2227513853253575
     ],
     [
-      "Report Writing",
-      2.9087466382226332
+      "Computer Fundamentals",
+      3.2227513853253575
     ],
     [
-      "Writing for Different Audiences (e.g., technical, lay, academic)",
-      2.9087466382226332
+      "File Management and Organization",
+      3.2227513853253575
     ],
     [
-      "Audience Analysis and Adaptation",
-      2.9087466382226332
+      "Digital Communication and Collaboration",
+      3.2227513853253575
     ],
     [
-      "Communication Theory",
-      2.9029942890304543
+      "Keyboarding and Typing Proficiency",
+      3.2227513853253575
     ]
   ],
   "Factor_6": [
     [
-      "Quantitative Research Methods",
-      3.1733303465169898
+      "Self and Identity Theory",
+      3.4591999210303452
     ],
     [
-      "Hypothesis Testing",
-      3.17333034636297
+      "Mindfulness and Self-Awareness",
+      3.4591999210303452
     ],
     [
-      "Research Ethics",
-      3.17333034636297
+      "Emotional Intelligence",
+      3.4591999210303452
     ],
     [
-      "Research Methodology",
-      3.17333034636297
+      "Active Listening and Empathy",
+      3.4591999210303452
     ],
     [
-      "Data Interpretation and Analysis",
-      3.17333034636297
+      "Personality Psychology",
+      3.4591999210303452
     ],
     [
-      "Statistical Analysis",
-      3.17333034636297
+      "Psychological Theory",
+      3.4591999210303452
     ],
     [
-      "Scientific Writing",
-      3.17333034636297
+      "Reflective Practice",
+      3.4591999210303452
     ],
     [
-      "Computing Research",
-      3.17333034636297
+      "Ethics in Psychology",
+      3.4591999210303452
     ],
     [
-      "Experimental Design",
-      3.17333034636297
+      "Lesson Facilitation and Student Engagement",
+      3.4591999210303452
     ],
     [
-      "Qualitative Research Methods",
-      2.1155535644551513
+      "Cognitive Psychology",
+      3.1284302970145785
     ]
   ],
   "Factor_7": [
     [
-      "Documentation",
-      3.33521218195567
+      "Data Link Layer and Physical Layer Protocols",
+      3.9823583428840617
     ],
     [
-      "Communication for IT",
-      3.063725248105333
+      "Data Transmission",
+      3.9823583428840617
     ],
     [
-      "Clear and Concise Communication in IT",
-      3.063725248105333
+      "Routing and Switching Protocols",
+      3.9823583428840617
     ],
     [
-      "Technical Writing Fundamentals",
-      3.063725248105333
+      "Networking Fundamentals",
+      3.9823583428840617
     ],
     [
-      "Presentation Techniques",
-      3.063725248105333
+      "Internet Protocol (IP) and Addressing",
+      3.9823583428840617
     ],
     [
-      "Designing Effective Technical Presentations",
-      3.063725248105333
+      "OSI Model and TCP/IP Protocol Stack",
+      3.9823583428840617
     ],
     [
-      "Presentation Skills for IT Professionals",
-      3.063725248105333
+      "Communication Protocols",
+      3.9823583428840617
     ],
     [
-      "Technical Writing for IT Audiences",
-      3.063725248105333
+      "Network Performance Analysis and Optimization",
+      2.654905561922708
     ],
     [
-      "Technical Writing",
-      3.062279824297706
+      "Network Troubleshooting and Diagnostics",
+      2.654905561922708
     ],
     [
-      "Documentation and Documentation Management",
-      2.0424834987368885
+      "Signal Processing",
+      2.654905561922708
     ]
   ],
   "Factor_8": [
     [
-      "SQL",
-      3.685012648245395
+      "Statistics",
+      3.613975229402355
     ],
     [
-      "Database Management Systems (DBMS)",
-      3.632536189449739
+      "Probability Theory",
+      3.3436363203693804
     ],
     [
-      "Data Modeling",
-      3.5550218330537136
+      "Regression Analysis",
+      3.001244797301333
     ],
     [
-      "Relational Database Theory",
-      3.5550218330537136
+      "Correlation Analysis",
+      3.001244797301333
     ],
     [
-      "SQL Query Writing and Optimization",
-      3.5550218330537136
+      "Hypothesis Testing and Confidence Intervals",
+      3.001244797301333
     ],
     [
-      "Entity-Relationship Diagrams (ERD)",
-      3.5550218330537136
+      "Data Interpretation",
+      3.001244797301333
     ],
     [
-      "ACID Properties of Transactions",
-      3.5550218330537136
+      "Probability Theory and Distribution",
+      3.001244797301333
     ],
     [
-      "Database Design",
-      3.5550218330537136
+      "Statistics Fundamentals",
+      3.001244797301333
     ],
     [
-      "Data Integrity and Constraints",
-      3.5550218330537136
+      "Quantitative Analysis",
+      3.001244797301333
     ],
     [
-      "Normalization and Denormalization",
-      3.5550218330537136
+      "Quantitative Data Analysis",
+      3.001244797301333
     ]
   ],
   "Factor_9": [
     [
-      "Statistics",
-      3.8388775679339933
+      "Microservices Architecture",
+      3.3405123504457745
     ],
     [
-      "Probability Theory",
-      3.5517432347507363
+      "Cloud Architecture Patterns",
+      2.6955584565784254
     ],
     [
-      "Data Interpretation",
-      3.1882262467456264
+      "Cloud Security and Management",
+      2.6766795171454256
     ],
     [
-      "Statistics Fundamentals",
-      3.1882262467456264
+      "Web Services",
+      2.3911294557255127
     ],
     [
-      "Correlation Analysis",
-      3.1882262467456264
+      "DevOps and CI/CD",
+      2.311962132617665
     ],
     [
-      "Regression Analysis",
-      3.1882262467456264
+      "Monitoring and Logging Tools",
+      2.311962132617665
     ],
     [
-      "Quantitative Analysis",
-      3.1882262467456264
+      "Cloud-Native Development",
+      2.311962132617665
     ],
     [
-      "Statistical Inference",
-      3.1882262467456264
+      "Cloud Integration",
+      2.311962132617665
     ],
     [
-      "Hypothesis Testing and Confidence Intervals",
-      3.1882262467456264
+      "Cloud Platforms (e.g., AWS, Azure, Google Cloud)",
+      2.311962132617665
     ],
     [
-      "Quantitative Data Analysis",
-      3.1882262467456264
+      "API Development",
+      2.226784930199973
     ]
   ],
   "Factor_10": [
     [
-      "Community Development",
-      3.307141246373376
+      "Risk Management",
+      3.1375015754480664
     ],
     [
-      "Policy Literacy (e.g., NSTP Law, civic laws)",
-      3.307141246373376
+      "Business Planning",
+      1.7397337572351435
     ],
     [
-      "Volunteerism and Service Learning",
-      3.307141246373376
+      "Creative Thinking and Problem-Solving",
+      1.7397337572351435
     ],
     [
-      "Social Advocacy and Civic Engagement",
-      3.307141246373376
+      "Business Model Development",
+      1.7397337572351435
     ],
     [
-      "Leadership",
-      3.307141246373376
+      "Entrepreneurship Principles",
+      1.7397337572351435
     ],
     [
-      "Educational Facilitation in Communities",
-      3.307141246373376
+      "Opportunity Recognition",
+      1.7397337572351435
     ],
     [
-      "Team Building and Group Facilitation",
-      3.307141246373376
+      "Business Communication for Entrepreneurs",
+      1.7397337572351435
     ],
     [
-      "Project Planning and Implementation",
-      3.307141246373376
+      "Outdoor Leadership",
+      1.7376258053103075
     ],
     [
-      "Public Service Ethics",
-      2.740386345324233
+      "Outdoor Education",
+      1.7376258053103075
     ],
     [
-      "Risk Reduction and Emergency Response",
-      2.2047608309155846
+      "First Aid and Emergency Response",
+      1.7376258053103075
     ]
   ],
   "Factor_11": [
     [
-      "Exercise Physiology",
-      3.8210754503756488
+      "Critical Thinking",
+      3.053347197168597
     ],
     [
-      "Injury Prevention and Management",
-      3.1186212317909323
+      "Interpersonal Communication",
+      2.844150427413615
     ],
     [
-      "Fitness Assessment",
-      2.5705691919322513
+      "Business Communication",
+      2.8431773874920845
     ],
     [
-      "Anatomy and Kinesiology",
-      2.5705691919322513
+      "Listening and Feedback Skills",
+      2.8431773874920845
     ],
     [
-      "Instructional Strategies in PE",
-      2.5705691919322513
+      "Writing for Different Audiences (e.g., technical, lay, academic)",
+      2.8431773874920845
     ],
     [
-      "Physical Fitness Programming",
-      2.5705691919322513
+      "Ethics in Communication",
+      2.8431773874920845
     ],
     [
-      "Assessment and Feedback in Physical Activities",
-      2.5705691919322513
+      "Audience Analysis and Adaptation",
+      2.8431773874920845
     ],
     [
-      "Motor Learning and Control",
-      2.5705691919322513
+      "Report Writing",
+      2.8431773874920845
     ],
     [
-      "Physical Education Theory",
-      2.5705691919322513
+      "Presentation Skills",
+      2.8431773874920845
     ],
     [
-      "Movement Analysis",
-      2.5705691919322513
+      "Communication Theory",
+      2.843149854024821
     ]
   ],
   "Factor_12": [
     [
-      "Risk Management",
-      4.352232319772822
+      "Critical Thinking",
+      3.3200332990110986
     ],
     [
-      "Entrepreneurship Principles",
-      2.443988342609537
+      "Linear Equations and Inequalities",
+      3.1077448745458462
     ],
     [
-      "Business Communication for Entrepreneurs",
-      2.443988342609537
+      "Trigonometry",
+      3.1077448745458462
     ],
     [
-      "Business Planning",
-      2.443988342609537
+      "Mathematics Communication",
+      3.1077448745458462
     ],
     [
-      "Business Model Development",
-      2.443988342609537
+      "Mathematical Reasoning",
+      3.1077448745458462
     ],
     [
-      "Opportunity Recognition",
-      2.443988342609537
+      "Mathematics Pedagogy",
+      3.1077448745458462
     ],
     [
-      "Creative Thinking and Problem-Solving",
-      2.443988342609537
+      "Assessment and Feedback Design",
+      3.1077448745458462
     ],
     [
-      "First Aid and Emergency Response",
-      2.4306374511600852
+      "Algebra",
+      3.1077448745458462
     ],
     [
-      "Outdoor Safety Protocols",
-      2.4306374511600852
+      "Functions and Graphs",
+      3.1077448745458462
     ],
     [
-      "Wilderness Survival Skills",
-      2.4306374511600852
+      "Pre-Calculus",
+      3.1077448745458462
     ]
   ],
   "Factor_13": [
     [
-      "Object-Oriented Programming",
-      3.4389605777545875
+      "Documentation",
+      2.777449550196881
     ],
     [
-      "Program Design",
-      3.1086704412402213
+      "Clear and Concise Communication in IT",
+      2.4525543044626303
     ],
     [
-      "Data Structures",
-      3.0258008447235487
+      "Presentation Techniques",
+      2.4525543044626303
     ],
     [
-      "Software Development",
-      2.2575644568202953
+      "Presentation Skills for IT Professionals",
+      2.4525543044626303
     ],
     [
-      "Algorithm Analysis",
-      2.072446960826814
+      "Technical Writing for IT Audiences",
+      2.4525543044626303
     ],
     [
-      "Programming Logic and Flow Control",
-      1.7156037745988515
+      "Communication for IT",
+      2.4525543044626303
     ],
     [
-      "Syntax and Semantics of Programming Languages",
-      1.7156037745988515
+      "Technical Writing Fundamentals",
+      2.4525543044626303
     ],
     [
-      "Student Code Review and Feedback",
-      1.7156037745988515
+      "Designing Effective Technical Presentations",
+      2.4525543044626303
     ],
     [
-      "Problem Solving and Computational Thinking",
-      1.7156037745988515
+      "Technical Writing",
+      2.449448395604148
     ],
     [
-      "Teaching Programming Concepts",
-      1.7156037745988515
+      "Technical Proposals and RFPs",
+      1.6350362029750867
     ]
   ],
   "Factor_14": [
     [
-      "Critical Thinking",
-      2.9731261342019737
+      "Software Engineering Practices",
+      3.123912970746243
     ],
     [
-      "Ethical Theory",
-      2.840203094784344
+      "Agile Development Practices",
+      2.9675246629143586
     ],
     [
-      "Ethics and Moral Philosophy",
-      2.840203094784344
+      "Software Development Methodologies",
+      2.9675246629143586
     ],
     [
-      "Normative Ethics",
-      2.840203094784344
+      "Software Documentation and Maintenance",
+      2.9675246629143586
     ],
     [
-      "Philosophical Analysis",
-      2.840203094784344
+      "System Analysis and Design Fundamentals",
+      2.609985187034365
     ],
     [
-      "Applied Ethics and Moral Decision-Making",
-      2.840203094784344
+      "UML Diagrams",
+      2.609985187034365
     ],
     [
-      "Philosophical Writing and Argumentation",
-      2.840203094784344
+      "Systems Thinking",
+      2.609985187034365
     ],
     [
-      "Virtue Ethics",
-      2.840203094784344
+      "Process Modeling",
+      2.609985187034365
     ],
     [
-      "Meta-Ethics",
-      2.840203094784344
+      "Requirements Engineering",
+      2.609985187034365
     ],
     [
-      "Ethical Analysis and Moral Reasoning",
-      2.840203094784344
+      "Project Management",
+      2.5378784364345517
     ]
   ],
   "Factor_15": [
     [
       "Sociological Theory",
-      3.2962585967131766
-    ],
-    [
-      "Social Justice",
-      2.9680362763178767
-    ],
-    [
-      "Feminist Theory",
-      2.9680362763178767
-    ],
-    [
-      "Inclusive Pedagogy",
-      2.9680362763178767
-    ],
-    [
-      "Qualitative Research",
-      2.9680362763178767
-    ],
-    [
-      "Ethics in Social Research",
-      2.9680362763178767
-    ],
-    [
-      "Intersectionality",
-      2.9680362763178767
-    ],
-    [
-      "Facilitation of Sensitive Topics",
-      2.9680362763178767
+      3.1509901175408497
     ],
     [
       "Gender Studies",
-      2.9680362763178767
+      2.8383651483116745
     ],
     [
-      "Curriculum Development",
-      2.9567699597106927
+      "Inclusive Pedagogy",
+      2.8383651483116745
+    ],
+    [
+      "Feminist Theory",
+      2.8383651483116745
+    ],
+    [
+      "Ethics in Social Research",
+      2.8383651483116745
+    ],
+    [
+      "Qualitative Research",
+      2.8383651483116745
+    ],
+    [
+      "Intersectionality",
+      2.8383651483116745
+    ],
+    [
+      "Social Justice",
+      2.8383651483116745
+    ],
+    [
+      "Facilitation of Sensitive Topics",
+      2.8383651483116745
+    ],
+    [
+      "Academic Writing",
+      2.823266479739913
     ]
   ],
   "Factor_16": [
     [
-      "Routing and Switching Protocols",
-      2.441204183172816
+      "TCP/IP Protocol Suite",
+      3.3967808052753554
     ],
     [
-      "Networking Fundamentals",
-      2.441204183172816
+      "Network Design",
+      3.3967808052753554
     ],
     [
-      "Communication Protocols",
-      2.441204183172816
+      "OSI Model",
+      3.3967808052753554
     ],
     [
-      "Data Transmission",
-      2.441204183172816
+      "Network Protocols",
+      3.3967808052753554
     ],
     [
-      "Data Link Layer and Physical Layer Protocols",
-      2.441204183172816
+      "Network Security",
+      3.3791017245184367
     ],
     [
-      "OSI Model and TCP/IP Protocol Stack",
-      2.441204183172816
+      "Network Troubleshooting",
+      2.8065532332527137
     ],
     [
-      "Internet Protocol (IP) and Addressing",
-      2.441204183172816
+      "Network Management",
+      2.706908542568927
     ],
     [
-      "Error Detection and Correction",
-      1.627469455448544
+      "Firewall and VPN Configuration",
+      2.264520536850237
     ],
     [
-      "Network Architecture",
-      1.627469455448544
+      "Cloud Networking",
+      2.264520536850237
     ],
     [
-      "Bandwidth Management",
-      1.627469455448544
+      "Routing and Switching",
+      2.264520536850237
     ]
   ],
   "Factor_17": [
     [
-      "Visual Literacy",
-      3.9711437296808194
-    ],
-    [
-      "Art Criticism",
-      3.9711437296808194
-    ],
-    [
       "Critical Thinking and Visual Analysis",
-      3.9711437296808194
-    ],
-    [
-      "Art Appreciation Techniques and Teaching Methods",
-      3.9711437296808194
-    ],
-    [
-      "Art Movements and Periods (e.g., Renaissance, Baroque, Modernism)",
-      3.9711437296808194
+      1.1833009006577468
     ],
     [
       "Art Theory and Philosophical Perspectives",
-      3.9711437296808194
-    ],
-    [
-      "Aesthetic Theory",
-      3.9711437296808194
+      1.1833009006577468
     ],
     [
       "Art History",
-      3.9711437296808194
+      1.1833009006577468
+    ],
+    [
+      "Aesthetic Theory",
+      1.1833009006577468
+    ],
+    [
+      "Visual Literacy",
+      1.1833009006577468
+    ],
+    [
+      "Art Movements and Periods (e.g., Renaissance, Baroque, Modernism)",
+      1.1833009006577468
+    ],
+    [
+      "Art Criticism",
+      1.1833009006577468
+    ],
+    [
+      "Art Appreciation Techniques and Teaching Methods",
+      1.1833009006577468
     ],
     [
       "Cultural Studies",
-      2.8057889566395473
+      0.842023548634581
     ],
     [
-      "Art Education and Pedagogy",
-      2.6474291531205463
+      "Art and Society (Art as Reflection of Culture and Politics)",
+      0.7888672671051646
     ]
   ],
   "Factor_18": [
     [
-      "Critical Thinking",
-      5.140697186791066
+      "Database Management Systems (DBMS)",
+      4.9315814750376274
     ],
     [
-      "Assessment and Feedback Design",
-      4.813395867284069
+      "SQL",
+      4.835492841910205
     ],
     [
-      "Functions and Graphs",
-      4.813395867284069
+      "Data Integrity and Constraints",
+      4.665414628368547
     ],
     [
-      "Pre-Calculus",
-      4.813395867284069
+      "Data Modeling",
+      4.665414628368547
     ],
     [
-      "Mathematics Communication",
-      4.813395867284069
+      "ACID Properties of Transactions",
+      4.665414628368547
     ],
     [
-      "Trigonometry",
-      4.813395867284069
+      "Database Design",
+      4.665414628368547
     ],
     [
-      "Mathematics Pedagogy",
-      4.813395867284069
+      "SQL Query Writing and Optimization",
+      4.665414628368547
     ],
     [
-      "Linear Equations and Inequalities",
-      4.813395867284069
+      "Entity-Relationship Diagrams (ERD)",
+      4.665414628368547
     ],
     [
-      "Mathematical Reasoning",
-      4.813395867284069
+      "Normalization and Denormalization",
+      4.665414628368547
     ],
     [
-      "Algebra",
-      4.813395867284069
+      "Relational Database Theory",
+      4.665414628368547
     ]
   ],
   "Factor_19": [
     [
-      "Quality Assurance",
-      3.3754127137689673
+      "Digital Logic Design Fundamentals",
+      3.622267872425776
     ],
     [
-      "Software Development Lifecycle",
-      3.3398297960250276
+      "Boolean Algebra and Logic Gates",
+      3.622267872425776
     ],
     [
-      "Software Engineering",
-      2.837513704779876
+      "Digital Electronics",
+      3.622267872425776
     ],
     [
-      "Version Control (Git, GitHub)",
-      2.364626340069173
+      "Boolean Algebra",
+      3.622267872425776
     ],
     [
-      "Software Testing",
-      2.3261248636105627
+      "Circuit Design",
+      3.622267872425776
     ],
     [
-      "Regression Testing",
-      2.3261248636105627
+      "Logic Gates",
+      3.622267872425776
     ],
     [
-      "Test Case Design",
-      2.3261248636105627
+      "Digital Circuit Troubleshooting",
+      2.41484524828385
     ],
     [
-      "Manual Testing Techniques",
-      2.3261248636105627
+      "Flip-Flops and Registers",
+      2.41484524828385
     ],
     [
-      "Application Development",
-      1.7876239784724093
+      "Combinational Logic Design",
+      2.41484524828385
     ],
     [
-      "Mobile Development",
-      1.6713328502499867
+      "Finite State Machines (FSM)",
+      2.41484524828385
     ]
   ]
 }

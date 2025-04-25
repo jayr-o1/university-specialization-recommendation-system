@@ -144,6 +144,7 @@ class EnhancedRecommendationModel:
         content_recs = []
         collab_recs = []
         skill_based_recs = []
+        career_path_recs = []
         
         # 1. Content-based recommendations
         if user_skills:
@@ -159,16 +160,32 @@ class EnhancedRecommendationModel:
                 [item['skill'] for item in next_skills], top_n=top_n
             )
         
+        # 4. Career path recommendations (if user has career goals)
+        if user_id in self.user_profiles and self.user_profiles[user_id]['career_goals']:
+            career_goal = self.user_profiles[user_id]['career_goals'][0]
+            career_path_recs = self.path_generator.get_career_aligned_courses(career_goal, top_n=top_n)
+        
         # Combine recommendations with different weights
         combined_scores = defaultdict(float)
+        component_scores = defaultdict(dict)
         course_history = self.user_profiles.get(user_id, {}).get('course_history', [])
+        
+        # Define weights for different recommendation components
+        weights = {
+            'content': 0.5,    # Content-based (skill matching) - 50%
+            'collab': 0.3,     # Collaborative filtering - 30%
+            'skill_graph': 0.1,  # Skill graph-based - 10%
+            'career_path': 0.1   # Career path alignment - 10%
+        }
         
         # Content-based recommendations (highest weight)
         for rec in content_recs:
             course = rec['course_name']
             if course not in course_history:  # Skip courses the user has already taken
                 score = rec['match_percentage'] / 100.0  # Convert to 0-1 scale
-                combined_scores[course] += score * 0.5  # 50% weight
+                combined_scores[course] += score * weights['content']
+                component_scores[course]['content_score'] = rec['match_percentage']
+                component_scores[course]['content_details'] = rec
                 
         # Collaborative filtering recommendations
         for rec in collab_recs:
@@ -176,14 +193,25 @@ class EnhancedRecommendationModel:
             if course not in course_history:
                 # Normalize rating from 1-5 to 0-1 scale
                 score = rec['predicted_rating'] / 5.0
-                combined_scores[course] += score * 0.3  # 30% weight
+                combined_scores[course] += score * weights['collab']
+                component_scores[course]['collab_score'] = rec['predicted_rating'] * 20  # Scale to 0-100
+                component_scores[course]['collab_details'] = rec
                 
         # Skill graph-based recommendations
         for rec in skill_based_recs:
             course = rec['course_name']
             if course not in course_history:
                 score = rec['relevance'] / 100.0  # Convert to 0-1 scale
-                combined_scores[course] += score * 0.2  # 20% weight
+                combined_scores[course] += score * weights['skill_graph']
+                component_scores[course]['skill_graph_score'] = rec['relevance']
+                
+        # Career path recommendations
+        for rec in career_path_recs:
+            course = rec['course_name']
+            if course not in course_history:
+                score = rec['match_percentage'] / 100.0
+                combined_scores[course] += score * weights['career_path']
+                component_scores[course]['career_path_score'] = rec['match_percentage']
         
         # Sort courses by combined score
         sorted_courses = sorted(combined_scores.items(), key=lambda x: x[1], reverse=True)
@@ -225,6 +253,60 @@ class EnhancedRecommendationModel:
             if collab_rec:
                 recommendation['predicted_rating'] = collab_rec['predicted_rating']
             
+            # Add explainability data
+            explanation_data = {
+                'component_scores': {},
+                'weights': weights,
+                'recommendation_factors': []
+            }
+            
+            # Add individual component scores
+            if course_name in component_scores:
+                if 'content_score' in component_scores[course_name]:
+                    explanation_data['component_scores']['content_score'] = component_scores[course_name]['content_score']
+                
+                if 'collab_score' in component_scores[course_name]:
+                    explanation_data['component_scores']['collab_score'] = component_scores[course_name]['collab_score']
+                
+                if 'skill_graph_score' in component_scores[course_name]:
+                    explanation_data['component_scores']['skill_graph_score'] = component_scores[course_name]['skill_graph_score']
+                
+                if 'career_path_score' in component_scores[course_name]:
+                    explanation_data['component_scores']['career_path_score'] = component_scores[course_name]['career_path_score']
+            
+            # Add factors that influenced this recommendation
+            if recommendation['matched_skills']:
+                explanation_data['recommendation_factors'].append({
+                    'factor': 'Skill Match',
+                    'description': f"You already have {len(recommendation['matched_skills'])} relevant skills for this course",
+                    'importance': 'high'
+                })
+            
+            if 'predicted_rating' in recommendation:
+                explanation_data['recommendation_factors'].append({
+                    'factor': 'User Ratings',
+                    'description': f"Similar users rated this course {recommendation['predicted_rating']:.1f}/5.0",
+                    'importance': 'medium'
+                })
+            
+            if recommendation['missing_skills']:
+                explanation_data['recommendation_factors'].append({
+                    'factor': 'Skill Development',
+                    'description': f"This course teaches {len(recommendation['missing_skills'])} new skills that complement your profile",
+                    'importance': 'medium'
+                })
+            
+            # Add career path alignment if applicable
+            if user_id in self.user_profiles and self.user_profiles[user_id]['career_goals']:
+                career_goal = self.user_profiles[user_id]['career_goals'][0]
+                if 'career_path_score' in component_scores.get(course_name, {}):
+                    explanation_data['recommendation_factors'].append({
+                        'factor': 'Career Alignment',
+                        'description': f"This course aligns with your {career_goal} career goal",
+                        'importance': 'medium'
+                    })
+            
+            recommendation['explanation_data'] = explanation_data
             recommendations.append(recommendation)
         
         # Store recommendations in user profile
@@ -313,7 +395,90 @@ class EnhancedRecommendationModel:
     
     def find_similar_courses(self, course_name, top_n=5):
         """Find courses similar to a given course"""
-        return self.content_recommender.find_similar_courses(course_name, top_n)
+        similar_courses = self.content_recommender.find_similar_courses(course_name, top_n)
+        
+        # Enhance with additional information
+        for course in similar_courses:
+            course_skills = set(self.course_data.get(course['course_name'], {}).get('required_skills', []))
+            target_skills = set(self.course_data.get(course_name, {}).get('required_skills', []))
+            
+            if course_skills and target_skills:
+                common_skills = course_skills.intersection(target_skills)
+                course['common_skills'] = list(common_skills)
+        
+        return similar_courses
+    
+    def explain_recommendation(self, course_name, user_id):
+        """
+        Generate a detailed explanation for why a course was recommended
+        
+        Args:
+            course_name: Name of the recommended course
+            user_id: User ID for the recommendation
+            
+        Returns:
+            Dict with explanation data
+        """
+        if user_id not in self.user_profiles:
+            return {"error": "User profile not found"}
+            
+        user_skills = self.user_profiles[user_id]['skills']
+        
+        # Find the recommendation data
+        rec_history = self.user_profiles[user_id].get('recent_recommendations', [])
+        if course_name not in rec_history:
+            # Re-recommend to get fresh data
+            recommendations = self.recommend_courses(user_id, top_n=10)
+            rec = next((r for r in recommendations if r['course_name'] == course_name), None)
+        else:
+            # Use last recommendations to explain
+            recommendations = self.recommend_courses(user_id, top_n=10)
+            rec = next((r for r in recommendations if r['course_name'] == course_name), None)
+        
+        if not rec:
+            return {"error": "Course not found in recommendations"}
+            
+        # Get course data
+        course_data = self.course_data.get(course_name, {})
+        if not course_data:
+            return {"error": "Course data not found"}
+            
+        # Build a detailed explanation
+        explanation = {
+            "course_name": course_name,
+            "match_percentage": rec.get('match_percentage', 0),
+            "matched_skills": rec.get('matched_skills', []),
+            "missing_skills": rec.get('missing_skills', []),
+            "explanation_factors": rec.get('explanation_data', {}).get('recommendation_factors', []),
+            "component_scores": rec.get('explanation_data', {}).get('component_scores', {}),
+            "skill_gap_analysis": {}
+        }
+        
+        # Add skill gap analysis
+        if 'required_skills' in course_data and user_skills:
+            required_skills = set(course_data['required_skills'])
+            user_skill_set = set(user_skills.keys())
+            
+            explanation["skill_gap_analysis"] = {
+                "total_required_skills": len(required_skills),
+                "user_matched_skills": len(required_skills.intersection(user_skill_set)),
+                "skill_gap_percentage": round((1 - len(required_skills.intersection(user_skill_set)) / len(required_skills)) * 100 if required_skills else 0)
+            }
+        
+        # Add career relevance if applicable
+        if self.user_profiles[user_id]['career_goals']:
+            career_goal = self.user_profiles[user_id]['career_goals'][0]
+            career_courses = self.path_generator.get_career_aligned_courses(career_goal)
+            
+            career_match = next((c for c in career_courses if c['course_name'] == course_name), None)
+            if career_match:
+                explanation["career_relevance"] = {
+                    "career_goal": career_goal,
+                    "relevance_score": career_match.get('match_percentage', 0),
+                    "career_path_position": career_match.get('path_position', 'unknown')
+                }
+        
+        return explanation
 
 # Example usage
 if __name__ == "__main__":

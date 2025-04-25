@@ -13,10 +13,37 @@ class SkillGraph:
             'complementary': {},  # skill -> complementary skills
             'advanced_version': {}  # basic skill -> advanced versions
         }
+        self.skill_aliases = self._create_skill_aliases()
         
         # Load course skills to build initial relationships
         if course_skills_path:
             self.load_course_data(course_skills_path)
+            
+    def _create_skill_aliases(self):
+        """Create a dictionary of common skill aliases and their full names"""
+        return {
+            'OOP': 'Object-Oriented Programming',
+            'DB': 'Database Design',
+            'JS': 'JavaScript',
+            'UI': 'User Interface (UI) Design',
+            'UX': 'User Experience (UX) Design',
+            'ML': 'Machine Learning',
+            'AI': 'Artificial Intelligence',
+            'NLP': 'Natural Language Processing',
+            'CV': 'Computer Vision',
+            'DS': 'Data Structures',
+            'SQL': 'Structured Query Language (SQL)',
+            'CSS': 'Cascading Style Sheets (CSS)',
+            'HTML': 'HyperText Markup Language (HTML)',
+            'API': 'API Development',
+            'REST': 'RESTful API Design',
+            'TDD': 'Test-Driven Development',
+            'CI/CD': 'CI/CD Pipeline',
+            'DevOps': 'DevOps Practices',
+            'AWS': 'Amazon Web Services',
+            'GCP': 'Google Cloud Platform',
+            'Azure': 'Microsoft Azure'
+        }
             
     def load_course_data(self, course_skills_path):
         """Load course data and build initial skill relationships"""
@@ -53,6 +80,39 @@ class SkillGraph:
                         self.graph[skill2][skill1]['weight'] += 1
                     else:
                         self.graph.add_edge(skill2, skill1, weight=1)
+        
+        # Add aliases as nodes in the graph, connected to their full names
+        self._add_skill_aliases_to_graph()
+    
+    def _add_skill_aliases_to_graph(self):
+        """Add skill aliases to the graph and connect them to their full names"""
+        for alias, full_name in self.skill_aliases.items():
+            # If the full name exists in the graph, add the alias as a node
+            if full_name in self.graph:
+                # Add the alias as a node if it doesn't exist
+                if not self.graph.has_node(alias):
+                    self.graph.add_node(alias, alias_for=full_name)
+                
+                # Create bidirectional edges between alias and full name
+                self.graph.add_edge(alias, full_name, relationship='alias', weight=10)
+                self.graph.add_edge(full_name, alias, relationship='alias', weight=10)
+                
+                # Copy the attributes from the full name node
+                for attr_name, attr_value in self.graph.nodes[full_name].items():
+                    if attr_name not in self.graph.nodes[alias]:
+                        self.graph.nodes[alias][attr_name] = attr_value
+                
+                # Copy the edges from the full name
+                for neighbor in self.graph.neighbors(full_name):
+                    if neighbor != alias:  # Avoid self-loops
+                        edge_attrs = self.graph[full_name][neighbor]
+                        self.graph.add_edge(alias, neighbor, **edge_attrs)
+    
+    def get_canonical_skill_name(self, skill):
+        """Get the canonical name for a skill, resolving aliases"""
+        if skill in self.skill_aliases and self.graph.has_node(self.skill_aliases[skill]):
+            return self.skill_aliases[skill]
+        return skill
     
     def add_prerequisite(self, skill, prerequisite):
         """Add a prerequisite relationship"""
@@ -97,24 +157,37 @@ class SkillGraph:
     
     def get_prerequisites(self, skill):
         """Get prerequisites for a skill"""
+        # Resolve aliases first
+        skill = self.get_canonical_skill_name(skill)
+        
         if skill in self.skill_relationships['prerequisite']:
             return self.skill_relationships['prerequisite'][skill]
         return []
     
     def get_complementary_skills(self, skill):
         """Get complementary skills"""
+        # Resolve aliases first
+        skill = self.get_canonical_skill_name(skill)
+        
         if skill in self.skill_relationships['complementary']:
             return self.skill_relationships['complementary'][skill]
         return []
     
     def get_advanced_versions(self, skill):
         """Get advanced versions of a skill"""
+        # Resolve aliases first
+        skill = self.get_canonical_skill_name(skill)
+        
         if skill in self.skill_relationships['advanced_version']:
             return self.skill_relationships['advanced_version'][skill]
         return []
     
     def get_skill_path(self, from_skill, to_skill):
         """Find a path between two skills"""
+        # Resolve aliases first
+        from_skill = self.get_canonical_skill_name(from_skill)
+        to_skill = self.get_canonical_skill_name(to_skill)
+        
         try:
             path = nx.shortest_path(self.graph, from_skill, to_skill)
             return path
@@ -131,24 +204,38 @@ class SkillGraph:
         
         # For each user skill, find related skills
         for skill, proficiency in user_skills.items():
+            # Resolve aliases first
+            canonical_skill = self.get_canonical_skill_name(skill)
+            
+            # Skip skills not in the graph
+            if canonical_skill not in self.graph and skill not in self.graph:
+                continue
+                
+            # Use the canonical skill name if it exists, otherwise use the original
+            graph_skill = canonical_skill if canonical_skill in self.graph else skill
+                
             # Convert proficiency to weight
             weight = self._convert_proficiency_to_weight(proficiency)
             
             # Score is higher for skills with strong connections to multiple user skills
-            for neighbor in self.graph.neighbors(skill):
-                if neighbor not in existing_skills:
-                    # Weight by connection strength and user's proficiency
-                    edge_weight = self.graph[skill][neighbor].get('weight', 1)
-                    skill_scores[neighbor] += edge_weight * weight
+            try:
+                for neighbor in self.graph.neighbors(graph_skill):
+                    if neighbor not in existing_skills:
+                        # Weight by connection strength and user's proficiency
+                        edge_weight = self.graph[graph_skill][neighbor].get('weight', 1)
+                        skill_scores[neighbor] += edge_weight * weight
+            except nx.NetworkXError:
+                # Skip if skill not in graph
+                continue
                     
             # Add prerequisites with higher scores
-            prereqs = self.get_prerequisites(skill)
+            prereqs = self.get_prerequisites(graph_skill)
             for prereq in prereqs:
                 if prereq not in existing_skills:
                     skill_scores[prereq] += 2.0 * weight
                     
             # Add advanced versions with medium scores
-            advanced = self.get_advanced_versions(skill)
+            advanced = self.get_advanced_versions(graph_skill)
             for adv in advanced:
                 if adv not in existing_skills:
                     skill_scores[adv] += 1.5 * weight
@@ -209,7 +296,8 @@ class SkillGraph:
         data = {
             'nodes': list(self.graph.nodes(data=True)),
             'edges': list(self.graph.edges(data=True)),
-            'relationships': self.skill_relationships
+            'relationships': self.skill_relationships,
+            'skill_aliases': self.skill_aliases
         }
         
         with open(filepath, 'w') as f:
@@ -234,12 +322,18 @@ class SkillGraph:
         # Load relationships
         self.skill_relationships = data['relationships']
         
+        # Load aliases if available
+        if 'skill_aliases' in data:
+            self.skill_aliases = data['skill_aliases']
+        else:
+            self.skill_aliases = self._create_skill_aliases()
+        
     def initialize_common_relationships(self):
         """Initialize common skill relationships based on patterns"""
         # Add some common programming relationships
         prog_skills = {
             'basic': ['Programming Logic and Flow Control', 'Basic Programming Concepts', 
-                     'Computational Thinking', 'Algorithm Design'],
+                     'Computational Thinking', 'Algorithm Design', 'Object-Oriented Programming'],
             'languages': ['JavaScript', 'Python', 'Java', 'C++', 'PHP', 'Ruby'],
             'web': ['HTML', 'CSS', 'JavaScript', 'Responsive Design', 'Web Design Principles'],
             'data': ['SQL', 'Database Design', 'Data Structures', 'Data Visualization', 
@@ -290,6 +384,9 @@ class SkillGraph:
             for skill2 in comm_skills[i+1:]:
                 if skill1 in self.graph and skill2 in self.graph:
                     self.add_complementary(skill1, skill2)
+                    
+        # Add skill aliases to the graph
+        self._add_skill_aliases_to_graph()
 
 # Example usage
 if __name__ == "__main__":

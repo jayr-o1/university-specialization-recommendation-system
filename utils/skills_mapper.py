@@ -48,20 +48,56 @@ class SkillsMapper:
             vec2 (list): Second vector
             
         Returns:
-            float: Cosine similarity score
+            float: Cosine similarity between the vectors
         """
         vec1 = np.array(vec1)
         vec2 = np.array(vec2)
         
-        dot_product = np.dot(vec1, vec2)
-        norm_vec1 = np.linalg.norm(vec1)
-        norm_vec2 = np.linalg.norm(vec2)
-        
-        # Avoid division by zero
-        if norm_vec1 == 0 or norm_vec2 == 0:
-            return 0
+        # Handle zero vectors
+        if np.all(vec1 == 0) or np.all(vec2 == 0):
+            return 0.0
             
-        return dot_product / (norm_vec1 * norm_vec2)
+        # Calculate cosine similarity
+        dot_product = np.dot(vec1, vec2)
+        norm1 = np.linalg.norm(vec1)
+        norm2 = np.linalg.norm(vec2)
+        
+        return dot_product / (norm1 * norm2)
+        
+    def find_similar_skills(self, skill, max_similar=3):
+        """
+        Find skills similar to the given skill based on embeddings.
+        
+        Args:
+            skill (str): The skill to find similar skills for
+            max_similar (int): Maximum number of similar skills to return
+            
+        Returns:
+            list: List of similar skills
+        """
+        if not self.skill_embeddings:
+            return []
+            
+        # Get embedding for the skill
+        skill_embedding = None
+        for s, embedding in self.skill_embeddings.items():
+            if s.lower() == skill.lower():
+                skill_embedding = embedding
+                break
+                
+        if not skill_embedding:
+            return []
+            
+        # Calculate similarities with all other skills
+        similarities = []
+        for s, embedding in self.skill_embeddings.items():
+            if s.lower() != skill.lower():
+                similarity = self.cosine_similarity(skill_embedding, embedding)
+                similarities.append((s, similarity))
+                
+        # Sort by similarity and get top matches
+        similarities.sort(key=lambda x: x[1], reverse=True)
+        return [s for s, _ in similarities[:max_similar]]
         
     def map_skills(self, user_skills, course_skills):
         """

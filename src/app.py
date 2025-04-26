@@ -38,7 +38,7 @@ def faculty_development():
     
     if request.method == 'POST':
         name = request.form.get('name', 'Faculty Member')
-        department = request.form.get('department', 'computer_science')
+        department = request.form.get('department', 'computer_studies')
         skills_input = request.form.get('skills', '')
         skills = [skill.strip() for skill in skills_input.split(',') if skill.strip()]
         
@@ -63,12 +63,39 @@ def faculty_development():
                 "recommendations": recommendations
             }, output_file)
             
+            # Format results to match template expectations
             results = {
                 'name': name,
                 'department': department,
-                'matched_skills': skill_gaps['matched_skills'],
-                'recommendations': recommendations
+                'matched_skills': {
+                    'high_demand': skill_gaps['matched_skills'],
+                    'emerging': []
+                },
+                'recommendations': []
             }
+            
+            # Add recommendations in the expected format
+            for skill in skill_gaps['skill_gaps']['high_priority']:
+                results['recommendations'].append({
+                    'skill': skill,
+                    'priority': 'high',
+                    'reason': 'Core skill required for your department',
+                    'related_faculty_skills': [],
+                    'prerequisites': [],
+                    'missing_prerequisites': [],
+                    'estimated_learning_time': '3-6 months'
+                })
+                
+            for skill in skill_gaps['skill_gaps']['medium_priority']:
+                results['recommendations'].append({
+                    'skill': skill,
+                    'priority': 'medium',
+                    'reason': 'Advanced skill recommended for your department',
+                    'related_faculty_skills': [],
+                    'prerequisites': [],
+                    'missing_prerequisites': [],
+                    'estimated_learning_time': '2-3 months'
+                })
     
     return render_template(
         'faculty_development.html',
@@ -142,25 +169,14 @@ def faculty_teaching():
             except Exception as e:
                 print(f"DEBUG: Error accessing course data: {e}")
             
-            # Find teachable courses using the trained model
-            teachable_courses = advisor.find_teachable_courses(faculty_skills, threshold=threshold)
-            
-            # Debug teachable courses
-            print(f"DEBUG: Found {len(teachable_courses)} courses matching at {threshold}% threshold")
-            if teachable_courses:
-                print("DEBUG: Top matching course:", teachable_courses[0])
-            
-            # Try with lower threshold for debugging
-            if not teachable_courses:
-                lower_threshold = 30
-                print(f"DEBUG: No matches at {threshold}%, trying lower threshold {lower_threshold}%")
-                test_courses = advisor.find_teachable_courses(faculty_skills, threshold=lower_threshold)
-                if test_courses:
-                    print(f"DEBUG: Found {len(test_courses)} courses at {lower_threshold}% threshold")
-                    print(f"DEBUG: Best match: {test_courses[0]['course_name']} - {test_courses[0]['match_percentage']}%")
-            
             # Identify skill gaps using the trained model
-            skill_gaps = advisor.identify_skill_gaps(faculty_skills)
+            skill_gaps = advisor.identify_skill_gaps(faculty_skills, threshold=threshold)
+            
+            # If we don't have enough skill gaps, try with a lower threshold
+            if len(skill_gaps['skill_gap_courses']) < 10:
+                lower_threshold = max(10, threshold - 20)  # Don't go below 10%
+                print(f"DEBUG: Not enough skill gaps found, trying lower threshold {lower_threshold}%")
+                skill_gaps = advisor.identify_skill_gaps(faculty_skills, threshold=lower_threshold)
             
             # Save analysis to file
             output_dir = 'data/faculty_analysis'
@@ -170,14 +186,12 @@ def faculty_teaching():
             with open(output_file, 'w') as f:
                 json.dump({
                     "faculty_name": name,
-                    "teachable_courses": teachable_courses,
                     "skill_gaps": skill_gaps
                 }, f, indent=4)
             
             results = {
                 'name': name,
-                'teachable_courses': teachable_courses,
-                'skill_gaps': skill_gaps
+                'skill_gaps': skill_gaps['skill_gap_courses']
             }
     
     return render_template(

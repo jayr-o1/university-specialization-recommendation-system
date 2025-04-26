@@ -1,9 +1,8 @@
-
-    <!DOCTYPE html>
-    <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Faculty Development Advisor</title>
         <style>
             body {
@@ -48,7 +47,8 @@
                 border-radius: 5px;
                 background-color: #f9f9f9;
             }
-            input, select {
+            input,
+            select {
                 width: 100%;
                 padding: 10px;
                 margin: 10px 0;
@@ -92,37 +92,58 @@
         <div class="header">
             <h1>Faculty Skills Development Advisor</h1>
         </div>
-        
+
         <div class="nav-menu">
             <a href="/" class="nav-item">Home</a>
-            <a href="/faculty-development" class="nav-item active">Faculty Development</a>
+            <a href="/faculty-development" class="nav-item active"
+                >Faculty Development</a
+            >
             <a href="/faculty-teaching" class="nav-item">Teaching Advisor</a>
         </div>
 
         <div class="form-container">
             <h2>Enter Your Information</h2>
-            
+
             <form method="POST">
                 <div>
-                    <label for="name">Your Name:</label>
-                    <input type="text" id="name" name="name" required>
+                    <label for="name">Faculty Name:</label>
+                    <input type="text" id="name" name="name" required />
                 </div>
-                
                 <div>
-                    <label for="department">Select Your Department/Area:</label>
-                    <select id="department" name="department">
-                        <option value="data_science">Data Science</option>
-                        <option value="computer_science">Computer Science</option>
-                        <option value="information_systems">Information Systems</option>
-                        <option value="software_engineering">Software Engineering</option>
+                    <label for="department">College/Department:</label>
+                    <select id="department" name="department" required>
+                        <option value="business_accountancy">
+                            College of Business Accountancy
+                        </option>
+                        <option value="computer_studies">
+                            College of Computer Studies
+                        </option>
+                        <option value="criminology">
+                            College of Criminology
+                        </option>
+                        <option value="education">College of Education</option>
+                        <option value="tourism">College of Tourism</option>
+                        <option value="nursing">College of Nursing</option>
+                        <option value="psychology">
+                            College of Psychology
+                        </option>
+                        <option value="engineering">
+                            College of Engineering
+                        </option>
                     </select>
                 </div>
-                
                 <div>
-                    <label for="skills">Enter Your Current Skills (comma-separated):</label>
-                    <input type="text" id="skills" name="skills" placeholder="Python, Machine Learning, Data Analysis" value="{{ skills_input }}" required>
+                    <label for="skills"
+                        >Current Skills (comma-separated):</label
+                    >
+                    <input
+                        type="text"
+                        id="skills"
+                        name="skills"
+                        placeholder="e.g., Python, Data Analysis, Research Methods"
+                        required
+                    />
                 </div>
-                
                 <button type="submit">Analyze Skills</button>
             </form>
         </div>
@@ -130,10 +151,10 @@
         {% if results %}
         <div class="results">
             <h2>Your Skill Analysis</h2>
-            
+
             <div class="section">
                 <h3>Skills You Already Have Matching Industry Demands</h3>
-                
+
                 {% if results.matched_skills.high_demand %}
                 <h4>High-demand Skills:</h4>
                 <div>
@@ -141,52 +162,57 @@
                     <span class="skill-item">{{ skill }}</span>
                     {% endfor %}
                 </div>
-                {% endif %}
-                
-                {% if results.matched_skills.emerging %}
+                {% endif %} {% if results.matched_skills.emerging %}
                 <h4>Emerging Skills:</h4>
                 <div>
                     {% for skill in results.matched_skills.emerging %}
                     <span class="skill-item">{{ skill }}</span>
                     {% endfor %}
                 </div>
-                {% endif %}
-                
-                {% if not results.matched_skills.high_demand and not results.matched_skills.emerging %}
+                {% endif %} {% if not results.matched_skills.high_demand and not
+                results.matched_skills.emerging %}
                 <p>No direct matches found with in-demand industry skills.</p>
                 {% endif %}
             </div>
-            
+
             <div class="section">
                 <h3>Recommended Skill Development Areas</h3>
-                
+
                 {% if not results.recommendations %}
                 <p>No specific recommendations found.</p>
-                {% else %}
-                    {% for rec in results.recommendations %}
-                    <div class="section {% if rec.priority == 'high' %}high-priority{% else %}medium-priority{% endif %}">
-                        <h4>{{ rec.skill }} (Priority: {{ rec.priority }})</h4>
-                        <p><strong>Reason:</strong> {{ rec.reason }}</p>
-                        
-                        {% if rec.related_faculty_skills %}
-                        <p><strong>Related skills you already have:</strong> {{ rec.related_faculty_skills|join(', ') }}</p>
-                        {% endif %}
-                        
-                        {% if rec.prerequisites %}
-                        <p><strong>Prerequisites:</strong> {{ rec.prerequisites|join(', ') }}</p>
-                        
-                        {% if rec.missing_prerequisites %}
-                        <p><strong>Missing prerequisites:</strong> {{ rec.missing_prerequisites|join(', ') }}</p>
-                        {% endif %}
-                        {% endif %}
-                        
-                        <p><strong>Estimated learning time:</strong> {{ rec.estimated_learning_time }}</p>
-                    </div>
-                    {% endfor %}
-                {% endif %}
+                {% else %} {% for rec in results.recommendations %}
+                <div
+                    class="section {% if rec.priority == 'high' %}high-priority{% else %}medium-priority{% endif %}"
+                >
+                    <h4>{{ rec.skill }} (Priority: {{ rec.priority }})</h4>
+                    <p><strong>Reason:</strong> {{ rec.reason }}</p>
+
+                    {% if rec.related_faculty_skills %}
+                    <p>
+                        <strong>Related skills you already have:</strong> {{
+                        rec.related_faculty_skills|join(', ') }}
+                    </p>
+                    {% endif %} {% if rec.prerequisites %}
+                    <p>
+                        <strong>Prerequisites:</strong> {{
+                        rec.prerequisites|join(', ') }}
+                    </p>
+
+                    {% if rec.missing_prerequisites %}
+                    <p>
+                        <strong>Missing prerequisites:</strong> {{
+                        rec.missing_prerequisites|join(', ') }}
+                    </p>
+                    {% endif %} {% endif %}
+
+                    <p>
+                        <strong>Estimated learning time:</strong> {{
+                        rec.estimated_learning_time }}
+                    </p>
+                </div>
+                {% endfor %} {% endif %}
             </div>
         </div>
         {% endif %}
     </body>
-    </html>
-    
+</html>

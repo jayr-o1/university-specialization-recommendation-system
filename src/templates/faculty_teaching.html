@@ -168,43 +168,6 @@
             <h2>Your Teaching Analysis</h2>
 
             <div class="section">
-                <h3>Courses You Can Teach</h3>
-
-                {% if not results.teachable_courses %}
-                <p>No courses match your skills at the specified threshold.</p>
-                <p>Try lowering the threshold to see more potential matches.</p>
-                {% else %} {% for course in results.teachable_courses %}
-                <div class="course">
-                    <div class="course-header">
-                        <span>{{ course.course_name }}</span>
-                        <span class="match-percentage"
-                            >{{ course.match_percentage|int }}% Match</span
-                        >
-                    </div>
-
-                    {% if course.matched_skills %}
-                    <div class="skills-list">
-                        <strong>Your relevant skills:</strong>
-                        {% for skill in course.matched_skills %}
-                        <div class="skill-matched">✓ {{ skill }}</div>
-                        {% endfor %}
-                    </div>
-                    {% endif %} {% if course.missing_skills %}
-                    <div class="skills-list">
-                        <strong
-                            >Skills you don't have (but may not be
-                            critical):</strong
-                        >
-                        {% for skill in course.missing_skills %}
-                        <div class="skill-missing">✗ {{ skill }}</div>
-                        {% endfor %}
-                    </div>
-                    {% endif %}
-                </div>
-                {% endfor %} {% endif %}
-            </div>
-
-            <div class="section">
                 <h3>Skill Development Opportunities</h3>
 
                 <h4>Courses Where You Have Skill Gaps</h4>

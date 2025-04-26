@@ -30,54 +30,106 @@ class FacultyTeachingAdvisor:
         self.course_data_path = course_data_path
         self.course_data = self.model.course_data
     
-    def identify_skill_gaps(self, faculty_skills, limit=10):
+    def identify_skill_gaps(self, faculty_skills, threshold=30):
         """
-        Identify courses with skill gaps for the faculty member.
+        Identify skill gaps for courses where the faculty member has some but not all required skills.
         
         Args:
-            faculty_skills: Dictionary of faculty skills with proficiency and certification info
-            limit: Maximum number of courses to return
+            faculty_skills (dict): Dictionary of faculty skills with proficiency and certification info
+            threshold (float): Minimum similarity threshold (0-100) for considering a course
             
         Returns:
-            List of courses with skill gap details
+            dict: Dictionary containing faculty skills and courses with skill gaps
         """
-        # Get recommendations from the trained model
-        recommendations = self.model.recommend_courses(faculty_skills, top_n=limit)
-        
-        # Filter to only include courses with gaps
-        skill_gap_courses = []
-        for rec in recommendations:
-            if rec['missing_skills']:  # Only include courses with missing skills
-                skill_gap_courses.append({
-                    "course_name": rec['course_name'],
-                    "match_percentage": rec['match_percentage'],
-                    "matched_skills": rec['matched_skills'],
-                    "missing_skills": rec['missing_skills'],
-                    "gap_count": len(rec['missing_skills'])
-                })
-        
-        return skill_gap_courses[:limit]
-    
-    def find_teachable_courses(self, faculty_skills, threshold=70, limit=10):
-        """
-        Find courses that the faculty member can teach effectively based on their skills.
-        
-        Args:
-            faculty_skills: Dictionary of faculty skills with proficiency and certification info
-            threshold: Minimum percentage match required to consider a course teachable
-            limit: Maximum number of courses to return
-            
-        Returns:
-            List of teachable courses with match details
-        """
-        # Get recommendations from the trained model
+        # Get course recommendations based on faculty skills
         recommendations = self.model.recommend_courses(faculty_skills, top_n=None)
         
-        # Filter by threshold and sort by match percentage
-        teachable_courses = [course for course in recommendations if course["match_percentage"] >= threshold]
-        teachable_courses.sort(key=lambda x: x["match_percentage"], reverse=True)
+        # Convert similarity scores to percentages and filter by threshold
+        skill_gap_courses = []
+        for course in recommendations:
+            match_percentage = course["similarity"] * 100
+            if match_percentage >= threshold:
+                course_name = course["course"]
+                course_info = self.course_data[course_name]
+                required_skills = set(course_info.get("required_skills", []))
+                
+                # Calculate matched and missing skills
+                matched_skills = required_skills.intersection(set(faculty_skills.keys()))
+                missing_skills = required_skills - set(faculty_skills.keys())
+                
+                # Only include courses where there are both matched and missing skills
+                if matched_skills and missing_skills:
+                    # Format matched skills with proficiency and certification
+                    formatted_matched_skills = []
+                    for skill in matched_skills:
+                        if isinstance(faculty_skills[skill], dict):
+                            proficiency = faculty_skills[skill].get("proficiency", "Intermediate")
+                            is_certified = faculty_skills[skill].get("isBackedByCertificate", False)
+                            certified_str = " (certified)" if is_certified else ""
+                            formatted_matched_skills.append(f"{skill} ({proficiency}{certified_str})")
+                        else:
+                            formatted_matched_skills.append(f"{skill} ({faculty_skills[skill]})")
+                    
+                    skill_gap_courses.append({
+                        "course_name": course_name,
+                        "match_percentage": match_percentage,
+                        "matched_skills": formatted_matched_skills,
+                        "missing_skills": list(missing_skills),
+                        "similarity_score": course["similarity"]
+                    })
         
-        return teachable_courses[:limit]
+        return {
+            "faculty_skills": list(faculty_skills.keys()),
+            "skill_gap_courses": sorted(skill_gap_courses, key=lambda x: x["match_percentage"], reverse=True)
+        }
+    
+    def find_teachable_courses(self, faculty_skills, threshold=50):
+        """
+        Find courses that the faculty member can teach based on their skills.
+        
+        Args:
+            faculty_skills (dict): Dictionary of faculty skills with proficiency and certification info
+            threshold (float): Minimum similarity threshold (0-100) for considering a course teachable
+            
+        Returns:
+            list: List of teachable courses with match details
+        """
+        # Get course recommendations based on faculty skills
+        recommendations = self.model.recommend_courses(faculty_skills, top_n=None)
+        
+        # Convert similarity scores to percentages and filter by threshold
+        teachable_courses = []
+        for course in recommendations:
+            match_percentage = course["similarity"] * 100
+            if match_percentage >= threshold:
+                course_name = course["course"]
+                course_info = self.course_data[course_name]
+                required_skills = set(course_info.get("required_skills", []))
+                
+                # Calculate matched and missing skills
+                matched_skills = required_skills.intersection(set(faculty_skills.keys()))
+                missing_skills = required_skills - set(faculty_skills.keys())
+                
+                # Format matched skills with proficiency and certification
+                formatted_matched_skills = []
+                for skill in matched_skills:
+                    if isinstance(faculty_skills[skill], dict):
+                        proficiency = faculty_skills[skill].get("proficiency", "Intermediate")
+                        is_certified = faculty_skills[skill].get("isBackedByCertificate", False)
+                        certified_str = " (certified)" if is_certified else ""
+                        formatted_matched_skills.append(f"{skill} ({proficiency}{certified_str})")
+                    else:
+                        formatted_matched_skills.append(f"{skill} ({faculty_skills[skill]})")
+                
+                teachable_courses.append({
+                    "course_name": course_name,
+                    "match_percentage": match_percentage,
+                    "matched_skills": formatted_matched_skills,
+                    "missing_skills": list(missing_skills),
+                    "similarity_score": course["similarity"]
+                })
+                
+        return sorted(teachable_courses, key=lambda x: x["match_percentage"], reverse=True)
     
     def format_skill_gaps_report(self, skill_gaps):
         """Format skill gaps into a readable report."""

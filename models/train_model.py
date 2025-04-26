@@ -66,60 +66,51 @@ class CourseRecommendationModel:
         self.course_vectors = self.vectorizer.transform(course_descriptions)
         self.course_names = course_names
         
-    def recommend_courses(self, user_skills, top_n=5):
+    def build_skill_vector(self, skills):
         """
-        Recommend courses based on user skills.
+        Build a skill vector from a list of skills.
         
         Args:
-            user_skills: Dictionary of user skills with proficiency and certification info
-            top_n: Number of recommendations to return
+            skills (list or dict): List of skills or dictionary of skills with proficiency info
             
         Returns:
-            List of recommended courses with match details
+            numpy.ndarray: Skill vector
         """
-        if not user_skills:
-            return []
+        if isinstance(skills, dict):
+            skill_text = ' '.join(skills.keys())
+        else:
+            skill_text = ' '.join(skills)
             
-        # Create user skill vector
-        user_skill_text = ' '.join(user_skills.keys())
-        user_vector = self.vectorizer.transform([user_skill_text])
+        return self.vectorizer.transform([skill_text]).toarray()[0]
         
-        # Calculate similarity with all courses
-        similarities = cosine_similarity(user_vector, self.course_vectors)[0]
+    def recommend_courses(self, skills, top_n=10):
+        """
+        Recommend courses based on input skills.
         
-        # Get top N courses
+        Args:
+            skills (list): List of skills to base recommendations on
+            top_n (int, optional): Number of recommendations to return. If None, returns all courses sorted by relevance.
+            
+        Returns:
+            list: List of recommended courses sorted by relevance
+        """
+        # Convert skills to skill vector
+        skill_vector = self.build_skill_vector(skills)
+        
+        # Calculate similarity with all courses at once
+        similarities = cosine_similarity([skill_vector], self.course_vectors)[0]
+            
+        # Get indices of top similar courses
+        if top_n is None:
+            top_n = len(similarities)
         top_indices = similarities.argsort()[-top_n:][::-1]
         
+        # Return recommended courses
         recommendations = []
         for idx in top_indices:
-            course_name = self.course_names[idx]
-            course_info = self.course_data[course_name]
-            required_skills = set(course_info.get('required_skills', []))
-            
-            # Calculate matched and missing skills
-            matched_skills = required_skills.intersection(set(user_skills.keys()))
-            missing_skills = required_skills - set(user_skills.keys())
-            
-            # Calculate match percentage
-            match_percentage = (len(matched_skills) / len(required_skills)) * 100 if required_skills else 0
-            
-            # Format matched skills with proficiency and certification
-            formatted_matched_skills = []
-            for skill in matched_skills:
-                if isinstance(user_skills[skill], dict):
-                    proficiency = user_skills[skill].get("proficiency", "Intermediate")
-                    is_certified = user_skills[skill].get("isBackedByCertificate", False)
-                    certified_str = " (certified)" if is_certified else ""
-                    formatted_matched_skills.append(f"{skill} ({proficiency}{certified_str})")
-                else:
-                    formatted_matched_skills.append(f"{skill} ({user_skills[skill]})")
-            
             recommendations.append({
-                "course_name": course_name,
-                "match_percentage": match_percentage,
-                "matched_skills": formatted_matched_skills,
-                "missing_skills": list(missing_skills),
-                "similarity_score": float(similarities[idx])
+                'course': self.course_names[idx],
+                'similarity': float(similarities[idx])
             })
             
         return recommendations
@@ -210,17 +201,15 @@ def test_model(model):
     print(f"Sample input: {test_skills}")
     
     # Get recommendations
-    recommendations = model.recommend_courses(test_skills, top_n=3)
+    recommendations = model.recommend_courses(list(test_skills.keys()), top_n=3)
     
     print("\nSample recommendations:")
     for i, rec in enumerate(recommendations, 1):
-        print(f"{i}. {rec['course_name']} - {rec['match_percentage']:.1f}% Match")
-        print(f"   Matched skills: {len(rec['matched_skills'])}")
-        print(f"   Missing skills: {len(rec['missing_skills'])}")
+        print(f"{i}. {rec['course']} - {rec['similarity']:.1f}% Match")
     
     # Find similar courses for the top recommendation
     if recommendations:
-        top_course = recommendations[0]['course_name']
+        top_course = recommendations[0]['course']
         similar_courses = model.find_similar_courses(top_course, top_n=2)
         
         print(f"\nCourses similar to {top_course}:")

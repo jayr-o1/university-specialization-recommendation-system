@@ -9,6 +9,7 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')
 
 from utils.skills_mapper import SkillsMapper
 from utils.skill_categories import SkillCategories
+from utils.department_skills import get_department_skills
 
 class FacultySkillsAnalyzer:
     """
@@ -73,144 +74,100 @@ class FacultySkillsAnalyzer:
             }
         }
     
-    def identify_skill_gaps(self, faculty_skills, department_area):
+    def identify_skill_gaps(self, faculty_skills, department):
         """
-        Identify gaps between faculty skills and in-demand industry skills.
+        Identify skill gaps for a faculty member in their department.
         
         Args:
-            faculty_skills (list): List of faculty member skills
-            department_area (str): Faculty member's department/area
+            faculty_skills (list): List of skills the faculty member has
+            department (str): The department/college the faculty member belongs to
             
         Returns:
-            dict: Dictionary containing skill gaps and recommendations
+            dict: Dictionary containing matched skills and skill gaps
         """
-        # Get relevant industry skills for the department area
-        industry_skills_for_area = self.industry_skills.get(department_area, {})
-        if not industry_skills_for_area:
-            # If department not found, use all industry skills
-            all_skills = []
-            for area_skills in self.industry_skills.values():
-                all_skills.extend(area_skills.get("high_demand", []))
-                all_skills.extend(area_skills.get("emerging", []))
-            industry_skills_for_area = {
-                "high_demand": all_skills
-            }
+        # Get department-specific required skills
+        dept_skills = get_department_skills(department)
+        required_skills = dept_skills['core_skills'] + dept_skills['advanced_skills']
         
-        high_demand_skills = industry_skills_for_area.get("high_demand", [])
-        emerging_skills = industry_skills_for_area.get("emerging", [])
+        # Normalize skills for comparison
+        faculty_skills = [skill.lower().strip() for skill in faculty_skills]
+        required_skills = [skill.lower().strip() for skill in required_skills]
         
-        # Map faculty skills to industry skills
-        faculty_to_industry_mapping = self.skills_mapper.map_skills(
-            faculty_skills, 
-            high_demand_skills + emerging_skills
-        )
+        # Find matched skills
+        matched_skills = []
+        skill_gaps = []
         
-        # Find missing high-demand skills
-        matched_high_demand = set()
-        for matches in faculty_to_industry_mapping.values():
-            for skill, _ in matches:
-                if skill in high_demand_skills:
-                    matched_high_demand.add(skill)
+        for skill in required_skills:
+            # Check for exact matches
+            if skill in faculty_skills:
+                matched_skills.append(skill)
+                continue
+                
+            # Check for similar skills using skills mapper
+            similar_skills = self.skills_mapper.find_similar_skills(skill)
+            if any(s.lower() in faculty_skills for s in similar_skills):
+                matched_skills.append(skill)
+                continue
+                
+            # If no match found, add to gaps
+            skill_gaps.append(skill)
         
-        missing_high_demand = [skill for skill in high_demand_skills if skill not in matched_high_demand]
+        # Categorize gaps by priority
+        high_priority = []
+        medium_priority = []
         
-        # Find missing emerging skills
-        matched_emerging = set()
-        for matches in faculty_to_industry_mapping.values():
-            for skill, _ in matches:
-                if skill in emerging_skills:
-                    matched_emerging.add(skill)
+        for gap in skill_gaps:
+            if gap in dept_skills['core_skills']:
+                high_priority.append(gap)
+            else:
+                medium_priority.append(gap)
         
-        missing_emerging = [skill for skill in emerging_skills if skill not in matched_emerging]
-        
-        # Group similar missing skills
-        all_missing = missing_high_demand + missing_emerging
-        missing_skill_groups = self.skills_mapper.group_related_skills(all_missing)
-        
-        # Create skill gap analysis
         return {
-            "faculty_skills": faculty_skills,
-            "department_area": department_area,
-            "matched_skills": {
-                "high_demand": list(matched_high_demand),
-                "emerging": list(matched_emerging)
-            },
-            "skill_gaps": {
-                "high_demand": missing_high_demand,
-                "emerging": missing_emerging,
-                "grouped": missing_skill_groups
+            'matched_skills': matched_skills,
+            'skill_gaps': {
+                'high_priority': high_priority,
+                'medium_priority': medium_priority
             }
         }
     
-    def get_development_recommendations(self, skill_gaps, max_recommendations=5):
+    def get_development_recommendations(self, skill_gaps):
         """
-        Generate personalized skill development recommendations based on identified gaps.
+        Get development recommendations based on identified skill gaps.
         
         Args:
-            skill_gaps (dict): Skill gap analysis from identify_skill_gaps
-            max_recommendations (int): Maximum number of recommendations to return
+            skill_gaps (dict): Dictionary containing skill gaps analysis
             
         Returns:
-            list: List of skill development recommendations
+            list: List of development recommendations
         """
         recommendations = []
         
-        # Prioritize high-demand skills first
-        high_demand_gaps = skill_gaps["skill_gaps"]["high_demand"]
-        emerging_gaps = skill_gaps["skill_gaps"]["emerging"]
-        faculty_skills = skill_gaps["faculty_skills"]
-        
-        # Process high-demand skill gaps first
-        for skill in high_demand_gaps[:max_recommendations]:
-            # Find related skills that faculty already has
-            related_faculty_skills = []
-            skill_category = self.skill_categories.get_category_for_skill(skill)
-            
-            if skill_category:
-                category_skills = self.skill_categories.get_category_skills(skill_category)
-                related_faculty_skills = [s for s in faculty_skills if s in category_skills]
-            
-            # Get required prerequisite skills
-            prerequisite_skills = self.get_prerequisite_skills(skill)
-            missing_prerequisites = [s for s in prerequisite_skills if s not in faculty_skills]
-            
-            # Generate recommendation
+        # Process high priority gaps
+        for skill in skill_gaps["skill_gaps"]["high_priority"]:
             recommendation = {
                 "skill": skill,
                 "priority": "high",
-                "reason": "High-demand industry skill",
-                "related_faculty_skills": related_faculty_skills,
-                "prerequisites": prerequisite_skills,
-                "missing_prerequisites": missing_prerequisites,
-                "estimated_learning_time": self.estimate_learning_time(skill, faculty_skills)
+                "reason": "Core skill required for your department",
+                "related_faculty_skills": self.skills_mapper.find_similar_skills(skill) if self.skills_mapper else [],
+                "prerequisites": [],
+                "missing_prerequisites": [],
+                "estimated_learning_time": "3-6 months"
             }
             recommendations.append(recommendation)
-        
-        # Add emerging skills if we haven't reached max recommendations
-        remaining_slots = max_recommendations - len(recommendations)
-        if remaining_slots > 0:
-            for skill in emerging_gaps[:remaining_slots]:
-                related_faculty_skills = []
-                skill_category = self.skill_categories.get_category_for_skill(skill)
-                
-                if skill_category:
-                    category_skills = self.skill_categories.get_category_skills(skill_category)
-                    related_faculty_skills = [s for s in faculty_skills if s in category_skills]
-                
-                prerequisite_skills = self.get_prerequisite_skills(skill)
-                missing_prerequisites = [s for s in prerequisite_skills if s not in faculty_skills]
-                
-                recommendation = {
-                    "skill": skill,
-                    "priority": "medium",
-                    "reason": "Emerging industry skill",
-                    "related_faculty_skills": related_faculty_skills,
-                    "prerequisites": prerequisite_skills,
-                    "missing_prerequisites": missing_prerequisites,
-                    "estimated_learning_time": self.estimate_learning_time(skill, faculty_skills)
-                }
-                recommendations.append(recommendation)
-        
+            
+        # Process medium priority gaps
+        for skill in skill_gaps["skill_gaps"]["medium_priority"]:
+            recommendation = {
+                "skill": skill,
+                "priority": "medium",
+                "reason": "Advanced skill recommended for your department",
+                "related_faculty_skills": self.skills_mapper.find_similar_skills(skill) if self.skills_mapper else [],
+                "prerequisites": [],
+                "missing_prerequisites": [],
+                "estimated_learning_time": "2-3 months"
+            }
+            recommendations.append(recommendation)
+            
         return recommendations
     
     def get_prerequisite_skills(self, target_skill):

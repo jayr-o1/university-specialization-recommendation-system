@@ -195,7 +195,17 @@ class SkillGraph:
             return None
     
     def suggest_next_skills(self, user_skills, top_n=5):
-        """Suggest next skills to learn based on user's current skills"""
+        """
+        Suggest next skills to learn based on user's current skills
+        
+        Args:
+            user_skills: Dictionary of user skills, either in old format {"Python": "Advanced"}
+                         or new format {"Python": {"proficiency": "Advanced", "is_backed": true}}
+            top_n: Number of skills to return
+        
+        Returns:
+            List of suggested skills with relevance scores
+        """
         if not user_skills:
             return []
             
@@ -203,7 +213,15 @@ class SkillGraph:
         existing_skills = set(user_skills.keys())
         
         # For each user skill, find related skills
-        for skill, proficiency in user_skills.items():
+        for skill, skill_data in user_skills.items():
+            # Handle both old and new formats
+            if isinstance(skill_data, dict):
+                proficiency = skill_data.get("proficiency", "Intermediate")
+                is_backed = skill_data.get("is_backed", False)
+            else:
+                proficiency = skill_data  # Old format: direct proficiency string
+                is_backed = False
+            
             # Resolve aliases first
             canonical_skill = self.get_canonical_skill_name(skill)
             
@@ -216,6 +234,10 @@ class SkillGraph:
                 
             # Convert proficiency to weight
             weight = self._convert_proficiency_to_weight(proficiency)
+            
+            # Apply boost for backed skills
+            if is_backed:
+                weight *= 1.5
             
             # Score is higher for skills with strong connections to multiple user skills
             try:

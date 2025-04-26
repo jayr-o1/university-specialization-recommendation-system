@@ -22,12 +22,28 @@ class SkillMatcher:
             print(f"Error loading course data: {str(e)}")
             return {}
     
+    def _get_skill_data(self, skill_info):
+        """
+        Extract proficiency and is_backed_by_certificate status from a skill
+        
+        Args:
+            skill_info: Either a string (old format) or dict (new format)
+            
+        Returns:
+            Tuple of (proficiency, is_backed_by_certificate)
+        """
+        if isinstance(skill_info, dict):
+            return skill_info.get("proficiency", "Intermediate"), skill_info.get("isBackedByCertificate", False)
+        return skill_info, False  # Old format: string proficiency, not backed
+    
     def get_recommendations(self, user_skills, limit=5):
         """
         Get course recommendations based on user skills.
         
         Args:
-            user_skills: Dictionary of user skills and proficiency levels (e.g., {"Python": "Advanced"})
+            user_skills: Dictionary of user skills with proficiency and isBackedByCertificate flag
+                         Either old format {"Python": "Advanced"} 
+                         or new format {"Python": {"proficiency": "Advanced", "isBackedByCertificate": true}}
             limit: Maximum number of recommendations to return
             
         Returns:
@@ -39,22 +55,45 @@ class SkillMatcher:
         # Calculate match score for each course
         course_matches = []
         
+        user_skill_set = set(user_skills.keys())
+        
+        # Track certified skills for weighting
+        certified_skills = {skill for skill, data in user_skills.items() 
+                        if isinstance(data, dict) and data.get("isBackedByCertificate", False)}
+        
         for course_code, course_info in self.course_data.items():
             required_skills = set(course_info["required_skills"])
-            user_skill_set = set(user_skills.keys())
             
             # Calculate overlapping and missing skills
             matched_skills = required_skills.intersection(user_skill_set)
             missing_skills = required_skills - user_skill_set
             
-            # Calculate match percentage
-            match_percentage = len(matched_skills) / len(required_skills) * 100 if required_skills else 0
+            # Calculate match percentage with higher weight for certified skills
+            if required_skills:
+                # Base match is the proportion of matched skills
+                base_match = len(matched_skills) / len(required_skills)
+                
+                # Apply a boost for each certified skill that's matched
+                certified_match_count = len(matched_skills.intersection(certified_skills))
+                certified_boost = certified_match_count * 0.1  # 10% boost per certified skill
+                
+                # Calculate final match percentage (capped at 100%)
+                match_percentage = min(100, (base_match + certified_boost) * 100)
+            else:
+                match_percentage = 0
+            
+            # Format matched skills with proficiency and certificate status
+            formatted_matched_skills = []
+            for skill in matched_skills:
+                proficiency, is_backed_by_certificate = self._get_skill_data(user_skills[skill])
+                certificate_str = " (certified)" if is_backed_by_certificate else ""
+                formatted_matched_skills.append(f"{skill} ({proficiency}{certificate_str})")
             
             course_matches.append({
                 "course_code": course_code,
-                "course_name": course_info["name"],
+                "course_name": course_info.get("name", course_code),
                 "match_percentage": match_percentage,
-                "matched_skills": list(matched_skills),
+                "matched_skills": formatted_matched_skills,
                 "missing_skills": list(missing_skills)
             })
         
@@ -103,13 +142,13 @@ class SkillMatcher:
 if __name__ == "__main__":
     matcher = SkillMatcher("data/course_skills_updated.json")
     
-    # Example user skills
+    # Example user skills (new format with isBackedByCertificate flag)
     user_skills = {
-        "Python": "Advanced",
-        "TensorFlow": "Intermediate",
-        "PyTorch": "Intermediate",
-        "Scikit-learn": "Intermediate",
-        "NumPy": "Intermediate"
+        "Python": {"proficiency": "Advanced", "isBackedByCertificate": True},
+        "TensorFlow": {"proficiency": "Intermediate", "isBackedByCertificate": False},
+        "PyTorch": {"proficiency": "Intermediate", "isBackedByCertificate": True},
+        "Scikit-learn": {"proficiency": "Intermediate", "isBackedByCertificate": False},
+        "NumPy": {"proficiency": "Intermediate", "isBackedByCertificate": False}
     }
     
     # Get and display recommendations

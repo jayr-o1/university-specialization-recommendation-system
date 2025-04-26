@@ -5,8 +5,8 @@ import subprocess
 
 def main():
     parser = argparse.ArgumentParser(description='University Specialization Recommendation System')
-    parser.add_argument('action', choices=['train', 'cli', 'enhanced', 'api', 'web', 'test', 'build-graph'], 
-                        help='Action to perform: train model, run CLI, run enhanced CLI, start API, start web app, run tests, or build skill graph')
+    parser.add_argument('action', choices=['train', 'cli', 'enhanced', 'api', 'web', 'test', 'build-graph', 'faculty', 'faculty-teaching'], 
+                        help='Action to perform: train model, run CLI, run enhanced CLI, start API, start web app, run tests, build skill graph, run faculty advisor, or run faculty teaching advisor')
     
     args = parser.parse_args()
     
@@ -14,11 +14,7 @@ def main():
         print("Training the recommendation model...")
         subprocess.run([sys.executable, 'models/train_model.py'])
     
-    elif args.action == 'cli':
-        print("Starting the basic command-line interface...")
-        subprocess.run([sys.executable, 'src/recommendation_app.py'])
-    
-    elif args.action == 'enhanced':
+    elif args.action == 'cli' or args.action == 'enhanced':
         print("Starting the enhanced command-line interface...")
         
         # Check if required packages are installed
@@ -52,7 +48,7 @@ def main():
     
     elif args.action == 'test':
         print("Running the test with example input...")
-        subprocess.run([sys.executable, 'tests/test_recommendation.py'])
+        subprocess.run([sys.executable, 'scripts/test_recommendation_system.py'])
         
     elif args.action == 'build-graph':
         print("Building the skill knowledge graph...")
@@ -67,6 +63,32 @@ def main():
             
         # Run the skill graph builder
         subprocess.run([sys.executable, 'utils/skill_graph.py'])
+        
+    elif args.action == 'faculty':
+        print("Starting the Faculty Skills Development Advisor...")
+        
+        # Check if required packages are installed
+        try:
+            import numpy
+        except ImportError:
+            print("Installing required packages...")
+            subprocess.run([sys.executable, '-m', 'pip', 'install', 'numpy', 'pandas'])
+            
+        # Run the faculty advisor in interactive mode
+        subprocess.run([sys.executable, 'scripts/faculty_development_advisor.py', '--interactive'])
+
+    elif args.action == 'faculty-teaching':
+        print("Starting the Faculty Teaching Advisor...")
+        
+        # Check if required packages are installed
+        try:
+            import numpy
+        except ImportError:
+            print("Installing required packages...")
+            subprocess.run([sys.executable, '-m', 'pip', 'install', 'numpy', 'pandas'])
+            
+        # Run the faculty teaching advisor in interactive mode
+        subprocess.run([sys.executable, 'scripts/faculty_teaching_advisor.py', '--interactive'])
 
 if __name__ == '__main__':
     main() 

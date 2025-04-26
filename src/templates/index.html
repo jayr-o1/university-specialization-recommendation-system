@@ -1,9 +1,8 @@
-
-    <!DOCTYPE html>
-    <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Course Recommendation System</title>
         <style>
             body {
@@ -161,130 +160,202 @@
         <div class="header">
             <h1>University Specialization Recommendation System</h1>
         </div>
-        
+
         <div class="form-container">
             <h2>Enter Your Skills</h2>
-            <p>Format: Skill1 : Proficiency1, Skill2 : Proficiency2</p>
-            <p>Example: MySQL : Intermediate, Database Design : Advanced</p>
-            
+            <p>
+                Format: Skill1 : Proficiency1 : CertificationStatus, Skill2 :
+                Proficiency2 : CertificationStatus
+            </p>
+            <p>
+                Example: MySQL : Intermediate : true, Database Design : Advanced
+                : false
+            </p>
+            <div class="certificate-info">
+                <p>
+                    <strong>Note:</strong> Adding a third value of "true"
+                    indicates you have certification for that skill, which will
+                    boost your matching score by 10%.
+                </p>
+                <p>
+                    Example: Python : Advanced : true (indicates you have
+                    certification for Python)
+                </p>
+            </div>
+
             <form method="POST">
-                <input type="text" name="skills" placeholder="Enter your skills and proficiency levels" value="{{ skills_input }}">
+                <input
+                    type="text"
+                    name="skills"
+                    placeholder="Enter your skills, proficiency levels, and certification status"
+                    value="{{ skills_input }}"
+                />
                 <button type="submit">Get Recommendations</button>
             </form>
         </div>
-        
+
         {% if recommendations %}
-            <div class="results">
-                <h2>Based on your skills, these are the courses that are aligned:</h2>
-                
-                {% for rec in recommendations %}
-                    <div class="course">
-                        <div class="course-header">
-                            <span>{{ rec.course_name }}</span>
-                            <span class="match-percentage">{{ rec.match_percentage }}% Match</span>
-                        </div>
-                        
-                        {% if loop.first and explanation_chart %}
-                        <div class="recommendation-factors">
-                            <div class="factor">
-                                <div class="factor-value">{{ rec.match_percentage }}%</div>
-                                <div class="factor-label">Skill Match</div>
-                            </div>
-                            {% if rec.predicted_rating %}
-                            <div class="factor">
-                                <div class="factor-value">{{ "%.1f"|format(rec.predicted_rating) }}/5.0</div>
-                                <div class="factor-label">Predicted Rating</div>
-                            </div>
-                            {% endif %}
-                            <div class="factor">
-                                <div class="factor-value">{{ rec.matched_skills|length }}</div>
-                                <div class="factor-label">Skills You Have</div>
-                            </div>
-                            <div class="factor">
-                                <div class="factor-value">{{ rec.missing_skills|length }}</div>
-                                <div class="factor-label">Skills to Learn</div>
-                            </div>
-                        </div>
-                        {% endif %}
-                        
-                        {% if rec.matched_skills %}
-                            <div class="skills-list">
-                                <h3>Matched Skills:</h3>
-                                <div>
-                                    {% for skill in rec.matched_skills %}
-                                        <span class="badge badge-matched">{{ skill }}</span>
-                                    {% endfor %}
-                                </div>
-                            </div>
-                        {% endif %}
-                        
-                        {% if rec.missing_skills %}
-                            <div class="skills-list">
-                                <h3>Skills for Further Training:</h3>
-                                <div>
-                                    {% for skill in rec.missing_skills %}
-                                        <span class="badge badge-missing">{{ skill }}</span>
-                                    {% endfor %}
-                                </div>
-                            </div>
-                        {% endif %}
-                        
-                        {% if loop.first and explanation_chart %}
-                            <div class="explanation-container">
-                                <h3>Why This Course Was Recommended</h3>
-                                <p>This course was recommended based on several factors, including your skill profile, ratings from other users with similar interests, and the relationships between your skills and the course requirements.</p>
-                                
-                                <div class="chart-container">
-                                    <img src="data:image/png;base64,{{ explanation_chart }}" alt="Recommendation Explanation">
-                                </div>
-                                
-                                <p><strong>Key Insights:</strong></p>
-                                <ul>
-                                    <li>Your <span class="tooltip">skill match<span class="tooltiptext">How well your current skills align with course requirements</span></span> accounts for 50% of the recommendation.</li>
-                                    <li>The <span class="tooltip">collaborative score<span class="tooltiptext">Based on ratings and preferences of users with similar profiles</span></span> accounts for 30% of the recommendation.</li>
-                                    <li>The <span class="tooltip">career path alignment<span class="tooltiptext">How well this course fits in your potential career development</span></span> accounts for 20% of the recommendation.</li>
-                                </ul>
-                            </div>
-                        {% endif %}
-                        
-                        {% if loop.first and skill_gap_chart %}
-                            <div class="skill-gap-container">
-                                <h3>Skill Gap Analysis</h3>
-                                <p>This visualization shows your current skill levels compared to what's required for this course.</p>
-                                
-                                <div class="chart-container">
-                                    <img src="data:image/png;base64,{{ skill_gap_chart }}" alt="Skill Gap Analysis">
-                                </div>
-                                
-                                <p><strong>What this means:</strong> The chart shows your current skills (blue) compared to the skills required for this course (orange). Gaps indicate areas where further training would be beneficial.</p>
-                            </div>
-                        {% endif %}
-                    </div>
-                {% endfor %}
-            </div>
-            
-            {% if similar_courses %}
-                <div class="similar-courses">
-                    <h2>Courses where you can apply similar skills:</h2>
-                    
-                    {% for course in similar_courses %}
-                        <div class="course">
-                            <div class="course-header">
-                                <span>{{ course.course_name }}</span>
-                                <span class="match-percentage">{{ course.similarity_score }}% Similar</span>
-                            </div>
-                        </div>
-                    {% endfor %}
+        <div class="results">
+            <h2>
+                Based on your skills, these are the courses that are aligned:
+            </h2>
+
+            {% for rec in recommendations %}
+            <div class="course">
+                <div class="course-header">
+                    <span>{{ rec.course_name }}</span>
+                    <span class="match-percentage"
+                        >{{ rec.match_percentage }}% Match</span
+                    >
                 </div>
-            {% endif %}
-        {% endif %}
-        
+
+                {% if loop.first and explanation_chart %}
+                <div class="recommendation-factors">
+                    <div class="factor">
+                        <div class="factor-value">
+                            {{ rec.match_percentage }}%
+                        </div>
+                        <div class="factor-label">Skill Match</div>
+                    </div>
+                    {% if rec.predicted_rating %}
+                    <div class="factor">
+                        <div class="factor-value">
+                            {{ "%.1f"|format(rec.predicted_rating) }}/5.0
+                        </div>
+                        <div class="factor-label">Predicted Rating</div>
+                    </div>
+                    {% endif %}
+                    <div class="factor">
+                        <div class="factor-value">
+                            {{ rec.matched_skills|length }}
+                        </div>
+                        <div class="factor-label">Skills You Have</div>
+                    </div>
+                    <div class="factor">
+                        <div class="factor-value">
+                            {{ rec.missing_skills|length }}
+                        </div>
+                        <div class="factor-label">Skills to Learn</div>
+                    </div>
+                </div>
+                {% endif %} {% if rec.matched_skills %}
+                <div class="skills-list">
+                    <h3>Matched Skills:</h3>
+                    <div>
+                        {% for skill in rec.matched_skills %}
+                        <span class="badge badge-matched">{{ skill }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %} {% if rec.missing_skills %}
+                <div class="skills-list">
+                    <h3>Skills for Further Training:</h3>
+                    <div>
+                        {% for skill in rec.missing_skills %}
+                        <span class="badge badge-missing">{{ skill }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %} {% if loop.first and explanation_chart %}
+                <div class="explanation-container">
+                    <h3>Why This Course Was Recommended</h3>
+                    <p>
+                        This course was recommended based on several factors,
+                        including your skill profile, ratings from other users
+                        with similar interests, and the relationships between
+                        your skills and the course requirements.
+                    </p>
+
+                    <div class="chart-container">
+                        <img
+                            src="data:image/png;base64,{{ explanation_chart }}"
+                            alt="Recommendation Explanation"
+                        />
+                    </div>
+
+                    <p><strong>Key Insights:</strong></p>
+                    <ul>
+                        <li>
+                            Your
+                            <span class="tooltip"
+                                >skill match<span class="tooltiptext"
+                                    >How well your current skills align with
+                                    course requirements</span
+                                ></span
+                            >
+                            accounts for 50% of the recommendation.
+                        </li>
+                        <li>
+                            The
+                            <span class="tooltip"
+                                >collaborative score<span class="tooltiptext"
+                                    >Based on ratings and preferences of users
+                                    with similar profiles</span
+                                ></span
+                            >
+                            accounts for 30% of the recommendation.
+                        </li>
+                        <li>
+                            The
+                            <span class="tooltip"
+                                >career path alignment<span class="tooltiptext"
+                                    >How well this course fits in your potential
+                                    career development</span
+                                ></span
+                            >
+                            accounts for 20% of the recommendation.
+                        </li>
+                    </ul>
+                </div>
+                {% endif %} {% if loop.first and skill_gap_chart %}
+                <div class="skill-gap-container">
+                    <h3>Skill Gap Analysis</h3>
+                    <p>
+                        This visualization shows your current skill levels
+                        compared to what's required for this course.
+                    </p>
+
+                    <div class="chart-container">
+                        <img
+                            src="data:image/png;base64,{{ skill_gap_chart }}"
+                            alt="Skill Gap Analysis"
+                        />
+                    </div>
+
+                    <p>
+                        <strong>What this means:</strong> The chart shows your
+                        current skills (blue) compared to the skills required
+                        for this course (orange). Gaps indicate areas where
+                        further training would be beneficial.
+                    </p>
+                </div>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+
+        {% if similar_courses %}
+        <div class="similar-courses">
+            <h2>Courses where you can apply similar skills:</h2>
+
+            {% for course in similar_courses %}
+            <div class="course">
+                <div class="course-header">
+                    <span>{{ course.course_name }}</span>
+                    <span class="match-percentage"
+                        >{{ course.similarity_score }}% Similar</span
+                    >
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %} {% endif %}
+
         <script>
             // Simple JavaScript to enable interactive elements if needed
-            document.addEventListener('DOMContentLoaded', function() {
+            document.addEventListener("DOMContentLoaded", function () {
                 // Any initialization code here
             });
         </script>
     </body>
-    </html>
-    
+</html>

@@ -1,9 +1,15 @@
 def parse_user_skills(skills_input):
     """
-    Parse user input of skills and proficiency levels
+    Parse user input of skills and proficiency levels with optional isBackedByCertificate flag
     
-    Example input: "MySQL : Intermediate, Database Design : Advanced"
-    Output: {"MySQL": "Intermediate", "Database Design": "Advanced"}
+    Example input formats:
+    "MySQL : Intermediate, Database Design : Advanced"
+    "MySQL : Intermediate : true, Database Design : Advanced : false"
+    
+    Output: {"MySQL": {"proficiency": "Intermediate", "isBackedByCertificate": true}, 
+             "Database Design": {"proficiency": "Advanced", "isBackedByCertificate": false}}
+    
+    If isBackedByCertificate is not specified, it defaults to false.
     """
     if not skills_input or skills_input.strip() == "":
         return {}
@@ -13,11 +19,12 @@ def parse_user_skills(skills_input):
     skills_dict = {}
     
     for pair in skill_pairs:
-        # Split by colon to separate skill and proficiency
-        parts = pair.split(":")
-        if len(parts) == 2:
-            skill = parts[0].strip()
-            proficiency = parts[1].strip()
+        # Split by colon to separate skill, proficiency, and isBackedByCertificate flag
+        parts = [part.strip() for part in pair.split(":")]
+        
+        if len(parts) >= 2:  # At least skill and proficiency
+            skill = parts[0]
+            proficiency = parts[1]
             
             # Validate proficiency level
             valid_proficiencies = ["beginner", "intermediate", "advanced", "expert"]
@@ -28,7 +35,18 @@ def parse_user_skills(skills_input):
                 # Capitalize first letter for consistency
                 proficiency = proficiency_normalized.capitalize()
             
-            skills_dict[skill] = proficiency
+            # Check if isBackedByCertificate flag is provided
+            is_backed_by_certificate = False
+            if len(parts) >= 3:
+                # Parse boolean value
+                is_backed_cert_str = parts[2].lower()
+                is_backed_by_certificate = is_backed_cert_str == "true"
+            
+            # Store skill data as a dictionary with proficiency and isBackedByCertificate
+            skills_dict[skill] = {
+                "proficiency": proficiency,
+                "isBackedByCertificate": is_backed_by_certificate
+            }
     
     return skills_dict
 

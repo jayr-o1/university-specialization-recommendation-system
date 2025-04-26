@@ -30,13 +30,41 @@ def _extract_proficiency(skill_string):
             return proficiency
     return "beginner"
 
+def _get_skill_proficiency(skill_data):
+    """
+    Extract proficiency from skill data, handling both new and old formats
+    
+    Args:
+        skill_data: Either a string (old format) or a dict with 'proficiency' key (new format)
+    
+    Returns:
+        Proficiency as a string
+    """
+    if isinstance(skill_data, dict) and "proficiency" in skill_data:
+        return skill_data["proficiency"]
+    return skill_data  # Old format: directly return the string
+
+def _is_skill_backed(skill_data):
+    """
+    Check if a skill is backed
+    
+    Args:
+        skill_data: Either a string (old format) or a dict with 'is_backed' key (new format)
+    
+    Returns:
+        Boolean indicating if the skill is backed
+    """
+    if isinstance(skill_data, dict) and "is_backed" in skill_data:
+        return skill_data["is_backed"]
+    return False  # Default for old format
+
 def generate_skill_gap_chart(course_data, user_skills, save_path=None):
     """
     Generate a chart showing the gap between user skills and course required skills
     
     Args:
         course_data: Dict with course_name and required_skills
-        user_skills: Dict of user's skills and proficiency levels
+        user_skills: Dict of user's skills and proficiency levels (new format with is_backed)
         save_path: Path to save the chart image (optional)
         
     Returns:
@@ -71,19 +99,24 @@ def generate_skill_gap_chart(course_data, user_skills, save_path=None):
     user_skill_values = []
     course_skill_values = []
     skill_labels = []
+    backed_skills = []
     
-    # Sort skills: first matched, then missing
-    matched_skills = []
+    # Sort skills: first matched and backed, then matched but not backed, then missing
+    matched_backed_skills = []
+    matched_not_backed_skills = []
     missing_skills = []
     
     for skill in all_skills:
         if skill in user_skills:
-            matched_skills.append(skill)
+            if _is_skill_backed(user_skills[skill]):
+                matched_backed_skills.append(skill)
+            else:
+                matched_not_backed_skills.append(skill)
         else:
             missing_skills.append(skill)
     
     # Limit to a reasonable number
-    display_skills = matched_skills + missing_skills
+    display_skills = matched_backed_skills + matched_not_backed_skills + missing_skills
     if len(display_skills) > 10:
         display_skills = display_skills[:10]
     
@@ -95,8 +128,13 @@ def generate_skill_gap_chart(course_data, user_skills, save_path=None):
         
         # User skill level
         if skill in user_skills:
-            user_value = _convert_proficiency_to_value(user_skills[skill])
+            proficiency = _get_skill_proficiency(user_skills[skill])
+            user_value = _convert_proficiency_to_value(proficiency)
             user_skill_values.append(user_value)
+            
+            # Track if skill is backed
+            if _is_skill_backed(user_skills[skill]):
+                backed_skills.append(skill)
         else:
             user_skill_values.append(0)  # User doesn't have this skill
     
@@ -107,9 +145,21 @@ def generate_skill_gap_chart(course_data, user_skills, save_path=None):
     x = np.arange(len(skill_labels))
     width = 0.35
     
-    # Plot the bars
-    user_bars = ax.bar(x - width/2, user_skill_values, width, label='Your Skills', color='#4285F4')
+    # Plot the bars with different colors for backed skills
+    user_bars = []
+    for i, (skill, value) in enumerate(zip(display_skills, user_skill_values)):
+        color = '#4285F4'  # Default blue color
+        if skill in backed_skills:
+            color = '#34A853'  # Green for backed skills
+        
+        bar = ax.bar(i - width/2, value, width, color=color)
+        user_bars.append(bar[0])
+    
     course_bars = ax.bar(x + width/2, course_skill_values, width, label='Required Level', color='#EA4335')
+    
+    # Create custom legend
+    ax.bar(0, 0, color='#34A853', label='Your Backed Skills')
+    ax.bar(0, 0, color='#4285F4', label='Your Other Skills')
     
     # Add labels and titles
     ax.set_title(f'Skill Gap Analysis for {course_data["course_name"]}', fontsize=14, pad=20)
@@ -159,7 +209,7 @@ def generate_recommendation_explanation(recommendation, user_skills, as_dict=Fal
     
     Args:
         recommendation: Dict with recommendation details
-        user_skills: Dict of user's skills and proficiency levels
+        user_skills: Dict of user's skills and proficiency levels (new format with is_backed)
         as_dict: Whether to return the data as a dict instead of an image
         
     Returns:
@@ -248,7 +298,7 @@ def generate_recommendation_explanation(recommendation, user_skills, as_dict=Fal
     ax2.set_title('Factor Scores for Your Recommendation', fontsize=12)
     
     # Add grid for readability
-    ax2.grid(axis='x', linestyle='--', alpha=0.3)
+    ax2.grid(axis='y', linestyle='--', alpha=0.3)
     
     plt.tight_layout()
     

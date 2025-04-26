@@ -203,5 +203,24 @@ def learning_path():
     
     return jsonify({'learning_path': learning_path})
 
+@app.route('/api/certificate_info', methods=['GET'])
+def certificate_info():
+    """API endpoint to get information about certificate-based skill matching"""
+    return jsonify({
+        'description': 'Adding certification information to your skills improves your match score.',
+        'format': 'In skill entries, add isBackedByCertificate: true to indicate certification status.',
+        'example': {
+            'Python': {'proficiency': 'Advanced', 'isBackedByCertificate': True}
+        },
+        'text_format': 'When using text input format: Skill : Proficiency : true',
+        'text_example': 'Python : Advanced : true',
+        'benefit': 'Certified skills receive a 10% boost in matching scores.',
+        'usage_notes': [
+            'Certification indicates formal validation of your skill',
+            'Use for skills where you have professional certifications',
+            'Higher match scores for teachers with certified skills'
+        ]
+    })
+
 if __name__ == '__main__':
     app.run(debug=True, port=5002) 

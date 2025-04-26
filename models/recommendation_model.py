@@ -42,14 +42,38 @@ class CourseRecommendationModel:
     
     def create_user_vector(self, user_skills):
         """
-        Create user skill vector from a dictionary of skills and proficiency levels
-        Example: {"Python": "Advanced", "Database Design": "Intermediate"}
+        Create user skill vector from a dictionary of skills with proficiency levels and isBackedByCertificate flag
+        
+        Example: {
+            "Python": {"proficiency": "Advanced", "isBackedByCertificate": true}, 
+            "Database Design": {"proficiency": "Intermediate", "isBackedByCertificate": false}
+        }
+        
+        Skills with isBackedByCertificate=true get a 50% boost in their weight.
         """
         user_vector = np.zeros(len(self.all_skills))
         
-        for skill, proficiency in user_skills.items():
+        for skill, skill_data in user_skills.items():
             if skill in self.skill_to_idx:
+                # Handle both new format (dict with proficiency and isBackedByCertificate) and old format (string)
+                if isinstance(skill_data, dict):
+                    proficiency = skill_data["proficiency"]
+                    is_backed_by_certificate = skill_data.get("isBackedByCertificate", False)
+                else:
+                    # Legacy support for old format
+                    proficiency = skill_data
+                    is_backed_by_certificate = False
+                
+                # Calculate base weight from proficiency
                 weight = self._convert_proficiency_to_weight(proficiency)
+                
+                # Apply a 50% boost if skill is backed by certificate
+                if is_backed_by_certificate:
+                    weight *= 1.5
+                    
+                # Cap at 1.0 for consistency
+                weight = min(weight, 1.0)
+                
                 user_vector[self.skill_to_idx[skill]] = weight
         
         return user_vector
@@ -59,7 +83,10 @@ class CourseRecommendationModel:
         Recommend courses based on user skills and proficiency levels
         
         Args:
-            user_skills: Dict of skill-proficiency pairs (e.g., {"Python": "Advanced"})
+            user_skills: Dict of skill data, either in new format:
+                {"Python": {"proficiency": "Advanced", "isBackedByCertificate": true}}
+                or legacy format:
+                {"Python": "Advanced"}
             top_n: Number of recommendations to return
             
         Returns:
@@ -90,9 +117,17 @@ class CourseRecommendationModel:
             
             # Find matched skills (skills the user has that match course requirements)
             matched_skills = []
-            for skill in user_skills:
+            for skill, skill_data in user_skills.items():
                 if skill in required_skills:
-                    matched_skills.append(f"{skill} ({user_skills[skill]})")
+                    # Handle both new format (dict with proficiency and isBackedByCertificate) and old format (string)
+                    if isinstance(skill_data, dict):
+                        proficiency = skill_data["proficiency"]
+                        is_backed_by_certificate = skill_data.get("isBackedByCertificate", False)
+                        certificate_marker = " (certified)" if is_backed_by_certificate else ""
+                        matched_skills.append(f"{skill} ({proficiency}{certificate_marker})")
+                    else:
+                        # Legacy support for old format
+                        matched_skills.append(f"{skill} ({skill_data})")
             
             # Find missing skills (skills required by the course that the user doesn't have)
             user_skill_set = set(user_skills.keys())

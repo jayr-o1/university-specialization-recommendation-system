@@ -121,6 +121,16 @@ def skill_gap(course_name):
     
     return send_file(chart_path, mimetype='image/png')
 
+@app.route('/api/certificate_info', methods=['GET'])
+def certificate_info():
+    """Get information about certificate-based skill matching"""
+    return jsonify({
+        'description': 'Adding certification information to your skills improves your match score.',
+        'format': 'In skill entries, add a third parameter (true/false) to indicate certification status.',
+        'example': 'Python : Advanced : true',
+        'benefit': 'Certified skills receive a 10% boost in matching scores.'
+    })
+
 if __name__ == '__main__':
     # Create templates directory if it doesn't exist
     templates_dir = os.path.join(os.path.dirname(__file__), 'templates')
@@ -198,97 +208,13 @@ if __name__ == '__main__':
             .skills-list {
                 margin-top: 10px;
             }
-            .similar-courses {
-                margin-top: 30px;
-                padding: 20px;
-                border: 1px solid #ddd;
-                border-radius: 5px;
-                background-color: #f5f5f5;
-            }
-            .explanation-container {
-                margin-top: 30px;
-                padding: 20px;
-                border: 1px solid #ddd;
-                border-radius: 5px;
-                background-color: #f9f9f9;
-            }
-            .chart-container {
-                margin-top: 20px;
-                text-align: center;
-            }
-            .skill-gap-container {
-                margin-top: 30px;
-                padding: 20px;
-                border: 1px solid #ddd;
-                border-radius: 5px;
-                background-color: #f5f5f5;
-            }
-            .tooltip {
-                position: relative;
-                display: inline-block;
-                cursor: pointer;
-                border-bottom: 1px dotted #2a5885;
-                color: #2a5885;
-            }
-            .tooltip .tooltiptext {
-                visibility: hidden;
-                width: 200px;
-                background-color: #2a5885;
-                color: #fff;
-                text-align: center;
-                border-radius: 6px;
-                padding: 5px;
-                position: absolute;
-                z-index: 1;
-                bottom: 125%;
-                left: 50%;
-                margin-left: -100px;
-                opacity: 0;
-                transition: opacity 0.3s;
-            }
-            .tooltip:hover .tooltiptext {
-                visibility: visible;
-                opacity: 1;
-            }
-            .recommendation-factors {
-                display: flex;
-                justify-content: space-between;
-                margin-top: 15px;
-                padding: 10px;
-                background-color: #f0f0f0;
-                border-radius: 5px;
-            }
-            .factor {
-                text-align: center;
-                padding: 10px;
-            }
-            .factor-value {
-                font-size: 1.2em;
-                font-weight: bold;
-                color: #2a5885;
-            }
-            .factor-label {
-                font-size: 0.8em;
-                color: #555;
-            }
-            .badge {
-                display: inline-block;
-                padding: 3px 8px;
-                border-radius: 12px;
-                font-size: 0.8em;
-                color: white;
-                margin-right: 5px;
-                margin-bottom: 5px;
-            }
-            .badge-matched {
-                background-color: #28a745;
-            }
-            .badge-missing {
-                background-color: #dc3545;
-            }
-            .badge-learning {
-                background-color: #ffc107;
-                color: #333;
+            .certificate-info {
+                background-color: #e6f7ff;
+                border-left: 4px solid #1890ff;
+                padding: 10px 15px;
+                margin: 10px 0;
+                border-radius: 0 5px 5px 0;
+                font-size: 0.9em;
             }
         </style>
     </head>
@@ -299,134 +225,30 @@ if __name__ == '__main__':
         
         <div class="form-container">
             <h2>Enter Your Skills</h2>
-            <p>Format: Skill1 : Proficiency1, Skill2 : Proficiency2</p>
-            <p>Example: MySQL : Intermediate, Database Design : Advanced</p>
+            <p>Format: Skill1 : Proficiency1 : CertificationStatus, Skill2 : Proficiency2 : CertificationStatus</p>
+            <p>Example: MySQL : Intermediate : true, Database Design : Advanced : false</p>
+            <div class="certificate-info">
+                <p><strong>Note:</strong> Adding a third value of "true" indicates you have certification for that skill, which will boost your matching score.</p>
+                <p>Example: Python : Advanced : true (indicates you have certification for Python)</p>
+            </div>
             
             <form method="POST">
-                <input type="text" name="skills" placeholder="Enter your skills and proficiency levels" value="{{ skills_input }}">
+                <input type="text" name="skills" placeholder="Enter your skills, proficiency levels, and certification status">
                 <button type="submit">Get Recommendations</button>
             </form>
         </div>
         
-        {% if recommendations %}
-            <div class="results">
-                <h2>Based on your skills, these are the courses that are aligned:</h2>
-                
-                {% for rec in recommendations %}
-                    <div class="course">
-                        <div class="course-header">
-                            <span>{{ rec.course_name }}</span>
-                            <span class="match-percentage">{{ rec.match_percentage }}% Match</span>
-                        </div>
-                        
-                        {% if loop.first and explanation_chart %}
-                        <div class="recommendation-factors">
-                            <div class="factor">
-                                <div class="factor-value">{{ rec.match_percentage }}%</div>
-                                <div class="factor-label">Skill Match</div>
-                            </div>
-                            {% if rec.predicted_rating %}
-                            <div class="factor">
-                                <div class="factor-value">{{ "%.1f"|format(rec.predicted_rating) }}/5.0</div>
-                                <div class="factor-label">Predicted Rating</div>
-                            </div>
-                            {% endif %}
-                            <div class="factor">
-                                <div class="factor-value">{{ rec.matched_skills|length }}</div>
-                                <div class="factor-label">Skills You Have</div>
-                            </div>
-                            <div class="factor">
-                                <div class="factor-value">{{ rec.missing_skills|length }}</div>
-                                <div class="factor-label">Skills to Learn</div>
-                            </div>
-                        </div>
-                        {% endif %}
-                        
-                        {% if rec.matched_skills %}
-                            <div class="skills-list">
-                                <h3>Matched Skills:</h3>
-                                <div>
-                                    {% for skill in rec.matched_skills %}
-                                        <span class="badge badge-matched">{{ skill }}</span>
-                                    {% endfor %}
-                                </div>
-                            </div>
-                        {% endif %}
-                        
-                        {% if rec.missing_skills %}
-                            <div class="skills-list">
-                                <h3>Skills for Further Training:</h3>
-                                <div>
-                                    {% for skill in rec.missing_skills %}
-                                        <span class="badge badge-missing">{{ skill }}</span>
-                                    {% endfor %}
-                                </div>
-                            </div>
-                        {% endif %}
-                        
-                        {% if loop.first and explanation_chart %}
-                            <div class="explanation-container">
-                                <h3>Why This Course Was Recommended</h3>
-                                <p>This course was recommended based on several factors, including your skill profile, ratings from other users with similar interests, and the relationships between your skills and the course requirements.</p>
-                                
-                                <div class="chart-container">
-                                    <img src="data:image/png;base64,{{ explanation_chart }}" alt="Recommendation Explanation">
-                                </div>
-                                
-                                <p><strong>Key Insights:</strong></p>
-                                <ul>
-                                    <li>Your <span class="tooltip">skill match<span class="tooltiptext">How well your current skills align with course requirements</span></span> accounts for 50% of the recommendation.</li>
-                                    <li>The <span class="tooltip">collaborative score<span class="tooltiptext">Based on ratings and preferences of users with similar profiles</span></span> accounts for 30% of the recommendation.</li>
-                                    <li>The <span class="tooltip">career path alignment<span class="tooltiptext">How well this course fits in your potential career development</span></span> accounts for 20% of the recommendation.</li>
-                                </ul>
-                            </div>
-                        {% endif %}
-                        
-                        {% if loop.first and skill_gap_chart %}
-                            <div class="skill-gap-container">
-                                <h3>Skill Gap Analysis</h3>
-                                <p>This visualization shows your current skill levels compared to what's required for this course.</p>
-                                
-                                <div class="chart-container">
-                                    <img src="data:image/png;base64,{{ skill_gap_chart }}" alt="Skill Gap Analysis">
-                                </div>
-                                
-                                <p><strong>What this means:</strong> The chart shows your current skills (blue) compared to the skills required for this course (orange). Gaps indicate areas where further training would be beneficial.</p>
-                            </div>
-                        {% endif %}
-                    </div>
-                {% endfor %}
-            </div>
-            
-            {% if similar_courses %}
-                <div class="similar-courses">
-                    <h2>Courses where you can apply similar skills:</h2>
-                    
-                    {% for course in similar_courses %}
-                        <div class="course">
-                            <div class="course-header">
-                                <span>{{ course.course_name }}</span>
-                                <span class="match-percentage">{{ course.similarity_score }}% Similar</span>
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
-            {% endif %}
-        {% endif %}
-        
-        <script>
-            // Simple JavaScript to enable interactive elements if needed
-            document.addEventListener('DOMContentLoaded', function() {
-                // Any initialization code here
-            });
-        </script>
+        <div class="results">
+            <p>Enter your skills above to get course recommendations.</p>
+        </div>
     </body>
     </html>
     """
     
-    # Write the template to file
-    with open(os.path.join(templates_dir, 'index.html'), 'w') as f:
-        f.write(index_template)
+    # Create default template file if it doesn't exist
+    index_template_path = os.path.join(templates_dir, 'index.html')
+    if not os.path.exists(index_template_path):
+        with open(index_template_path, 'w') as f:
+            f.write(index_template)
     
-    # Run the Flask app
     app.run(debug=True, port=5001) 

@@ -1,74 +1,51 @@
 # Faculty Skill Development System
 
-A Python-based intelligent system designed to help university faculty identify their skill gaps, improve teaching competencies, and stay updated with industry trends. The system categorizes skills into hierarchical groups, analyzes faculty skill profiles, and provides targeted recommendations for professional development.
+A Python-based intelligent system designed to help university faculty identify their skill gaps, improve teaching competencies, and stay updated with industry trends. The system uses machine learning and TF-IDF based similarity matching to provide personalized course recommendations and skill development guidance.
 
 ## Key Features
 
--   **Hierarchical skill categorization**: Skills are organized in a structured way for meaningful analysis
--   **Skill proficiency and certification weighting**: Analysis factors in skill levels and formal certifications
--   **Faculty Skill Development**: Helps faculty members identify skill gaps and development opportunities based on industry trends
--   **Teaching Advisor**: Assists teachers in identifying courses they're qualified to teach and highlights skill gaps for courses they might want to teach
--   **Skill gap visualization**: Visual representation of skill gaps for easier understanding and planning
+-   **Machine Learning-based Recommendations**: Uses TF-IDF vectorization and cosine similarity for intelligent course matching
+-   **Skill Proficiency and Certification Weighting**: Analysis factors in skill levels and formal certifications
+-   **Faculty Teaching Advisor**: AI-powered system to match faculty skills with teachable courses
+-   **Skill Gap Analysis**: Identifies missing skills and development opportunities
+-   **Web Interface**: User-friendly interface for accessing all system features
 
 ## System Components
 
 ### Core Modules
 
--   `skill_categories.py`: Core skill categorizer class that builds and maintains the skill taxonomy
--   `faculty_skills_analyzer.py`: Analyzes faculty skills and identifies development opportunities based on industry trends
--   `faculty_development_advisor.py`: Interactive CLI tool for faculty skill development recommendations
--   `faculty_teaching_advisor.py`: Helps teachers identify their skill gaps for courses and find courses where they can apply their existing skills effectively
+-   `models/train_model.py`: Machine learning model for course recommendations
+-   `faculty_skills_analyzer.py`: Analyzes faculty skills and identifies development opportunities
+-   `faculty_teaching_advisor.py`: Matches faculty skills with courses and identifies teaching opportunities
+-   `skill_matcher.py`: Core skill matching and recommendation engine
 
 ### Data Files
 
--   `data/course_skills.json`: Course data with required skills
+-   `data/enhanced_course_skills.json`: Enhanced course data with required skills and categories
 -   `data/skill_categories.json`: Hierarchical organization of skills by category
--   `data/industry_skills.json`: Current in-demand and emerging skills across academic disciplines
--   `data/faculty_skills_sample.csv`: Sample faculty skills data for demonstration
--   `data/skill_graph.json`: Knowledge graph representing relationships between different skills
-
-## Usage Modes
-
-The system offers multiple ways to interact with its functionality:
-
-1. **Faculty Advisor**: `python run.py faculty` - Tool for faculty members to identify skill development opportunities
-2. **Teaching Advisor**: `python run.py faculty-teaching` - Tool for teachers to identify courses they can teach and skill gaps
-3. **API Mode**: `python run.py api` - Starts an API server for programmatic access
-4. **Web Interface**: `python run.py web` - Starts a web application for user-friendly access
+-   `data/industry_skills.json`: Current in-demand and emerging skills
+-   `models/trained_model.pkl`: Trained recommendation model
 
 ## How It Works
 
-1. **Skill Categorization**: Skills are organized in a hierarchical structure in `data/skill_categories.json`. For example:
+1. **Model Training**:
 
-    ```
-    web_development
-    ├── frontend
-    │   ├── markup_and_styling
-    │   ├── css_frameworks (Bootstrap, Tailwind CSS, etc.)
-    │   ├── javascript
-    │   └── ui_ux
-    ├── backend
-    ├── devops_deployment
-    └── ...
-    ```
+    - The system uses TF-IDF vectorization to create numerical representations of skills and courses
+    - Cosine similarity is used to match faculty skills with course requirements
+    - The trained model is saved as `trained_model.pkl` for consistent recommendations
 
-2. **Skill Mapping**: The system maps course skills to these categories, handling both exact and partial matches, allowing for more accurate skill gap analysis.
+2. **Recommendation Process**:
 
-3. **Faculty Teaching Analysis**: For teachers, the system:
+    - Faculty skills are vectorized using the same TF-IDF model
+    - The system calculates similarity scores with all courses
+    - Recommendations are filtered based on match percentage and skill requirements
+    - Both skill-based matching and similarity scores are considered
 
+3. **Faculty Teaching Analysis**:
     - Analyzes existing skills and matches them with course requirements
-    - Identifies skill gaps that prevent teaching specific courses
-    - Recommends courses that are best matches for current skill sets
-    - Suggests skill development priorities based on teaching goals
-
-4. **Industry Trend Analysis**: The system compares faculty skills with current industry demands:
-
-    - Identifies high-demand skills faculty already possess
-    - Highlights missing skills that are in high demand
-    - Prioritizes skill development recommendations based on industry relevance
-    - Provides learning path information including prerequisites and estimated learning time
-
-5. **Skill Gap Visualization**: The system can generate visual representations of skill gaps between faculty members and course requirements, making it easier to plan professional development.
+    - Uses the trained model to find the best course matches
+    - Provides detailed match percentages and skill breakdowns
+    - Identifies skill gaps with specific recommendations
 
 ## Installation and Setup
 
@@ -79,7 +56,7 @@ The system offers multiple ways to interact with its functionality:
     cd faculty-skill-development-system
     ```
 
-2. Set up a Python virtual environment (recommended):
+2. Set up a Python virtual environment:
 
     ```bash
     python -m venv venv
@@ -92,147 +69,120 @@ The system offers multiple ways to interact with its functionality:
     pip install -r requirements.txt
     ```
 
-4. Generate the skill categories file:
-
+4. Train the recommendation model:
     ```bash
-    python create_skill_categories.py
+    python -c "from models.train_model import train_model; train_model()"
     ```
 
-## Faculty Development Advisor
+## Using the System
 
-The system includes a Faculty Development Advisor tool designed to help faculty members identify skill gaps and development opportunities based on current industry trends.
+### Web Interface
 
-### Running the Faculty Advisor
+1. Start the web server:
 
-```bash
-python run.py faculty
-```
+    ```bash
+    python src/app.py
+    ```
 
-This will start an interactive session where faculty members can:
+2. Access the interface at `http://localhost:5001`
 
-1. Enter their current skills
-2. Identify their academic department/area
-3. Receive a personalized skill gap analysis
-4. Get recommendations for skill development prioritized by industry demand
-
-### Batch Analysis of Faculty Skills
-
-You can also analyze skills for multiple faculty members using a CSV file:
-
-```bash
-python scripts/faculty_development_advisor.py --file data/faculty_skills_sample.csv
-```
-
-The system will:
-
-1. Process each faculty member's profile
-2. Generate skill gap analysis based on their department and current skills
-3. Provide personalized development recommendations
-4. Save detailed results to JSON files in the specified output directory
+3. Choose between:
+    - Faculty Development Advisor
+    - Teaching Advisor
 
 ### Faculty Teaching Advisor
 
-To analyze which courses you're qualified to teach and identify skill gaps:
+Enter your skills in the format:
 
-```bash
-python run.py faculty-teaching
+```
+skill_name:proficiency:certified
 ```
 
-This tool will help you:
+Example:
 
-1. Identify courses you're fully qualified to teach
-2. Show courses where you have most but not all required skills
-3. Provide targeted recommendations for skills to develop to expand teaching capabilities
+```
+Python:Advanced:yes, Machine Learning:Intermediate:no, Data Analysis:Expert:yes
+```
+
+Where:
+
+-   Proficiency can be: Beginner, Intermediate, Advanced, or Expert
+-   Certified is: yes/no to indicate certification status
 
 ### Example Output
 
 ```
-===== Your Skill Analysis =====
-Department/Area: data_science
+===== Your Teaching Analysis =====
 
-Skills You Already Have Matching Industry Demands:
-High-demand skills:
-  • Python
-  • Statistical Analysis
-  • Data Visualization
+Courses You Can Teach (80%+ match):
+1. Database Management (90.5% match)
+   ✓ SQL (Advanced, certified)
+   ✓ Database Design (Expert)
+   ✗ Query Optimization
 
-Recommended Skill Development Areas:
+2. Data Science Fundamentals (85.2% match)
+   ✓ Python (Advanced)
+   ✓ Machine Learning (Intermediate)
+   ✗ Deep Learning
 
-1. Machine Learning (Priority: high)
-   Reason: High-demand industry skill
-   Related skills you already have: Statistical Analysis, Data Analysis
-   Prerequisites: Python, Statistics, Linear Algebra, Calculus
-   Estimated learning time: 2-3 months
+Skill Development Opportunities:
+1. Query Optimization
+   - Related skills you have: SQL, Database Design
+   - Estimated learning time: 1-2 months
 
-2. SQL (Priority: high)
-   Reason: High-demand industry skill
-   Prerequisites: Database Basics
-   Missing prerequisites: Database Basics
-   Estimated learning time: 1-2 months
-
-3. Predictive Modeling (Priority: high)
-   Reason: High-demand industry skill
-   Related skills you already have: Statistical Analysis, Data Analysis
-   Prerequisites: Statistics, Python, Data Analysis
-   Estimated learning time: 2-3 months
+2. Deep Learning
+   - Related skills you have: Machine Learning, Python
+   - Prerequisites: Mathematics, Statistics
+   - Estimated learning time: 2-3 months
 ```
 
-## Using the API
-
-You can use the faculty development system in your own applications:
+## API Usage
 
 ```python
-from faculty_skills_analyzer import FacultySkillsAnalyzer
+from scripts.faculty_teaching_advisor import FacultyTeachingAdvisor
 
-# Initialize the analyzer
-analyzer = FacultySkillsAnalyzer()
+# Initialize advisor (automatically loads trained model)
+advisor = FacultyTeachingAdvisor()
 
-# Example faculty profile
+# Example faculty skills
 faculty_skills = {
     "Python": {"proficiency": "Advanced", "isBackedByCertificate": True},
-    "Statistical Analysis": {"proficiency": "Advanced", "isBackedByCertificate": False},
-    "Data Visualization": {"proficiency": "Intermediate", "isBackedByCertificate": False}
+    "Machine Learning": {"proficiency": "Intermediate", "isBackedByCertificate": False},
+    "SQL": {"proficiency": "Advanced", "isBackedByCertificate": True}
 }
 
-department = "data_science"
+# Get teachable courses
+teachable_courses = advisor.find_teachable_courses(faculty_skills, threshold=70)
 
-# Get skill gap analysis
-skill_gaps = analyzer.identify_skill_gaps(faculty_skills, department)
-
-# Get development recommendations
-recommendations = analyzer.get_development_recommendations(skill_gaps)
-
-# Print results
-print(f"Skills to develop for {department}:")
-for rec in recommendations:
-    print(f"- {rec['skill']} (Priority: {rec['priority']})")
-    print(f"  Reason: {rec['reason']}")
-    if rec['missing_prerequisites']:
-        print(f"  Missing prerequisites: {', '.join(rec['missing_prerequisites'])}")
-    print(f"  Estimated learning time: {rec['estimated_learning_time']}")
+# Get skill gaps
+skill_gaps = advisor.identify_skill_gaps(faculty_skills)
 ```
 
-## Customizing
+## Model Training Details
 
--   **Add New Skill Categories**: Modify `create_skill_categories.py` to add or refine skill categories
--   **Expand Course Data**: Add more courses and their required skills to `data/course_skills.json`
--   **Update Industry Skills**: Modify `data/industry_skills.json` to reflect current industry trends
+The recommendation model uses:
 
-## Future Development
+-   TF-IDF (Term Frequency-Inverse Document Frequency) vectorization
+-   Cosine similarity for skill matching
+-   Proficiency level weighting
+-   Certification status bonuses
 
--   Incorporate feedback mechanisms to improve recommendations over time
--   Enhance faculty development tools with learning resources and course recommendations
--   Add collaborative skill-sharing features for faculty within the same department
--   Integrate with learning management systems for more comprehensive analysis
--   Develop department-level dashboards for skill gap analysis across faculty teams
+The model is automatically trained when:
+
+1. Starting the web interface for the first time
+2. No existing trained model is found
+3. Running the training script manually
+
+To retrain the model:
+
+```bash
+python -c "from models.train_model import train_model; train_model()"
+```
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit pull requests, report bugs, and suggest features.
 
 ## License
 
-MIT License
-
-## Proficiency Levels
-
--   **Beginner**: Basic knowledge (range 1-25)
--   **Intermediate**: Working knowledge (range 26-49)
--   **Advanced**: Comprehensive knowledge (range 50-74)
--   **Expert**: Deep expertise (range 75-100)
+This project is licensed under the MIT License - see the LICENSE file for details.

@@ -1,13 +1,10 @@
 import os
 import sys
-
-# Add project root to Python path
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
+import json
 from flask import Flask, request, jsonify, render_template, redirect, url_for, send_file
 from utils.faculty_skills_analyzer import FacultySkillsAnalyzer
 from scripts.faculty_teaching_advisor import FacultyTeachingAdvisor
-import json
+from models.train_model import load_trained_model, train_model
 import matplotlib
 matplotlib.use('Agg')  # Use non-interactive backend for chart generation
 import matplotlib.pyplot as plt
@@ -15,6 +12,17 @@ import base64
 from io import BytesIO
 
 app = Flask(__name__, template_folder='templates', static_folder='static')
+
+# Ensure the model is trained
+print("Checking if model needs to be trained...")
+if not os.path.exists(os.path.join(os.path.dirname(__file__), '..', 'models', 'trained_model.pkl')):
+    print("No trained model found. Training new model...")
+    train_model()
+
+# Load the trained model
+model = load_trained_model()
+if not model:
+    print("Error: Failed to load or train model. The system may not work correctly.")
 
 @app.route('/', methods=['GET'])
 def index():
@@ -124,17 +132,17 @@ def faculty_teaching():
                 print(f"  - {skill}: {details}")
             print(f"DEBUG: Threshold set to: {threshold}%")
             
-            # Initialize advisor
+            # Initialize advisor with trained model
             advisor = FacultyTeachingAdvisor()
             
             # Debug available courses
             try:
-                print("DEBUG: Number of courses available in advisor:", len(advisor.skill_matcher.course_data))
-                print("DEBUG: Sample courses:", list(advisor.skill_matcher.course_data.keys())[:5])
+                print("DEBUG: Number of courses available in advisor:", len(advisor.course_data))
+                print("DEBUG: Sample courses:", list(advisor.course_data.keys())[:5])
             except Exception as e:
                 print(f"DEBUG: Error accessing course data: {e}")
             
-            # Find teachable courses
+            # Find teachable courses using the trained model
             teachable_courses = advisor.find_teachable_courses(faculty_skills, threshold=threshold)
             
             # Debug teachable courses
@@ -151,7 +159,7 @@ def faculty_teaching():
                     print(f"DEBUG: Found {len(test_courses)} courses at {lower_threshold}% threshold")
                     print(f"DEBUG: Best match: {test_courses[0]['course_name']} - {test_courses[0]['match_percentage']}%")
             
-            # Identify skill gaps
+            # Identify skill gaps using the trained model
             skill_gaps = advisor.identify_skill_gaps(faculty_skills)
             
             # Save analysis to file

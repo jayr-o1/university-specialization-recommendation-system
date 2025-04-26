@@ -9,6 +9,7 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')
 
 # Import from other modules
 from utils.skill_matcher import SkillMatcher
+from models.train_model import load_trained_model, CourseRecommendationModel
 
 class FacultyTeachingAdvisor:
     """
@@ -16,13 +17,18 @@ class FacultyTeachingAdvisor:
     find courses where they can apply their existing skills effectively.
     """
     
-    def __init__(self, course_data_path='data/course_skills.json'):
+    def __init__(self, course_data_path='data/enhanced_course_skills.json'):
         """Initialize with path to course skills data file."""
-        self.skill_matcher = SkillMatcher(course_data_path)
-        self.course_data_path = course_data_path
+        # Try to load the trained model first
+        self.model = load_trained_model()
         
-        with open(course_data_path, 'r') as f:
-            self.course_data = json.load(f)
+        # If no trained model exists, create a new one
+        if not self.model:
+            print("No trained model found. Training new model...")
+            self.model = CourseRecommendationModel(course_data_path)
+        
+        self.course_data_path = course_data_path
+        self.course_data = self.model.course_data
     
     def identify_skill_gaps(self, faculty_skills, limit=10):
         """
@@ -35,51 +41,20 @@ class FacultyTeachingAdvisor:
         Returns:
             List of courses with skill gap details
         """
+        # Get recommendations from the trained model
+        recommendations = self.model.recommend_courses(faculty_skills, top_n=limit)
+        
+        # Filter to only include courses with gaps
         skill_gap_courses = []
-        
-        faculty_skill_set = set(faculty_skills.keys())
-        
-        for course_name, course_info in self.course_data.items():
-            required_skills = set(course_info.get('required_skills', []))
-            
-            # Skip courses with no required skills
-            if not required_skills:
-                continue
-            
-            # Calculate matching and missing skills
-            matched_skills = required_skills.intersection(faculty_skill_set)
-            missing_skills = required_skills - faculty_skill_set
-            
-            # Calculate match percentage
-            if required_skills:
-                match_percentage = (len(matched_skills) / len(required_skills)) * 100
-            else:
-                match_percentage = 0
-                
-            # Format matched skills with proficiency and certification status
-            formatted_matched_skills = []
-            for skill in matched_skills:
-                if isinstance(faculty_skills[skill], dict):
-                    proficiency = faculty_skills[skill].get("proficiency", "Intermediate")
-                    is_certified = faculty_skills[skill].get("isBackedByCertificate", False)
-                    certified_str = " (certified)" if is_certified else ""
-                    formatted_matched_skills.append(f"{skill} ({proficiency}{certified_str})")
-                else:
-                    # Legacy support for old format
-                    formatted_matched_skills.append(f"{skill} ({faculty_skills[skill]})")
-            
-            # Only include courses with some matched skills but also with gaps
-            if matched_skills and missing_skills:
+        for rec in recommendations:
+            if rec['missing_skills']:  # Only include courses with missing skills
                 skill_gap_courses.append({
-                    "course_name": course_name,
-                    "match_percentage": match_percentage,
-                    "matched_skills": formatted_matched_skills,
-                    "missing_skills": list(missing_skills),
-                    "gap_count": len(missing_skills)
+                    "course_name": rec['course_name'],
+                    "match_percentage": rec['match_percentage'],
+                    "matched_skills": rec['matched_skills'],
+                    "missing_skills": rec['missing_skills'],
+                    "gap_count": len(rec['missing_skills'])
                 })
-        
-        # Sort by match percentage (highest first) to show courses that are closest to being fully covered
-        skill_gap_courses.sort(key=lambda x: x["match_percentage"], reverse=True)
         
         return skill_gap_courses[:limit]
     
@@ -95,13 +70,11 @@ class FacultyTeachingAdvisor:
         Returns:
             List of teachable courses with match details
         """
-        # Use skill matcher to get course recommendations
-        recommendations = self.skill_matcher.get_recommendations(faculty_skills, limit=None)
+        # Get recommendations from the trained model
+        recommendations = self.model.recommend_courses(faculty_skills, top_n=None)
         
-        # Filter by threshold
+        # Filter by threshold and sort by match percentage
         teachable_courses = [course for course in recommendations if course["match_percentage"] >= threshold]
-        
-        # Sort by match percentage (highest first)
         teachable_courses.sort(key=lambda x: x["match_percentage"], reverse=True)
         
         return teachable_courses[:limit]
@@ -116,7 +89,7 @@ class FacultyTeachingAdvisor:
         output += "These are courses where you have some relevant skills but need to develop others:\n\n"
         
         for i, course in enumerate(skill_gaps, 1):
-            output += f"{i}. {course['course_name']} ({course['match_percentage']:.0f}% match)\n"
+            output += f"{i}. {course['course_name']} ({course['match_percentage']:.1f}% match)\n"
             
             # Skills you already have
             if course['matched_skills']:
@@ -143,7 +116,7 @@ class FacultyTeachingAdvisor:
         output += "=" * 80 + "\n\n"
         
         for i, course in enumerate(teachable_courses, 1):
-            output += f"{i}. {course['course_name']} ({course['match_percentage']:.0f}% match)\n"
+            output += f"{i}. {course['course_name']} ({course['match_percentage']:.1f}% match)\n"
             
             # Matched skills
             if course['matched_skills']:

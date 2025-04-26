@@ -6,7 +6,12 @@ import json
 # Add project root to Python path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from models.recommendation_model import CourseRecommendationModel
+def load_trained_model():
+    """
+    This is a simplified version that returns None, 
+    as we don't need the recommendation model for the faculty system.
+    """
+    return None
 
 def train_model():
     """
@@ -81,25 +86,6 @@ def test_model(model):
         print(f"\nCourses similar to {top_course}:")
         for i, course in enumerate(similar_courses, 1):
             print(f"{i}. {course['course_name']} - {course['similarity_score']}% Similar")
-
-def load_trained_model():
-    """Load a trained model from disk"""
-    model_path = os.path.join(os.path.dirname(__file__), 'trained_model.pkl')
-    
-    if os.path.exists(model_path):
-        with open(model_path, 'rb') as f:
-            return pickle.load(f)
-    else:
-        # If no saved model exists, train a new one
-        print("No saved model found. Training a new model...")
-        train_model()
-        
-        # Try loading again
-        if os.path.exists(model_path):
-            with open(model_path, 'rb') as f:
-                return pickle.load(f)
-        else:
-            return None
 
 if __name__ == "__main__":
     train_model() 

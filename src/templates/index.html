@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Course Recommendation System</title>
+        <title>Faculty Skills Development System</title>
         <style>
             body {
                 font-family: Arial, sans-serif;
@@ -19,343 +19,74 @@
                 border-radius: 5px;
                 margin-bottom: 20px;
             }
-            .form-container {
+            .nav-menu {
+                display: flex;
+                justify-content: center;
                 margin-bottom: 30px;
-                padding: 20px;
-                border: 1px solid #ddd;
-                border-radius: 5px;
-                background-color: #f9f9f9;
             }
-            input[type="text"] {
-                width: 100%;
-                padding: 10px;
-                margin: 10px 0;
-                box-sizing: border-box;
-            }
-            button {
-                background-color: #2a5885;
-                color: white;
-                padding: 10px 15px;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-            }
-            .results {
-                margin-top: 20px;
-            }
-            .course {
-                margin-bottom: 20px;
-                padding: 15px;
-                border: 1px solid #ddd;
-                border-radius: 5px;
-            }
-            .course-header {
-                display: flex;
-                justify-content: space-between;
-                margin-bottom: 10px;
-                font-weight: bold;
-            }
-            .match-percentage {
-                color: #2a5885;
-                font-weight: bold;
-            }
-            .skills-list {
-                margin-top: 10px;
-            }
-            .similar-courses {
-                margin-top: 30px;
-                padding: 20px;
-                border: 1px solid #ddd;
-                border-radius: 5px;
-                background-color: #f5f5f5;
-            }
-            .explanation-container {
-                margin-top: 30px;
-                padding: 20px;
-                border: 1px solid #ddd;
-                border-radius: 5px;
-                background-color: #f9f9f9;
-            }
-            .chart-container {
-                margin-top: 20px;
-                text-align: center;
-            }
-            .skill-gap-container {
-                margin-top: 30px;
-                padding: 20px;
-                border: 1px solid #ddd;
-                border-radius: 5px;
-                background-color: #f5f5f5;
-            }
-            .tooltip {
-                position: relative;
-                display: inline-block;
-                cursor: pointer;
-                border-bottom: 1px dotted #2a5885;
-                color: #2a5885;
-            }
-            .tooltip .tooltiptext {
-                visibility: hidden;
-                width: 200px;
-                background-color: #2a5885;
-                color: #fff;
-                text-align: center;
-                border-radius: 6px;
-                padding: 5px;
-                position: absolute;
-                z-index: 1;
-                bottom: 125%;
-                left: 50%;
-                margin-left: -100px;
-                opacity: 0;
-                transition: opacity 0.3s;
-            }
-            .tooltip:hover .tooltiptext {
-                visibility: visible;
-                opacity: 1;
-            }
-            .recommendation-factors {
-                display: flex;
-                justify-content: space-between;
-                margin-top: 15px;
-                padding: 10px;
+            .nav-item {
+                margin: 0 15px;
+                padding: 10px 20px;
                 background-color: #f0f0f0;
                 border-radius: 5px;
-            }
-            .factor {
-                text-align: center;
-                padding: 10px;
-            }
-            .factor-value {
-                font-size: 1.2em;
-                font-weight: bold;
-                color: #2a5885;
-            }
-            .factor-label {
-                font-size: 0.8em;
-                color: #555;
-            }
-            .badge {
-                display: inline-block;
-                padding: 3px 8px;
-                border-radius: 12px;
-                font-size: 0.8em;
-                color: white;
-                margin-right: 5px;
-                margin-bottom: 5px;
-            }
-            .badge-matched {
-                background-color: #28a745;
-            }
-            .badge-missing {
-                background-color: #dc3545;
-            }
-            .badge-learning {
-                background-color: #ffc107;
+                text-decoration: none;
                 color: #333;
+                font-weight: bold;
+            }
+            .nav-item:hover {
+                background-color: #e0e0e0;
+            }
+            .active {
+                background-color: #2a5885;
+                color: white;
+            }
+            .main-content {
+                text-align: center;
+                padding: 40px;
+                background-color: #f9f9f9;
+                border-radius: 5px;
+            }
+            .btn {
+                display: inline-block;
+                margin: 20px 10px;
+                padding: 15px 30px;
+                background-color: #2a5885;
+                color: white;
+                text-decoration: none;
+                border-radius: 5px;
+                font-weight: bold;
+            }
+            .btn:hover {
+                background-color: #1e4060;
             }
         </style>
     </head>
     <body>
         <div class="header">
-            <h1>University Specialization Recommendation System</h1>
+            <h1>Faculty Skills Development System</h1>
         </div>
 
-        <div class="form-container">
-            <h2>Enter Your Skills</h2>
+        <div class="nav-menu">
+            <a href="/" class="nav-item active">Home</a>
+            <a href="/faculty-development" class="nav-item"
+                >Faculty Development</a
+            >
+            <a href="/faculty-teaching" class="nav-item">Teaching Advisor</a>
+        </div>
+
+        <div class="main-content">
+            <h2>Welcome to the Faculty Skills Development System</h2>
             <p>
-                Format: Skill1 : Proficiency1 : CertificationStatus, Skill2 :
-                Proficiency2 : CertificationStatus
+                This system is designed to help faculty members identify skill
+                gaps and improve teaching competencies.
             </p>
-            <p>
-                Example: MySQL : Intermediate : true, Database Design : Advanced
-                : false
-            </p>
-            <div class="certificate-info">
-                <p>
-                    <strong>Note:</strong> Adding a third value of "true"
-                    indicates you have certification for that skill, which will
-                    boost your matching score by 10%.
-                </p>
-                <p>
-                    Example: Python : Advanced : true (indicates you have
-                    certification for Python)
-                </p>
+
+            <div>
+                <a href="/faculty-development" class="btn"
+                    >Faculty Development Advisor</a
+                >
+                <a href="/faculty-teaching" class="btn">Teaching Advisor</a>
             </div>
-
-            <form method="POST">
-                <input
-                    type="text"
-                    name="skills"
-                    placeholder="Enter your skills, proficiency levels, and certification status"
-                    value="{{ skills_input }}"
-                />
-                <button type="submit">Get Recommendations</button>
-            </form>
         </div>
-
-        {% if recommendations %}
-        <div class="results">
-            <h2>
-                Based on your skills, these are the courses that are aligned:
-            </h2>
-
-            {% for rec in recommendations %}
-            <div class="course">
-                <div class="course-header">
-                    <span>{{ rec.course_name }}</span>
-                    <span class="match-percentage"
-                        >{{ rec.match_percentage }}% Match</span
-                    >
-                </div>
-
-                {% if loop.first and explanation_chart %}
-                <div class="recommendation-factors">
-                    <div class="factor">
-                        <div class="factor-value">
-                            {{ rec.match_percentage }}%
-                        </div>
-                        <div class="factor-label">Skill Match</div>
-                    </div>
-                    {% if rec.predicted_rating %}
-                    <div class="factor">
-                        <div class="factor-value">
-                            {{ "%.1f"|format(rec.predicted_rating) }}/5.0
-                        </div>
-                        <div class="factor-label">Predicted Rating</div>
-                    </div>
-                    {% endif %}
-                    <div class="factor">
-                        <div class="factor-value">
-                            {{ rec.matched_skills|length }}
-                        </div>
-                        <div class="factor-label">Skills You Have</div>
-                    </div>
-                    <div class="factor">
-                        <div class="factor-value">
-                            {{ rec.missing_skills|length }}
-                        </div>
-                        <div class="factor-label">Skills to Learn</div>
-                    </div>
-                </div>
-                {% endif %} {% if rec.matched_skills %}
-                <div class="skills-list">
-                    <h3>Matched Skills:</h3>
-                    <div>
-                        {% for skill in rec.matched_skills %}
-                        <span class="badge badge-matched">{{ skill }}</span>
-                        {% endfor %}
-                    </div>
-                </div>
-                {% endif %} {% if rec.missing_skills %}
-                <div class="skills-list">
-                    <h3>Skills for Further Training:</h3>
-                    <div>
-                        {% for skill in rec.missing_skills %}
-                        <span class="badge badge-missing">{{ skill }}</span>
-                        {% endfor %}
-                    </div>
-                </div>
-                {% endif %} {% if loop.first and explanation_chart %}
-                <div class="explanation-container">
-                    <h3>Why This Course Was Recommended</h3>
-                    <p>
-                        This course was recommended based on several factors,
-                        including your skill profile, ratings from other users
-                        with similar interests, and the relationships between
-                        your skills and the course requirements.
-                    </p>
-
-                    <div class="chart-container">
-                        <img
-                            src="data:image/png;base64,{{ explanation_chart }}"
-                            alt="Recommendation Explanation"
-                        />
-                    </div>
-
-                    <p><strong>Key Insights:</strong></p>
-                    <ul>
-                        <li>
-                            Your
-                            <span class="tooltip"
-                                >skill match<span class="tooltiptext"
-                                    >How well your current skills align with
-                                    course requirements</span
-                                ></span
-                            >
-                            accounts for 50% of the recommendation.
-                        </li>
-                        <li>
-                            The
-                            <span class="tooltip"
-                                >collaborative score<span class="tooltiptext"
-                                    >Based on ratings and preferences of users
-                                    with similar profiles</span
-                                ></span
-                            >
-                            accounts for 30% of the recommendation.
-                        </li>
-                        <li>
-                            The
-                            <span class="tooltip"
-                                >career path alignment<span class="tooltiptext"
-                                    >How well this course fits in your potential
-                                    career development</span
-                                ></span
-                            >
-                            accounts for 20% of the recommendation.
-                        </li>
-                    </ul>
-                </div>
-                {% endif %} {% if loop.first and skill_gap_chart %}
-                <div class="skill-gap-container">
-                    <h3>Skill Gap Analysis</h3>
-                    <p>
-                        This visualization shows your current skill levels
-                        compared to what's required for this course.
-                    </p>
-
-                    <div class="chart-container">
-                        <img
-                            src="data:image/png;base64,{{ skill_gap_chart }}"
-                            alt="Skill Gap Analysis"
-                        />
-                    </div>
-
-                    <p>
-                        <strong>What this means:</strong> The chart shows your
-                        current skills (blue) compared to the skills required
-                        for this course (orange). Gaps indicate areas where
-                        further training would be beneficial.
-                    </p>
-                </div>
-                {% endif %}
-            </div>
-            {% endfor %}
-        </div>
-
-        {% if similar_courses %}
-        <div class="similar-courses">
-            <h2>Courses where you can apply similar skills:</h2>
-
-            {% for course in similar_courses %}
-            <div class="course">
-                <div class="course-header">
-                    <span>{{ course.course_name }}</span>
-                    <span class="match-percentage"
-                        >{{ course.similarity_score }}% Similar</span
-                    >
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-        {% endif %} {% endif %}
-
-        <script>
-            // Simple JavaScript to enable interactive elements if needed
-            document.addEventListener("DOMContentLoaded", function () {
-                // Any initialization code here
-            });
-        </script>
     </body>
 </html>

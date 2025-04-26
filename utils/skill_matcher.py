@@ -1,6 +1,8 @@
 import json
 import os
 from collections import defaultdict
+from typing import Dict, List, Optional
+from .skill_hierarchy import SkillHierarchy
 
 class SkillMatcher:
     """
@@ -8,15 +10,20 @@ class SkillMatcher:
     This simplified version focuses solely on skill matching without additional analysis.
     """
     
-    def __init__(self, course_data_path):
-        """Initialize with path to course skills data file."""
-        self.course_data_path = course_data_path
-        self.course_data = self._load_course_data()
+    def __init__(self, course_data_path: str, hierarchy_path: Optional[str] = None):
+        """Initialize the skill matcher with course data and skill hierarchy.
         
-    def _load_course_data(self):
+        Args:
+            course_data_path: Path to the course skills data file
+            hierarchy_path: Optional path to custom skill hierarchy data
+        """
+        self.course_data = self._load_course_data(course_data_path)
+        self.hierarchy = SkillHierarchy(hierarchy_path)
+        
+    def _load_course_data(self, course_data_path: str) -> Dict:
         """Load course data from JSON file."""
         try:
-            with open(self.course_data_path, 'r') as f:
+            with open(course_data_path, 'r') as f:
                 return json.load(f)
         except Exception as e:
             print(f"Error loading course data: {str(e)}")
@@ -36,14 +43,11 @@ class SkillMatcher:
             return skill_info.get("proficiency", "Intermediate"), skill_info.get("isBackedByCertificate", False)
         return skill_info, False  # Old format: string proficiency, not backed
     
-    def get_recommendations(self, user_skills, limit=5):
-        """
-        Get course recommendations based on user skills.
+    def get_recommendations(self, user_skills: Dict, limit: int = 5) -> List[Dict]:
+        """Get course recommendations based on user skills with enhanced matching.
         
         Args:
-            user_skills: Dictionary of user skills with proficiency and isBackedByCertificate flag
-                         Either old format {"Python": "Advanced"} 
-                         or new format {"Python": {"proficiency": "Advanced", "isBackedByCertificate": true}}
+            user_skills: Dictionary of user skills with proficiency and certification info
             limit: Maximum number of recommendations to return
             
         Returns:
@@ -52,56 +56,117 @@ class SkillMatcher:
         if not user_skills:
             return []
         
-        # Calculate match score for each course
         course_matches = []
-        
         user_skill_set = set(user_skills.keys())
         
-        # Track certified skills for weighting
-        certified_skills = {skill for skill, data in user_skills.items() 
-                        if isinstance(data, dict) and data.get("isBackedByCertificate", False)}
-        
-        for course_code, course_info in self.course_data.items():
-            required_skills = set(course_info["required_skills"])
+        for course_name, course_info in self.course_data.items():
+            required_skills = set(course_info.get('required_skills', []))
             
-            # Calculate overlapping and missing skills
-            matched_skills = required_skills.intersection(user_skill_set)
-            missing_skills = required_skills - user_skill_set
+            if not required_skills:
+                continue
             
-            # Calculate match percentage with higher weight for certified skills
-            if required_skills:
-                # Base match is the proportion of matched skills
-                base_match = len(matched_skills) / len(required_skills)
+            # Calculate enhanced match scores
+            match_scores = []
+            matched_skills = []
+            missing_skills = []
+            
+            for req_skill in required_skills:
+                best_match_score = 0
+                best_matching_skill = None
                 
-                # Apply a boost for each certified skill that's matched
-                certified_match_count = len(matched_skills.intersection(certified_skills))
-                certified_boost = certified_match_count * 0.1  # 10% boost per certified skill
+                # Check each user skill against the required skill
+                for user_skill in user_skill_set:
+                    match_score = self.hierarchy.calculate_skill_match_score(user_skill, req_skill)
+                    
+                    if match_score > best_match_score:
+                        best_match_score = match_score
+                        best_matching_skill = user_skill
                 
-                # Calculate final match percentage (capped at 100%)
-                match_percentage = min(100, (base_match + certified_boost) * 100)
-            else:
-                match_percentage = 0
+                if best_match_score > 0:
+                    # Apply certification weight if available
+                    if isinstance(user_skills[best_matching_skill], dict):
+                        is_certified = user_skills[best_matching_skill].get('isBackedByCertificate', False)
+                        cert_weight = self.hierarchy.calculate_certification_weight(best_matching_skill, is_certified)
+                        best_match_score *= cert_weight
+                    
+                    match_scores.append(best_match_score)
+                    matched_skills.append(best_matching_skill)
+                else:
+                    missing_skills.append(req_skill)
             
-            # Format matched skills with proficiency and certificate status
-            formatted_matched_skills = []
-            for skill in matched_skills:
-                proficiency, is_backed_by_certificate = self._get_skill_data(user_skills[skill])
-                certificate_str = " (certified)" if is_backed_by_certificate else ""
-                formatted_matched_skills.append(f"{skill} ({proficiency}{certificate_str})")
-            
-            course_matches.append({
-                "course_code": course_code,
-                "course_name": course_info.get("name", course_code),
-                "match_percentage": match_percentage,
-                "matched_skills": formatted_matched_skills,
-                "missing_skills": list(missing_skills)
-            })
+            # Calculate overall match percentage
+            if match_scores:
+                match_percentage = (sum(match_scores) / len(required_skills)) * 100
+                
+                # Format matched skills with proficiency and certification info
+                formatted_matched_skills = []
+                for skill in matched_skills:
+                    skill_data = user_skills[skill]
+                    if isinstance(skill_data, dict):
+                        prof = skill_data.get('proficiency', 'Intermediate')
+                        is_cert = skill_data.get('isBackedByCertificate', False)
+                        cert_text = " (certified)" if is_cert else ""
+                        formatted_matched_skills.append(f"{skill} ({prof}{cert_text})")
+                    else:
+                        formatted_matched_skills.append(f"{skill} ({skill_data})")
+                
+                course_matches.append({
+                    'course_name': course_name,
+                    'match_percentage': match_percentage,
+                    'matched_skills': formatted_matched_skills,
+                    'missing_skills': missing_skills,
+                    'skill_match_details': {
+                        'match_scores': match_scores,
+                        'difficulty_level': max(self.hierarchy.get_skill_difficulty(skill) 
+                                             for skill in required_skills)
+                    }
+                })
         
-        # Sort by match percentage (highest first)
-        course_matches.sort(key=lambda x: x["match_percentage"], reverse=True)
-        
-        # Return top matches
+        # Sort by match percentage and return top matches
+        course_matches.sort(key=lambda x: x['match_percentage'], reverse=True)
         return course_matches[:limit]
+    
+    def find_similar_courses(self, course_name: str, top_n: int = 5) -> List[Dict]:
+        """Find courses similar to a given course using enhanced skill relationships."""
+        if course_name not in self.course_data:
+            return []
+        
+        target_course_skills = set(self.course_data[course_name].get('required_skills', []))
+        
+        if not target_course_skills:
+            return []
+        
+        similar_courses = []
+        for other_course, course_info in self.course_data.items():
+            if other_course == course_name:
+                continue
+            
+            other_course_skills = set(course_info.get('required_skills', []))
+            
+            if not other_course_skills:
+                continue
+            
+            # Calculate enhanced similarity score using skill relationships
+            total_score = 0
+            comparisons = 0
+            
+            for target_skill in target_course_skills:
+                for other_skill in other_course_skills:
+                    match_score = self.hierarchy.calculate_skill_match_score(target_skill, other_skill)
+                    total_score += match_score
+                    comparisons += 1
+            
+            if comparisons > 0:
+                similarity_score = (total_score / comparisons) * 100
+                similar_courses.append({
+                    'course_name': other_course,
+                    'similarity_score': similarity_score,
+                    'common_skills': list(target_course_skills & other_course_skills),
+                    'related_skills': list(target_course_skills ^ other_course_skills)
+                })
+        
+        similar_courses.sort(key=lambda x: x['similarity_score'], reverse=True)
+        return similar_courses[:top_n]
     
     def format_recommendations(self, recommendations):
         """
@@ -120,7 +185,7 @@ class SkillMatcher:
         output += "=" * 80 + "\n\n"
         
         for i, rec in enumerate(recommendations, 1):
-            output += f"{i}. {rec['course_code']} - {rec['course_name']} ({rec['match_percentage']:.0f}% match)\n"
+            output += f"{i}. {rec['course_name']} ({rec['match_percentage']:.0f}% match)\n"
             
             # Matched skills
             if rec['matched_skills']:
